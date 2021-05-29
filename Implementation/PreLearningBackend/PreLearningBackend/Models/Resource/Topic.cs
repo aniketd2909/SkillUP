@@ -10,6 +10,7 @@ namespace PreLearningBackend.Models.Resource
     public class Topic
     {
         [Key]
+        //harsha
         public int Id { get; set; }
         [StringLength(100)]
 
