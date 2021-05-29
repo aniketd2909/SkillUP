@@ -9,6 +9,7 @@ namespace PreLearningBackend.Models.User
 {
     public class Mind
     {
+        //Hi hello 
         [Key]
         public int Id { get; set; }
 
