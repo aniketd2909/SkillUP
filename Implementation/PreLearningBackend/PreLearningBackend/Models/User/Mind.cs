@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace PreLearningBackend.Models.User
 {
     public class Mind
-    {
+    {   
+        // Mind ID
         [Key]
         public int Id { get; set; }
 
