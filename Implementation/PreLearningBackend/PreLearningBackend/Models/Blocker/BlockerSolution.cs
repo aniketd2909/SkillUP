@@ -7,23 +7,21 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Models.Blocker
 {
-    public class Blocker
+    public class BlockerSolution
     {
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        public string Name { get; set; }
-
         [Column(TypeName = "text")]
+        public string Solution { get; set; }
+
+        public DateTime PostedAt { get; set; }
+
         [Required]
-        public string Description { get; set; }
+        [ForeignKey("Blocker")]
+        public int BlockerId { get; set; }
 
-        public string Image { get; set; }
-
-        public DateTime CreatedAt { get; set; }
-
-        public ICollection<BlockerSolution> BlockerSolutions { get; set; }
+        public Blocker Blocker { get; set; }
 
 
     }
