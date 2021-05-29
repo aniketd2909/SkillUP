@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Models.Practice
 {
-    public class Question
+    public class Answer
     {
         [Key]
         public int Id { get; set; }
-        [Column(TypeName = "text")]
-        public string Description { get; set; }
+
+        [ForeignKey("Question")]
+        public int QuestionId { get; set; }
+        public Question Question { get; set; }
+
+        [Required]
+        [ForeignKey("Option")]
+        public int OptionId { get; set; }
+        public Option Option { get; set; }
     }
 }
