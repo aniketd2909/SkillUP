@@ -7,16 +7,20 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Models.Resource
 {
-    public class Topic
+    public class Resource
     {
         [Key]
         public int Id { get; set; }
-        [StringLength(100)]
 
-        public string Name { get; set; }
+        [StringLength(50)]
+        public string Type { get; set; }
+
 
         [Column(TypeName = "text")]
-        public string Description { get; set; }
-        public ICollection<Resource> Resources { get; set; }
+        public string Link { get; set; }
+
+        [ForeignKey("Topic")]
+        public int TopicId { get; set; }
+        public Topic Topic { get; set; }
     }
 }
