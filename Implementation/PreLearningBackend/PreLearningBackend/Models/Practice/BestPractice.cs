@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Models.Practice
 {
-    public class Question
+    public class BestPractice
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         [Column(TypeName = "text")]
         public string Description { get; set; }
     }
