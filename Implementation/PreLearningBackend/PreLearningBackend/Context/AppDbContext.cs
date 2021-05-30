@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PreLearningBackend.Models.Blocker;
+using PreLearningBackend.Models.ExperienceFeed;
 using PreLearningBackend.Models.Practice;
 using PreLearningBackend.Models.Resource;
 using PreLearningBackend.Models.User;
@@ -20,8 +21,8 @@ namespace PreLearningBackend.Context
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Resource> Resources { get; set; }
         public DbSet<Blocker> Blockers { get; set; }
-        public DbSet<ExperieneFeed> BlockerSolutions { get; set; }
-        public DbSet<ExperieneFeed> ExperieneFeeds { get; set; }
+        public DbSet<BlockerSolution> BlockerSolutions { get; set; }
+        public DbSet<ExperienceFeed> ExperienceFeeds { get; set; }
         public DbSet<Mind> Minds { get; set; }
         public DbSet<CampusMind> CampusMinds { get; set; }
         public DbSet<MindTreeMind> MindTreeMinds { get; set; }
