@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PreLearningBackend.Models.Blocker;
 using PreLearningBackend.Models.Practice;
 using PreLearningBackend.Models.Resource;
+using PreLearningBackend.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Context
 {
-    public class PracticeDbContext:DbContext
+    public class AppDbContext:DbContext
     {
         public DbSet<Question> Questions { get; set; }
         public DbSet<Option> Options { get; set; }
@@ -17,7 +19,16 @@ namespace PreLearningBackend.Context
         public DbSet<ProblemStatement> ProblemStatements { get; set; }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Resource> Resources { get; set; }
-        public PracticeDbContext(DbContextOptions<PracticeDbContext> options):base(options)
+        public DbSet<Blocker> Blockers { get; set; }
+        public DbSet<ExperieneFeed> BlockerSolutions { get; set; }
+        public DbSet<ExperieneFeed> ExperieneFeeds { get; set; }
+        public DbSet<Mind> Minds { get; set; }
+        public DbSet<CampusMind> CampusMinds { get; set; }
+        public DbSet<MindTreeMind> MindTreeMinds { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<SelectedUser> SelectedUsers { get; set; }
+
+        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
         }
     }

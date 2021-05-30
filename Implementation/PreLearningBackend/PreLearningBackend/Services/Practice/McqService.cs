@@ -9,9 +9,9 @@ namespace PreLearningBackend.Services.Practice
 {
     public class McqService : IMcqService
     {
-        private readonly PracticeDbContext _context;
+        private readonly AppDbContext _context;
 
-        public McqService(PracticeDbContext context)
+        public McqService(AppDbContext context)
         {
             _context = context;
         }
