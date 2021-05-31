@@ -16,7 +16,7 @@ namespace PreLearningBackend.Services.Practice
             _context = context;
         }
 
-        public Task<bool> AddQuestion(CompleteQuestion completeQuestion)
+        public async Task<bool> AddQuestion(CompleteQuestion completeQuestion)
         {
             //await _context.Questions.AddAsync(completeQuestion.Question);
             //await _context.SaveChangesAsync();
@@ -33,7 +33,7 @@ namespace PreLearningBackend.Services.Practice
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteQuestion(int id)
+        public async Task<bool> DeleteQuestion(int id)
         {
             //Question question = await _context.Questions.FindAsync(id);
             //if (question is null)
@@ -51,7 +51,7 @@ namespace PreLearningBackend.Services.Practice
             throw new NotImplementedException();
         }
 
-        public Task<CompleteQuestion> GetQuestionById(int id)
+        public async Task<CompleteQuestion> GetQuestionById(int id)
         {
             //CompleteQuestion completeQuestion = new();
             //completeQuestion.Question = await _context.Questions.FindAsync(id);
@@ -61,7 +61,7 @@ namespace PreLearningBackend.Services.Practice
             throw new NotImplementedException();
         }
 
-        public Task<bool> SubmitAnswer(int id, AnswerResource answerResource)
+        public async Task<bool> SubmitAnswer(int id, AnswerResource answerResource)
         {
             //Answer answer = await _context.Answers.SingleOrDefaultAsync(a => a.QuestionId == id);
             //if (answerResource.OptionId == answer.OptionId)
