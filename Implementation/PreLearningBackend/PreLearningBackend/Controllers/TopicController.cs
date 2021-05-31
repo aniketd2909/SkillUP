@@ -19,11 +19,11 @@ namespace PreLearningBackend.Controllers
         }
         // GET: api/<TopicController>
         [HttpGet]
-        public IActionResult GetAllTopics()
+        public async Task<IActionResult> GetAllTopics()
         {
             try
             {
-                return Ok(_context.GetAllTopics());
+                return Ok(await _context.GetAllTopics());
             }
             catch (Exception e)
             {
