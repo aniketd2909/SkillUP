@@ -28,7 +28,7 @@ namespace PreLearningBackend.Controllers
             {
                 bool result = await _service.AddExperienceFeed(experienceFeed); // Calls the AddExperienceFeed from the service
                 if (result)
-                    return Conflict("Experience Feed Added Successfully.."); //Returns the success message
+                    return Ok("Experience Feed Added Successfully.."); //Returns the success message
                 else
                     throw new ExceptionWhileAdding();
 
@@ -56,9 +56,9 @@ namespace PreLearningBackend.Controllers
             {
                 List<ExperienceFeed> listOfExperienceFeeds = await _service.GetAllFeedbacks();// Calls the GetAllFeedbacks from the service
                 if (listOfExperienceFeeds.Count == 0)
-                    return Conflict("No data to display");//Returns if there's no feed to display
+                    return Ok("No data to display");//Returns if there's no feed to display
                 else
-                    return listOfExperienceFeeds;// Display the feedbacks from the database
+                    return Ok(listOfExperienceFeeds);// Display the feedbacks from the database
             }
             catch (DbUpdateException)
             {
@@ -77,7 +77,7 @@ namespace PreLearningBackend.Controllers
             {
                 bool result = await _service.UpdateExperienceFeed(id, experienceFeed);// Calls the GetAllFeedbacks from the service
                 if (result)
-                    return Conflict("Updated Successfully.."); //Returns the success message
+                    return Ok("Updated Successfully.."); //Returns the success message
                 else
                     throw new UpdateException();
             }
@@ -103,9 +103,9 @@ namespace PreLearningBackend.Controllers
             {
                 bool result = await _service.DeleteExperienceFeed(id);// Calls the DeleteExperienceFeed from the service
                 if (result)
-                    return Conflict("Deleted Successfully..");//Returns the success message
+                    return Ok("Deleted Successfully..");//Returns the success message
                 else
-                    return Conflict("Id not found");
+                    return Ok("Id not found");
             }
             catch (DbUpdateException)
             {

@@ -28,7 +28,7 @@ namespace PreLearningBackend.Controllers
             {
                 bool result = await _service.AddBestPractice(bestCodingPractice); // Calls the AddBestPractice from the service
                 if (result)
-                    return Conflict("Best Practices Added Successfully.."); //Returns the success message
+                    return Ok("Best Practices Added Successfully.."); //Returns the success message
                 else
                     throw new AddBestPracticeError();
 
@@ -56,9 +56,9 @@ namespace PreLearningBackend.Controllers
             {
                 List<BestPractice> listOfBestCodingPractice = await _service.GetBestPractices();// Calls the GetBestPractices from the service
                 if (listOfBestCodingPractice.Count == 0)
-                    return Conflict("No data to display");//Returns if there's no data to display
+                    return Ok("No data to display");//Returns if there's no data to display
                 else
-                    return listOfBestCodingPractice;// Display the Best Coding Practices from the database
+                    return Ok(listOfBestCodingPractice);// Display the Best Coding Practices from the database
             }
             catch (DbUpdateException)
             {
@@ -78,7 +78,7 @@ namespace PreLearningBackend.Controllers
 
                 bool result = await _service.UpdateBestPractice(id, bestCodingPractice);// Calls the UpdateBestCodingPractice from the service
                 if (result)
-                    return Conflict("Updated Successfully.."); //Returns the success message
+                    return Ok("Updated Successfully.."); //Returns the success message
                 else
                     throw new UpdationError();
             }
@@ -104,9 +104,9 @@ namespace PreLearningBackend.Controllers
             {
                 bool result = await _service.DeleteBestPractice(id);// Calls the DeleteBestPractice from the service
                 if (result)
-                    return Conflict("Deleted Successfully..");//Returns the success message
+                    return Ok("Deleted Successfully..");//Returns the success message
                 else
-                    return Conflict("Id not found");
+                    return Ok("Id not found");
             }
             catch (DbUpdateException)
             {

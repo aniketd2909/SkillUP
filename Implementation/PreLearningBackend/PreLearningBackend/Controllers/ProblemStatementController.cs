@@ -28,7 +28,7 @@ namespace PreLearningBackend.Controllers
             {
                 bool result = await _service.AddProblemStatement(problemStatement); // Calls the ProblemStatement from the service
                 if (result)
-                    return Conflict(" Problem Statement Added Successfully.."); //Returns the success message
+                    return Ok(" Problem Statement Added Successfully.."); //Returns the success message
                 else
                     throw new AddProblemStatementError();
 
@@ -56,9 +56,9 @@ namespace PreLearningBackend.Controllers
             {
                 List<ProblemStatement> listOfProblemStatement = await _service.GetProblemStatement();// Calls the GetProblemStatement from the service
                 if (listOfProblemStatement.Count == 0)
-                    return Conflict("No data to display");//Returns if there's no data to display
+                    return Ok("No data to display");//Returns if there's no data to display
                 else
-                    return listOfProblemStatement;// Display the Problem statements from the database
+                    return Ok(listOfProblemStatement);// Display the Problem statements from the database
             }
             catch (DbUpdateException)
             {
@@ -78,7 +78,7 @@ namespace PreLearningBackend.Controllers
 
                 bool result = await _service.UpdateProblemStatement(id, problemStatement);// Calls the UpdateProblemStatement from the service
                 if (result)
-                    return Conflict("Updated Successfully.."); //Returns the success message
+                    return Ok("Updated Successfully.."); //Returns the success message
                 else
                     throw new UpdationProblemStatementError();
             }
@@ -104,9 +104,9 @@ namespace PreLearningBackend.Controllers
             {
                 bool result = await _service.DeleteProblemStatement(id);// Calls the DeleteProblemStatement from the service
                 if (result)
-                    return Conflict("Deleted Successfully..");//Returns the success message
+                    return Ok("Deleted Successfully..");//Returns the success message
                 else
-                    return Conflict("Id not found");
+                    return Ok("Id not found");
             }
             catch (DbUpdateException)
             {
