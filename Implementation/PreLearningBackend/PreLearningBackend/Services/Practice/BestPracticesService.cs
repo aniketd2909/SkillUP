@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Services.Practice
 {
-    public class IBestPracticeService
+    public class BestPracticesService:IBestPracticesService
     {
         private readonly AppDbContext _context;
 
-        public IBestPracticeService(AppDbContext context)
+        public BestPracticesService(AppDbContext context)
         {
             _context = context;
         }

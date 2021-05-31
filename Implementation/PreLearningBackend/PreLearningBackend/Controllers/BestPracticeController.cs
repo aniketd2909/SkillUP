@@ -14,9 +14,9 @@ namespace PreLearningBackend.Controllers
     [ApiController]
     public class BestPracticeController : ControllerBase
     {
-        private readonly IBestPracticeService _service;
+        private readonly IBestPracticesService _service;
 
-        public BestPracticeController(IBestPracticeService service)
+        public BestPracticeController(IBestPracticesService service)
         {
             _service = service; // creates an reference object for the service
         }

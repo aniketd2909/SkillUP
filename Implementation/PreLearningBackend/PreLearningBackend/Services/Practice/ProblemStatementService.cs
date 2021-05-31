@@ -10,7 +10,7 @@ namespace PreLearningBackend.Services.Practice
 {
     public class ProblemStatementService:IProblemStatementService
     {
-        public AppDbContext _context;
+        private readonly AppDbContext _context;
 
         public ProblemStatementService(AppDbContext context)
         {
