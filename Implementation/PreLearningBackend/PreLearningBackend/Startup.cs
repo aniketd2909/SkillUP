@@ -14,6 +14,7 @@ using PreLearningBackend.Services.ExpereienceFeed;
 using PreLearningBackend.Services.Practice;
 using PreLearningBackend.Services.Resource;
 using PreLearningBackend.Services.User;
+using PreLearningBackend.Services.Blocker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,13 @@ namespace PreLearningBackend
             services.AddScoped<IMindTreeMindRegisterService, MindTreeMindRegisterService>();
             services.AddScoped<ISelectedUserService, SelectedUserService>();
             services.AddScoped<IRoleService, RoleService>();
+
+        
+
+         //   services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IBlockerService, BlockerService>();
+            services.AddScoped<IBlockerSolutionService, BlockerSolutionService>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
