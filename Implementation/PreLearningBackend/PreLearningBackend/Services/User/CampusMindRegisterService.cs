@@ -14,18 +14,18 @@ namespace PreLearningBackend.Services.User
         {
             _context = context;
         }
-        public bool AddDetails(CampusMindRegister register)
+        public async Task<bool> AddDetails(CampusMindRegister register)
         {
             if (ValidateUserEmail(register.Mind.Email))
             {
                 register.Mind.RoleId = 1;
-                _context.Minds.Add(register.Mind);
-                _context.SaveChanges();
+               await _context.Minds.AddAsync(register.Mind);
+               await _context.SaveChangesAsync();
 
                 register.CampusMind.MindId = register.Mind.Id;
 
-                _context.CampusMinds.Add(register.CampusMind);
-                _context.SaveChanges();
+               await _context.CampusMinds.AddAsync(register.CampusMind);
+               await _context.SaveChangesAsync();
                 return true;
             }
             else

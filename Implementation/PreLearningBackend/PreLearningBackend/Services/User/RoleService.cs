@@ -27,9 +27,9 @@ namespace PreLearningBackend.Services.User
                return false;
            }
        }*/
-        public Role GetRole(int Id)
+        public async Task<Role> GetRole(int Id)
         {
-            Role role =  _context.Roles.Find(Id);
+            Role role = await  _context.Roles.FindAsync(Id);
             if (role == null)
             {
                 throw new RoleNotFoundException("Role Not Found");

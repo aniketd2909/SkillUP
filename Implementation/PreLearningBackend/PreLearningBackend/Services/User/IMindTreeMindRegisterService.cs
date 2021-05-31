@@ -8,6 +8,6 @@ namespace PreLearningBackend.Services.User
 {
     public interface IMindTreeMindRegisterService
     {
-        bool AddDetails(MindTreeMindRegister mindTreeMindDetails);
+        Task<bool> AddDetails(MindTreeMindRegister mindTreeMindDetails);
     }
 }

@@ -8,7 +8,7 @@ namespace PreLearningBackend.Services.User
 {
     public interface IRoleService
     {
-          Role GetRole(int Id);
+          Task<Role> GetRole(int Id);
 
        // Task<bool> AddRole(Role role);
     }

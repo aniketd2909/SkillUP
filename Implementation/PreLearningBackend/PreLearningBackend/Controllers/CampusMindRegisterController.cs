@@ -35,11 +35,11 @@ namespace PreLearningBackend.Controllers
 
         // POST api/<RegisterController>
         [HttpPost]
-        public IActionResult Post(CampusMindRegister register)
+        public async Task<IActionResult> Post(CampusMindRegister register)
         {
             try
             {
-                if (_service.AddDetails(register))
+                if ( await _service.AddDetails(register))
                 {
                     return Ok("Added");
                 }

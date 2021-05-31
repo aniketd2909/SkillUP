@@ -14,18 +14,18 @@ namespace PreLearningBackend.Services.User
         {
             _context = context;
         }
-        public bool AddDetails(MindTreeMindRegister mindTreeMindDetails)
+        public async Task<bool> AddDetails(MindTreeMindRegister mindTreeMindDetails)
         {
             if (validateMindTreeMind(mindTreeMindDetails.Mind.Email))
             {
                 mindTreeMindDetails.Mind.RoleId = 2;
-                _context.Minds.Add(mindTreeMindDetails.Mind);
-                _context.SaveChanges();
+               await _context.Minds.AddAsync(mindTreeMindDetails.Mind);
+               await _context.SaveChangesAsync();
 
                 mindTreeMindDetails.MindTreeMind.MindId = mindTreeMindDetails.Mind.Id;
 
-                _context.MindTreeMinds.Add(mindTreeMindDetails.MindTreeMind);
-                _context.SaveChanges();
+               await _context.MindTreeMinds.AddAsync(mindTreeMindDetails.MindTreeMind);
+               await _context.SaveChangesAsync();
                 return true;
             }
             else

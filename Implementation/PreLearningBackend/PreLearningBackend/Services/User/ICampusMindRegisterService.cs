@@ -8,6 +8,6 @@ namespace PreLearningBackend.Services.User
 {
     public interface ICampusMindRegisterService
     {
-        bool AddDetails(CampusMindRegister register);
+        Task<bool> AddDetails(CampusMindRegister register);
     }
 }

@@ -30,11 +30,11 @@ namespace PreLearningBackend.Controllers
 
         // GET api/<RoleController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
             try
             {
-               Role role =   _service.GetRole(id);
+               Role role =  await _service.GetRole(id);
                 return Ok(role);
             }
             catch(Exception ex)
