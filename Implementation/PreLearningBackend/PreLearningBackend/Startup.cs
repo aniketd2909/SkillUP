@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PreLearningBackend.Context;
+using PreLearningBackend.Services.Blocker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,13 @@ namespace PreLearningBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+        
+
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IBlockerService, BlockerService>();
+            services.AddScoped<IBlockerSolutionService, BlockerSolutionService>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
