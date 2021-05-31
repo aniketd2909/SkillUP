@@ -55,7 +55,7 @@ namespace PreLearningBackend
 
         
 
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+         //   services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IBlockerService, BlockerService>();
             services.AddScoped<IBlockerSolutionService, BlockerSolutionService>();
 
