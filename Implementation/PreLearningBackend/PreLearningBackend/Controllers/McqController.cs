@@ -43,8 +43,8 @@ namespace PreLearningBackend.Controllers
                 return Ok(completeQuestion);
             return BadRequest("Question doesn't exist.");
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> SubmitAnswer(int id, AnswerResource answerResource)
+        [HttpPost("{id}")]
+        public async Task<IActionResult> SubmitAnswer(int id,[FromBody] AnswerResource answerResource)
         {
             bool answer = await _mcqService.SubmitAnswer(id,answerResource);
             if (answer)

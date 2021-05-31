@@ -23,7 +23,7 @@ namespace PreLearningBackend.Models.Blocker
 
         public DateTime CreatedAt { get; set; }
 
-        public ICollection<ExperieneFeed> BlockerSolutions { get; set; }
+        public ICollection<BlockerSolution> BlockerSolutions { get; set; }
 
 
     }
