@@ -9,6 +9,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PreLearningBackend.Context;
+using PreLearningBackend.Services.Blocker;
+using PreLearningBackend.Services.ExpereienceFeed;
+using PreLearningBackend.Services.Practice;
+using PreLearningBackend.Services.Resource;
 using PreLearningBackend.Services.User;
 using System;
 using System.Collections.Generic;
@@ -29,7 +33,20 @@ namespace PreLearningBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddCors();
+            services.AddMvc();
+            services.AddScoped<IResourceService, ResourceService>();
+            services.AddScoped<ITopicService, TopicService>();
+            services.AddScoped<IBestPracticesService, BestPracticesService>();
+            services.AddScoped<IProblemStatementService, ProblemStatementService>();
+            services.AddScoped<IMcqService, McqService>();
+            services.AddScoped<IExperienceFeedService, ExperienceFeedService>();
+
+
+            //services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            string mySqlConnectionStr = Configuration.GetConnectionString("MySqlConnection");
+            services.AddDbContext<AppDbContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+           // services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ICampusMindRegisterService, CampusMindRegisterService>();
             services.AddScoped<IMindTreeMindRegisterService, MindTreeMindRegisterService>();
             services.AddScoped<ISelectedUserService, SelectedUserService>();

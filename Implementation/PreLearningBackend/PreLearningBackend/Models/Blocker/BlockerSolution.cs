@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Models.Blocker
 {
-    public class ExperieneFeed
+    public class BlockerSolution
     {
         [Key]
         public int Id { get; set; }
