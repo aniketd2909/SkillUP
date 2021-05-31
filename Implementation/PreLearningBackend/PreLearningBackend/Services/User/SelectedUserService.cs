@@ -14,10 +14,10 @@ namespace PreLearningBackend.Services.User
         {
             _context = context;
         }
-        public  bool AddUser(SelectedUser selectedUser)
+        public async Task<bool> AddUser(SelectedUser selectedUser)
         {
-           _context.SelectedUsers.Add(selectedUser);
-            int check =  _context.SaveChanges();
+          await _context.SelectedUsers.AddAsync(selectedUser);
+            int check = await  _context.SaveChangesAsync();
             if (check > 0)
             {
                 return true;
@@ -26,13 +26,12 @@ namespace PreLearningBackend.Services.User
             {
                 return false;
             }
-
         }
 
-        public  bool DeleteUser(int Id)
+        public async  Task<bool> DeleteUser(int Id)
         {
             bool flag = true;
-            SelectedUser user = _context.SelectedUsers.Find(Id);
+            SelectedUser user = await _context.SelectedUsers.FindAsync(Id);
             if (user == null)
             {
                 throw new UserNotFoundException("Selected User Not Present To Delete");
@@ -40,7 +39,7 @@ namespace PreLearningBackend.Services.User
             else
             {
                 _context.SelectedUsers.Remove(user);
-                int check =  _context.SaveChanges();
+                int check =  await _context.SaveChangesAsync();
                 if (check <= 0)
                 {
                     flag = false;
@@ -51,9 +50,9 @@ namespace PreLearningBackend.Services.User
 
         }
 
-        public SelectedUser GetUserById(int Id)
+        public async Task<SelectedUser> GetUserById(int Id)
         {
-            SelectedUser user = _context.SelectedUsers.Find(Id);
+            SelectedUser user = await _context.SelectedUsers.FindAsync(Id);
             if (user == null)
             {
                 throw new UserNotFoundException("User Not Found");
@@ -64,11 +63,11 @@ namespace PreLearningBackend.Services.User
             }
         }
 
-        public bool UpdateUser(SelectedUser selectedUser)
+        public async Task<bool> UpdateUser(SelectedUser selectedUser)
         {
 
             _context.SelectedUsers.Update(selectedUser);
-            int check = _context.SaveChanges();
+            int check = await _context.SaveChangesAsync();
             if (check > 0)
             {
                 return true;

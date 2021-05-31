@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PreLearningBackend.Context;
+using PreLearningBackend.Services.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,10 @@ namespace PreLearningBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ICampusMindRegisterService, CampusMindRegisterService>();
+            services.AddScoped<IMindTreeMindRegisterService, MindTreeMindRegisterService>();
+            services.AddScoped<ISelectedUserService, SelectedUserService>();
+            services.AddScoped<IRoleService, RoleService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
