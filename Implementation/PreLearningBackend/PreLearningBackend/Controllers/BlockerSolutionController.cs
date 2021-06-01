@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PreLearningBackend.Services.Blocker;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Controllers
 {
+    [Authorize(Roles = "CampusMind")]
     [Route("api/[controller]")]
     [ApiController]
     public class BlockerSolutionController : ControllerBase

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,17 +8,20 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PreLearningBackend.Context;
+using PreLearningBackend.JWTAuthenticationManager;
 using PreLearningBackend.Services.Blocker;
 using PreLearningBackend.Services.ExpereienceFeed;
 using PreLearningBackend.Services.Practice;
 using PreLearningBackend.Services.Resource;
 using PreLearningBackend.Services.User;
-using PreLearningBackend.Services.Blocker;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace PreLearningBackend
@@ -35,7 +39,9 @@ namespace PreLearningBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
+
             services.AddMvc();
+
             services.AddScoped<IResourceService, ResourceService>();
             services.AddScoped<ITopicService, TopicService>();
             services.AddScoped<IBestPracticesService, BestPracticesService>();
@@ -47,19 +53,36 @@ namespace PreLearningBackend
             //services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             string mySqlConnectionStr = Configuration.GetConnectionString("MySqlConnection");
             services.AddDbContext<AppDbContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
-           // services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            // services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ICampusMindRegisterService, CampusMindRegisterService>();
             services.AddScoped<IMindTreeMindRegisterService, MindTreeMindRegisterService>();
             services.AddScoped<ISelectedUserService, SelectedUserService>();
             services.AddScoped<IRoleService, RoleService>();
-
-        
-
-         //   services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //   services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IBlockerService, BlockerService>();
             services.AddScoped<IBlockerSolutionService, BlockerSolutionService>();
+            services.AddScoped<IJWTAuthentication, JWTAuthentication>();
 
             services.AddControllers();
+            var key = "This is my long private SecretKey";
+            services.AddAuthentication(x =>
+                  {
+                      x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                      x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                  }).AddJwtBearer(x =>
+                  {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+          //  services.AddSingleton<IJWTAuthentication>(new JWTAuthentication(key));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PreLearningBackend", Version = "v1" });
@@ -86,7 +109,7 @@ namespace PreLearningBackend
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

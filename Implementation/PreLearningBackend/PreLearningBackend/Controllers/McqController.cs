@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PreLearningBackend.Models.Practice;
 using PreLearningBackend.Services.Practice;
@@ -19,6 +20,8 @@ namespace PreLearningBackend.Controllers
         {
             _mcqService = mcqService;
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddQuestion([FromBody] CompleteQuestion completeQuestion)
         {
@@ -27,6 +30,8 @@ namespace PreLearningBackend.Controllers
             return Created(string.Empty,completeQuestion);
             return BadRequest("Something went wrong while adding the question.");
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuestion(int id)
         {
@@ -35,6 +40,8 @@ namespace PreLearningBackend.Controllers
                 return Ok();
             return BadRequest("Question doesn't exist to delete.");
         }
+
+        [Authorize(Roles = "Admin,CampusMind")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetQuestionById(int id)
         {
@@ -43,6 +50,8 @@ namespace PreLearningBackend.Controllers
                 return Ok(completeQuestion);
             return BadRequest("Question doesn't exist.");
         }
+
+        [Authorize(Roles = "CampusMind,Admin")]
         [HttpPost("{id}")]
         public async Task<IActionResult> SubmitAnswer(int id,[FromBody] AnswerResource answerResource)
         {

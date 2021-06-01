@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PreLearningBackend.Models.Practice;
@@ -20,7 +21,7 @@ namespace PreLearningBackend.Controllers
         {
             _service = service; // creates an reference object for the service
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult> AddBestCodingPractice(ProblemStatement problemStatement)
         {
@@ -47,7 +48,7 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Admin,CampusMind")]
         [HttpGet]
         public async Task<ActionResult<List<ProblemStatement>>> GetProblemStatement()
         {
@@ -69,7 +70,7 @@ namespace PreLearningBackend.Controllers
                 return NotFound();
             }
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateProblemStatement(int id, ProblemStatement problemStatement)
         {
@@ -96,7 +97,7 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteProblemStatement(int id)
         {

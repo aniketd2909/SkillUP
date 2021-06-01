@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PreLearningBackend.Services.Blocker;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Controllers
 {
+    [Authorize(Roles = "CampusMind")]
     [Route("api/[controller]")]
     [ApiController]
     public class BlockerController : ControllerBase
@@ -22,7 +24,7 @@ namespace PreLearningBackend.Controllers
             _blockerService = blockerService;  
         }
 
-
+     
         [HttpGet]
         public async Task<IActionResult> GetAllBlockers()
         {
@@ -43,7 +45,6 @@ namespace PreLearningBackend.Controllers
             }
 
         }
-
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBlockerById(int id)
@@ -67,7 +68,7 @@ namespace PreLearningBackend.Controllers
 
         }
 
-
+       
         [HttpPost]
         public async Task<IActionResult> AddBlocker(Models.Blocker.Blocker blocker)
         {
