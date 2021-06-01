@@ -8,13 +8,15 @@ import { GetExperienceFeedComponent } from './get-experience-feed/get-experience
 import { UpdateExperienceFeedComponent } from './update-experience-feed/update-experience-feed.component';
 import { DeleteExperienceFeedComponent } from './delete-experience-feed/delete-experience-feed.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
   declarations: [ExperienceFeedComponent, AddExperienceFeedComponent, GetExperienceFeedComponent, UpdateExperienceFeedComponent, DeleteExperienceFeedComponent, PageNotFoundComponent],
   imports: [
     CommonModule,
-    ExperienceFeedRoutingModule
+    ExperienceFeedRoutingModule,
+    MatListModule
   ]
 })
 export class ExperienceFeedModule { }

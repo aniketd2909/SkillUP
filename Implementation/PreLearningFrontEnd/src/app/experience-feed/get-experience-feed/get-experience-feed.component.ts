@@ -12,4 +12,6 @@ export class GetExperienceFeedComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  feeds:any=['feed1','feed2','feed3'];
+
 }
