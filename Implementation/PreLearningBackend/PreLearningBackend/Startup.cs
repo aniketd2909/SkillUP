@@ -64,7 +64,7 @@ namespace PreLearningBackend
             services.AddScoped<IJWTAuthentication, JWTAuthentication>();
 
             services.AddControllers();
-            var key = "This is my long private SecretKey";
+           // var key = "This is my long private SecretKey";
             services.AddAuthentication(x =>
                   {
                       x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -76,7 +76,7 @@ namespace PreLearningBackend
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey.Key)),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };

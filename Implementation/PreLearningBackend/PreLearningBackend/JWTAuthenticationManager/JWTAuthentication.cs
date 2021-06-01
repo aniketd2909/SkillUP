@@ -14,8 +14,7 @@ namespace PreLearningBackend.JWTAuthenticationManager
     public class JWTAuthentication : IJWTAuthentication
     {
         private readonly AppDbContext _context;
-      
-
+        
         public JWTAuthentication(AppDbContext context)
         {
             _context = context;
@@ -28,7 +27,7 @@ namespace PreLearningBackend.JWTAuthenticationManager
 
         public string Login(string email, string password)
         {
-            var _key = "This is my long private SecretKey";
+           // var _key = "This is my long private SecretKey";
             Mind mind = _context.Minds.SingleOrDefault(user => user.Email.Equals(email) && user.Password.Equals(password));
             if (mind is null)
                 return null;
@@ -36,7 +35,7 @@ namespace PreLearningBackend.JWTAuthenticationManager
             var userRole = _context.Roles.Find(mind.RoleId);
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var tokeyKey = Encoding.ASCII.GetBytes(_key);
+            var tokeyKey = Encoding.ASCII.GetBytes(SecretKey.Key);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
@@ -51,7 +50,7 @@ namespace PreLearningBackend.JWTAuthenticationManager
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+            return tokenHandler.WriteToken(token);  //this line returns the string format of generated token 
         }
     }
 }

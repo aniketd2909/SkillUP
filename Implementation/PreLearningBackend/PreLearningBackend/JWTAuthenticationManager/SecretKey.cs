@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.JWTAuthenticationManager
 {
-    public interface IJWTAuthentication
+    public class SecretKey
     {
-        string Login(string email, string password);  //Method declaration for user authentication
+        public const string Key = "This is my long private SecretKey";
     }
 }
-
