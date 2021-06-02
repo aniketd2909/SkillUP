@@ -33,7 +33,6 @@ namespace PreLearningBackend.Controllers
                     return Ok("Best Practices Added Successfully.."); //Returns the success message
                 else
                     throw new AddBestPracticeError();
-
             }
             catch (AddBestPracticeError ex)
             {

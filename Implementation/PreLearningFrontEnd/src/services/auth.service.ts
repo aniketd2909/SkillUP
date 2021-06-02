@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -7,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
   register(path, data): Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/${path}`, data);
   }
@@ -24,5 +25,9 @@ export class AuthService {
   }
   logout() {
     localStorage.removeItem('jwtToken');
+    this.router.navigate(['authentication/login']);
+  }
+  isLoggedIn() {
+    return !!localStorage.getItem('jwtToken');
   }
 }
