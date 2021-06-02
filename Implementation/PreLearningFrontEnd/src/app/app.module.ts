@@ -9,6 +9,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
+import{ReactiveFormsModule}from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {MatListModule} from '@angular/material/list';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
