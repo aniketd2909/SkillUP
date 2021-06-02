@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PreLearningBackend.Models.User;
 using PreLearningBackend.Services.User;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Controllers
 {
+    [Authorize(Roles = "MindtreeMind")]
     [Route("api/[controller]")]
     [ApiController]
     public class MindTreeMindRegisterController : ControllerBase

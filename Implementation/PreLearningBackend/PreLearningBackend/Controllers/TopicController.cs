@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PreLearningBackend.Models.Resource;
 using PreLearningBackend.Services.Resource;
 using System;
@@ -18,6 +19,7 @@ namespace PreLearningBackend.Controllers
             _context = context;
         }
         // GET: api/<TopicController>
+        [Authorize(Roles = "CampusMind")]
         [HttpGet]
         public async Task<IActionResult> GetAllTopics()
         {
@@ -32,6 +34,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // GET api/<TopicController>/<name>
+        [Authorize(Roles = "CampusMind")]
         [HttpGet("{name}")]
         public async Task<IActionResult> GetTopicByName(string name)
         {
@@ -52,6 +55,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // POST api/<TopicController>
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Post(Topic topic)
         {
@@ -67,6 +71,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // PUT api/<TopicController>/5
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Topic topic)
         {
@@ -82,6 +87,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // DELETE api/<TopicController>/5
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
