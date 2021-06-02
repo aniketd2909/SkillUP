@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  flag : boolean = false;
-   x  :any 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
