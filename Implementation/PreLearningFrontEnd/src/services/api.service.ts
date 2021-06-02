@@ -14,6 +14,7 @@ export class ApiService {
   post(path, data): Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/${path}`, data);
   }
+
   delete(path): Observable<any> {
     return this.httpClient.delete(`${environment.baseUrl}/${path}`);
   }
