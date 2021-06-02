@@ -8,6 +8,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTreeModule} from '@angular/material/tree';
 import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from 'src/services/token-interceptor.service';
 
 
 @NgModule({
@@ -22,6 +24,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatTreeModule,
     MatListModule,
     MatExpansionModule
-  ]
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
 })
 export class ResourceModule { }
