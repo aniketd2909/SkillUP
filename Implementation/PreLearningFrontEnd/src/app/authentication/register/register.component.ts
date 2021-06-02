@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   campusMind: boolean = false;
   mindTreeMind: boolean = false;
@@ -53,11 +54,17 @@ export class RegisterComponent implements OnInit {
   }
 
   collectData() {
-    // console.log(this.registerForm.value);
-    // console.log(this.registerForm.value.roleId)
-    // console.log(typeof(+this.registerForm.value.roleId))
-    // console.log(this.registerForm.value);
     this.registerForm.value.roleId = +this.registerForm.value.roleId;
     console.log(this.registerForm.value);
+    let path =
+      this.registerForm.value.roleId == 1
+        ? 'CampusMindRegister'
+        : 'MindTreeMindRegister';
+    this.authService.register(path, this.registerForm.value).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => alert(error.error)
+    );
   }
 }

@@ -16,16 +16,26 @@ namespace PreLearningBackend.Services.User
         }
         public async Task<bool> AddDetails(CampusMindRegister register)
         {
-            if (ValidateUserEmail(register.Mind.Email))
+
+            if (ValidateUserEmail(register.Email))
             {
-                register.Mind.RoleId = 1;
-               await _context.Minds.AddAsync(register.Mind);
-               await _context.SaveChangesAsync();
+                Mind mind = new Mind();
+                mind.ContactNo = register.ContactNo;
+                mind.Email = register.Email;
+                mind.Gender = register.Gender;
+                mind.Name = register.Name;
+                mind.RoleId = register.RoleId;
+                mind.Password = register.Password;
 
-                register.CampusMind.MindId = register.Mind.Id;
+                CampusMind campusMind = new CampusMind();
+                campusMind.EngineeringBranch = register.EngineeringBranch;
+                await _context.Minds.AddAsync(mind);
+                await _context.SaveChangesAsync();
 
-               await _context.CampusMinds.AddAsync(register.CampusMind);
-               await _context.SaveChangesAsync();
+                //register.CampusMind.MindId = register.Mind.Id;
+                campusMind.MindId = mind.Id;
+                await _context.CampusMinds.AddAsync(campusMind);
+                await _context.SaveChangesAsync();
                 return true;
             }
             else
