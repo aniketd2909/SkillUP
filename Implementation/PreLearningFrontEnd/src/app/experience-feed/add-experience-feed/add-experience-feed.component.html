@@ -1,13 +1,14 @@
+<html>
 <div class="container">
     <form [formGroup]="feedForm" (ngSubmit)="OnSubmit()">
   <div class="mb-2">
-      <h1 style="text-align:center">Add Your Experience in Orchard</h1>
+      <h1 style="text-align:left"><strong>Share Your OrchardExperience</strong></h1>
       </div>
       <div class="parallax"></div>
       <br>
       <div class="mb-3">
-        <h2 class="form-label"><strong>Comment</strong></h2>
-        <textarea type="text" class="form-control" formControlName="Comment" id="Comment"  ngModel></textarea>
+        <h2 class="form-label" ><strong>Feedback</strong></h2>
+        <textarea type="text" placeholder="Type here" class="form-control"  formControlName="Comment" id="Comment"  ngModel></textarea>
       </div>
   
       <button type="submit" class="btn btn-primary" (click)="resetForm">Submit</button>
@@ -15,6 +16,6 @@
     </form>
   
   </div>
-  
+</html>
   
   

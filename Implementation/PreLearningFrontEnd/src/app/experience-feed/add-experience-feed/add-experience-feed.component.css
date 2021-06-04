@@ -1,8 +1,9 @@
 .parallax {
-    background-image: url("https://st2.depositphotos.com/3837271/8657/i/600/depositphotos_86576638-stock-photo-your-feedback-matters-placard.jpg");
+    background-image: url("https://th.bing.com/th/id/R0691849d904de268a98d0932dccfb01b?rik=BgovClQQWGRFjw&riu=http%3a%2f%2fwww.drinksindustryireland.ie%2fwp-content%2fuploads%2f2016%2f11%2frsz_online_feedback.jpg&ehk=vKA9LWuVQdY%2fPvCFvdTrBp6y%2fzXdeC3%2bmEjJcvoArns%3d&risl=&pid=ImgRaw");
     min-height: 500px; 
     background-attachment: fixed;
-    background-position: center;
+    background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
