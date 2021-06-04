@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Controllers
 {
-    [Authorize(Roles = "CampusMind")]
+  //  [Authorize(Roles = "CampusMind")]
     [Route("api/[controller]")]
     [ApiController]
     public class BlockerController : ControllerBase

@@ -10,6 +10,9 @@ export class BlockerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    
+
   }
 
 }

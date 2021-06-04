@@ -1,0 +1,40 @@
+
+<div>
+  <mat-accordion #blocker>
+    <tr *ngFor="let blocker of blockerList" [value]="blocker">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ blocker.name }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ blocker.description }}
+            <br />
+            <span>Created At: </span>
+            {{ blocker.createdAt }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <h4>Solutions Posted:</h4>
+
+        <tr *ngFor="let blockerSolution of blocker.blockerSolutions">
+          <mat-divider></mat-divider>
+          <p>
+            {{ blockerSolution.solution }}
+          </p>
+        </tr>
+        <button style="float: right" mat-raised-button color="accent"  routerLink="/blocker/add/{{ blocker.id }}"> 
+          Add Solution
+        </button>
+      </mat-expansion-panel>
+    </tr>
+  </mat-accordion>
+</div>
+<div>
+  <mat-paginator
+    [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+  >
+  </mat-paginator>
+</div>

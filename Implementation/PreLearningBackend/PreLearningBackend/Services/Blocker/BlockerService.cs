@@ -49,7 +49,16 @@ namespace PreLearningBackend.Services.Blocker
         public async Task<List<Models.Blocker.Blocker>> GetAllBlockers()
         {
             List<Models.Blocker.Blocker> blockers =await _context.Blockers.ToListAsync();
-
+            foreach (Models.Blocker.Blocker blocker in blockers)
+            {
+                List<Models.Blocker.BlockerSolution> blockerSolutions = await _context.BlockerSolutions.Where(m => m.BlockerId == blocker.Id).ToListAsync();
+                foreach (Models.Blocker.BlockerSolution blockerSolution in blockerSolutions)
+                {
+                    blockerSolution.Blocker = null;
+                    blocker.BlockerSolutions.Add(blockerSolution);
+                }
+            
+            }
             //If blockers list is empty throw an EmptyList Exception
             if (blockers.Count == 0)
             {
