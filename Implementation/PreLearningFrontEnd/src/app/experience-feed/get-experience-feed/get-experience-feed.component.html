@@ -1,24 +1,18 @@
-<!-- <table>
-  <thead>
-    <tr>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let feed of feeds">
-      <td>{{ feed }}</td>
-    </tr>
-  </tbody>
-</table> -->
-<mat-list *ngFor="let feed of feeds">
-  <mat-list-item>{{ feed }}</mat-list-item>
-</mat-list>
-<p>-----------------------------------------------------</p>
-<div>
-  <mat-selection-list #list [multiple]="false">
-    <mat-list-option *ngFor="let feed of feeds" [value]="feed">
-      {{ feed }}
-    </mat-list-option>
-  </mat-selection-list>
-  <p>Option selected: {{ list.selectedOptions.selected[0]?.value }}</p>
+
+  <div><h1 style="text-align: center;"><strong>Feedback</strong></h1></div>
+  <div class="parallax"></div>
+  <br>
+<div class="list-group" *ngFor="let feed of feeds">
+  
+  <a  class="list-group-item list-group-item-action active" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      
+      <h3 class="mb-1">{{feed.id}}</h3>
+     
+      <small>{{feed.postedAt|date}}</small>
+    </div>
+    <p class="mb-1">{{feed.comment}}</p>
+   
+  </a>
+
 </div>

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+interface feed {
+  id: Number;
+  comment: String;
+  postedAt: number;
+ 
+}
 @Component({
   selector: 'app-get-experience-feed',
   templateUrl: './get-experience-feed.component.html',
@@ -12,6 +17,32 @@ export class GetExperienceFeedComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  feeds:any=['feed1','feed2','feed3'];
+  feeds: feed[] = [
+    {
+      id: 1,
+      comment: "overall good exper",
+      postedAt:Date.now()
+     
+    },
+    {
+      id: 2,
+      comment: "overall worst exper",
+      postedAt:Date.now()
+    },
+    {
+      id: 3,
+      comment: "comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 comment3 ",
+      postedAt:Date.now()
+    },
+    {
+      id: 4,
+      comment: "overall worst exper",
+      postedAt:Date.now()
+    },
+    {
+      id: 5,
+      comment: "overall worst exper",
+      postedAt:Date.now()
+    },]
 
 }

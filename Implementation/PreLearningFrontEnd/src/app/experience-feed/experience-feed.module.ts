@@ -9,6 +9,7 @@ import { UpdateExperienceFeedComponent } from './update-experience-feed/update-e
 import { DeleteExperienceFeedComponent } from './delete-experience-feed/delete-experience-feed.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MatListModule } from '@angular/material/list';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     CommonModule,
     ExperienceFeedRoutingModule,
-    MatListModule
+    FormsModule,   
+    ReactiveFormsModule
   ]
 })
 export class ExperienceFeedModule { }
