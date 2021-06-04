@@ -22,6 +22,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./resource/resource.module').then((m) => m.ResourceModule),
   },
+  { path: 'bestPractises', loadChildren: () => import('./best-practises/best-practises.module').then(m => m.BestPractisesModule) },
   {
     path: 'blocker',
     loadChildren: () =>

@@ -1,0 +1,12 @@
+<div>
+  <h1 style="text-align: center"><strong>Best Practises</strong></h1>
+</div>
+<br />
+<div class="list-group" *ngFor="let bestPractise of bestPractises">
+  <a class="list-group-item list-group-item-action active" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h3 class="mb-1">{{ bestPractise.id }}</h3>
+    </div>
+    <p class="mb-1">{{ bestPractise.bestPractise }}</p>
+  </a>
+</div>
