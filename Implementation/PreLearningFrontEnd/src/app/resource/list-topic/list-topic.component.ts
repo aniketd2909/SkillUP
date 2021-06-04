@@ -23,6 +23,7 @@ export class ListTopicComponent implements OnInit {
   refreshTopicList() {
     this.apiService.get('topic').subscribe((result) => {
       this.typesOfTopics = result;
+      console.log(result);
     });
   }
 }

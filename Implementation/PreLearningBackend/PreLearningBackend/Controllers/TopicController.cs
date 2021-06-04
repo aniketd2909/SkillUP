@@ -19,7 +19,7 @@ namespace PreLearningBackend.Controllers
             _context = context;
         }
         // GET: api/<TopicController>
-        [Authorize(Roles = "CampusMind")]
+     //   [Authorize(Roles = "CampusMind")]
         [HttpGet]
         public async Task<IActionResult> GetAllTopics()
         {
@@ -55,7 +55,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // POST api/<TopicController>
-        [Authorize(Roles = "Admin")]
+      //  [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Post(Topic topic)
         {
@@ -71,7 +71,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // PUT api/<TopicController>/5
-        [Authorize(Roles = "Admin")]
+      //  [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Topic topic)
         {
