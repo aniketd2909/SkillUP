@@ -1,0 +1,11 @@
+.mat-selection-list{
+    margin:50px 0px; padding:0px;
+    text-align:center;
+    
+  }
+  .mat-expansion-panel{
+    width: 1000px;
+  }
+  .mat-expansion-panel-header{
+    height: 100px;
+  }

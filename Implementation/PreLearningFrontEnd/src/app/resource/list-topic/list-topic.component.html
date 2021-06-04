@@ -1,0 +1,39 @@
+<!-- <mat-tab-group>
+    <tr *ngFor="let shoe of typesOfShoes" [value]="shoe">
+    <mat-tab label="{{shoe}}"> 
+
+        <h1>Discription</h1>
+        
+    </mat-tab>
+</tr>
+  </mat-tab-group> -->
+
+  <mat-selection-list>
+    <mat-accordion #topic >
+    <tr *ngFor="let topic of typesOfTopics" [value]="topic">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <div>
+            <mat-panel-title>
+                <h2>
+              {{topic.name}}
+            </h2>
+            </mat-panel-title>
+          <!-- <mat-panel-description>
+            <h4>This is the Basic Discription of the topic</h4>
+             status {{panelOpenState ? 'open' : 'closed'}}
+
+          </mat-panel-description> -->
+        </div>
+        </mat-expansion-panel-header>
+        <div>
+            <mat-tab-group>
+                <mat-tab label="Description"> {{topic.description}} </mat-tab>
+                <mat-tab label="Youtube Links"> Content 2 </mat-tab>
+                <mat-tab label="Website Links"> Content 3 </mat-tab>
+              </mat-tab-group>
+        </div>
+      </mat-expansion-panel>
+    </tr>
+    </mat-accordion>
+  </mat-selection-list>

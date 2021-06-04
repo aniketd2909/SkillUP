@@ -21,4 +21,5 @@ export class ApiService {
   update(path, data): Observable<any> {
     return this.httpClient.put(`${environment.baseUrl}/${path}`, data);
   }
+  
 }
