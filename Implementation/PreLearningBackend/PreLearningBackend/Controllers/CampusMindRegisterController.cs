@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace PreLearningBackend.Controllers
 {
     //[Authorize(Roles = "CampusMind")]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class CampusMindRegisterController : ControllerBase

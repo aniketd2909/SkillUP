@@ -57,9 +57,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm.value.roleId = +this.registerForm.value.roleId;
     console.log(this.registerForm.value);
     let path =
-      this.registerForm.value.roleId == 1
-        ? 'CampusMindRegister'
-        : 'MindTreeMindRegister';
+      this.registerForm.value.roleId == 1? 'CampusMindRegister': 'MindTreeMindRegister';
     this.authService.register(path, this.registerForm.value).subscribe(
       (response) => {
         console.log(response);
