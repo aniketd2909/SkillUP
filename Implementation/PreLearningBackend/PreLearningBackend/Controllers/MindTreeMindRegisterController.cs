@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Controllers
 {
-    [Authorize(Roles = "MindtreeMind")]
+ /*   [Authorize(Roles = "MindtreeMind")]*/
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class MindTreeMindRegisterController : ControllerBase

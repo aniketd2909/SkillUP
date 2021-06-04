@@ -14,18 +14,36 @@ namespace PreLearningBackend.Services.User
         {
             _context = context;
         }
-        public async Task<bool> AddDetails(MindTreeMindRegister mindTreeMindDetails)
+        public async Task<bool> AddDetails(MindTreeMindRegister register)
         {
-            if (validateMindTreeMind(mindTreeMindDetails.Mind.Email))
+
+
+
+            if (validateMindTreeMind(register.Email))
             {
-                mindTreeMindDetails.Mind.RoleId = 2;
-               await _context.Minds.AddAsync(mindTreeMindDetails.Mind);
-               await _context.SaveChangesAsync();
+                Mind mind = new Mind();
+                mind.ContactNo = register.ContactNo;
+                mind.Email = register.Email;
+                mind.Gender = register.Gender;
+                mind.Name = register.Name;
+                mind.RoleId = register.RoleId;
+                mind.Password = register.Password;
 
-                mindTreeMindDetails.MindTreeMind.MindId = mindTreeMindDetails.Mind.Id;
+                MindTreeMind mindTreeMind = new MindTreeMind();
 
-               await _context.MindTreeMinds.AddAsync(mindTreeMindDetails.MindTreeMind);
-               await _context.SaveChangesAsync();
+                mindTreeMind.Location = register.Location;
+                mindTreeMind.Track = register.Track;
+
+
+
+                await _context.Minds.AddAsync(mind);
+                await _context.SaveChangesAsync();
+
+
+                mindTreeMind.MindId = mind.Id;
+
+                await _context.MindTreeMinds.AddAsync(mindTreeMind);
+                await _context.SaveChangesAsync();
                 return true;
             }
             else
