@@ -9,7 +9,7 @@ const routes: Routes = [
       import('./blocker/blocker.module').then((m) => m.BlockerModule),
   },
   {
-    path: 'experience-feed',
+    path: 'experienceFeed',
     loadChildren: () =>
       import('./experience-feed/experience-feed.module').then(
         (m) => m.ExperienceFeedModule
@@ -27,6 +27,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./resource/resource.module').then((m) => m.ResourceModule),
   },
+  { path: 'bestPractises', loadChildren: () => import('./best-practises/best-practises.module').then(m => m.BestPractisesModule) },
 ];
 
 @NgModule({

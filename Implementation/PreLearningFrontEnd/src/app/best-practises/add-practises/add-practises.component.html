@@ -1,15 +1,14 @@
 <html>
   <div class="container">
-    <form [formGroup]="feedForm" (ngSubmit)="OnSubmit()">
+    <form [formGroup]="feedForm" (ngSubmit)="OnSubmit(feedForm.value)">
       <div class="mb-2">
         <h1 style="text-align: center">
-          <strong>Share Your Orchard Experience</strong>
+          <strong>Best Coding Practises</strong>
         </h1>
       </div>
-      <div class="parallax"></div>
       <br />
       <div class="mb-3">
-        <h3 class="form-label"><strong>Feedback</strong></h3>
+        <h3 class="form-label"><strong>Add Practise</strong></h3>
         <textarea
           type="text"
           placeholder="Type here"
