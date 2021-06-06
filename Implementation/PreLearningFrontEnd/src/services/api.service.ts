@@ -14,6 +14,11 @@ export class ApiService {
   post(path, data): Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/${path}`, data);
   }
+  postAnswer(path, data): Observable<any> {
+    return this.httpClient.post(`${environment.baseUrl}/${path}`, data, {
+      responseType:"text"
+    });
+  }
 
   delete(path): Observable<any> {
     return this.httpClient.delete(`${environment.baseUrl}/${path}`);
@@ -21,5 +26,4 @@ export class ApiService {
   update(path, data): Observable<any> {
     return this.httpClient.put(`${environment.baseUrl}/${path}`, data);
   }
-  
 }

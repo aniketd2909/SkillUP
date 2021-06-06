@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       (response) => {
         this.authService.saveToken(response);
         alert('login successfull');
+        this.loginForm.reset()
       },
       (error) => console.log(error)
     );

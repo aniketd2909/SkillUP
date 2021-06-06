@@ -17,12 +17,31 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="resource/topics">Resources</a>
       </li>
+
+     
+
+      <li class="nav-item active " style="padding: 1px;margin-top: 7px;" *ngIf="authService.isLoggedIn()">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle nav-link" type="button" id="toggleButtonForPlayer"
+            data-bs-toggle="dropdown" aria-expanded="false" >
+            Practice 
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">       
+            <li><a class="dropdown-item" routerLink="practice/mcq">MCQ</a></li>
+            <li><a class="dropdown-item" href="#" id="playerlist">Practice Programming</a></li>
+          </ul>
+        </div>
+      </li>
+      
+
       <li class="nav-item active" *ngIf="!authService.isLoggedIn()">
         <a class="nav-link" routerLink="authentication/register">Register</a>
       </li>
+
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
         <a class="nav-link" routerLink="authentication/login">Login</a>
       </li>
+
       <li class="nav-item" *ngIf="authService.isLoggedIn()">
         <a
           class="nav-link"

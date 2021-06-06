@@ -21,7 +21,7 @@ namespace PreLearningBackend.Controllers
             _mcqService = mcqService;
         }
 
-        [Authorize(Roles = "Admin")]
+      /*  [Authorize(Roles = "Admin")]*/
         [HttpPost]
         public async Task<IActionResult> AddQuestion([FromBody] CompleteQuestion completeQuestion)
         {
@@ -31,7 +31,7 @@ namespace PreLearningBackend.Controllers
             return BadRequest("Something went wrong while adding the question.");
         }
 
-        [Authorize(Roles = "Admin")]
+      /*  [Authorize(Roles = "Admin")]*/
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuestion(int id)
         {
@@ -41,7 +41,7 @@ namespace PreLearningBackend.Controllers
             return BadRequest("Question doesn't exist to delete.");
         }
 
-        [Authorize(Roles = "Admin,CampusMind")]
+       /* [Authorize(Roles = "Admin,CampusMind")]*/
         [HttpGet("{id}")]
         public async Task<IActionResult> GetQuestionById(int id)
         {
@@ -51,7 +51,19 @@ namespace PreLearningBackend.Controllers
             return BadRequest("Question doesn't exist.");
         }
 
-        [Authorize(Roles = "CampusMind,Admin")]
+        [HttpGet]
+        public async Task<IActionResult> GetQuestionIds()
+        {
+            var questionIds = await _mcqService.GetQuestionIds();
+            if (questionIds is not null)
+                return Ok(questionIds);
+            return BadRequest("Question Ids doesn't exist.");
+        }
+
+
+
+
+        /* [Authorize(Roles = "CampusMind,Admin")]*/
         [HttpPost("{id}")]
         public async Task<IActionResult> SubmitAnswer(int id,[FromBody] AnswerResource answerResource)
         {

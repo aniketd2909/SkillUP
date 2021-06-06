@@ -61,6 +61,13 @@ namespace PreLearningBackend.Services.Practice
             throw new NotImplementedException();
         }
 
+        public async Task<List<Question>> GetQuestionIds()
+        {
+            var questions = await _context.Questions.ToListAsync();
+            return questions;
+        }
+
+
         public async Task<bool> SubmitAnswer(int id, AnswerResource answerResource)
         {
             Answer answer = await _context.Answers.SingleOrDefaultAsync(a => a.QuestionId == id);

@@ -27,6 +27,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./resource/resource.module').then((m) => m.ResourceModule),
   },
+  { path: 'practice', loadChildren: () => import('./practice/practice.module').then(m => m.PracticeModule) },
 ];
 
 @NgModule({
