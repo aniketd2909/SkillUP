@@ -1,40 +1,55 @@
-
 <div>
+  <!-- <div>
+
+    <input type="text" [(ngModel)]='listBlocker'/>
+    <h1>{{listBlocker}}</h1>
+  </div> -->
+  <mat-form-field >
+    <mat-label style="content-visibility:inherit">Search</mat-label>
+    <input matTooltip="Search By Topic" type="text" [(ngModel)]='listBlocker'  matInput />
+  </mat-form-field>
   <mat-accordion #blocker>
-    <tr *ngFor="let blocker of blockerList" [value]="blocker">
+    <tr *ngFor="let blocker of filteredBlockers" [value]="blocker">
       <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{ blocker.name }}
+          <mat-panel-title matTooltip="Topic name" >
+            {{ blocker.name | uppercase}}
           </mat-panel-title>
-          <mat-panel-description>
+          <mat-panel-description style="font-size: medium;" matTooltip="Blocker">
             {{ blocker.description }}
-            <br />
-            <span>Created At: </span>
-            {{ blocker.createdAt }}
           </mat-panel-description>
+
+          Created At:
+          {{ blocker.createdAt | date: "fullDate"}}
         </mat-expansion-panel-header>
         <mat-divider></mat-divider>
-        <h4>Solutions Posted:</h4>
+        <br>
+        <h3>Solutions Posted:</h3>
 
         <tr *ngFor="let blockerSolution of blocker.blockerSolutions">
           <mat-divider></mat-divider>
+          <br>
+          <span>
+            {{blockerSolution.Count}}
+          </span>
           <p>
             {{ blockerSolution.solution }}
           </p>
         </tr>
-        <button style="float: right" mat-raised-button color="accent"  routerLink="/blocker/add/{{ blocker.id }}"> 
+        <button
+          style="float: right"
+          mat-raised-button
+          color="accent"
+          routerLink="/blocker/add/{{ blocker.id }}"
+          matTooltip="Add your solution to the problem" 
+        >
           Add Solution
         </button>
+      
       </mat-expansion-panel>
+      
     </tr>
   </mat-accordion>
+ 
 </div>
-<div>
-  <mat-paginator
-    [length]="100"
-    [pageSize]="10"
-    [pageSizeOptions]="[5, 10, 25, 100]"
-  >
-  </mat-paginator>
-</div>
+

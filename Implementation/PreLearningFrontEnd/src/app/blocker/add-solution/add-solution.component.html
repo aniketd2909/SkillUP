@@ -1,18 +1,29 @@
 
-<div>
-<mat-card>{{Blocker.description}}</mat-card>
-</div>
-<div>
+<div class="container-fluid">
+  <br>
+  <br>
+  <br>
+<mat-card matRipple>
+
+
+<mat-card-title> {{Blocker.description}}</mat-card-title>
+
+
+  <br>
+ 
+
 <form [formGroup]="addSolution" (ngSubmit)="collectSolution()">
     
     <mat-form-field>
-      <mat-label>Description</mat-label>
+      <mat-label>Solution</mat-label>
       <textarea
       formControlName="solution" matInput placeholder="Ex. Enter Solution here..."></textarea>
     </mat-form-field>    
     <br />
-    <button type="submit" mat-raised-button color="warn">
+    <button  matTooltip="Submit the solution" type="submit" mat-raised-button color="warn">
       Submit
     </button>
     </form>
+
+</mat-card>
 </div>

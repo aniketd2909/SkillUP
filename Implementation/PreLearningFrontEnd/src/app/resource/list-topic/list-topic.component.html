@@ -1,58 +1,51 @@
-<!-- <mat-tab-group>
-    <tr *ngFor="let shoe of typesOfShoes" [value]="shoe">
-    <mat-tab label="{{shoe}}"> 
-
-        <h1>Discription</h1>
-        
-    </mat-tab>
-</tr>
-  </mat-tab-group> -->
-
-<mat-selection-list>
-  <mat-accordion #topic>
-    <tr *ngFor="let topic of typesOfTopics" [value]="topic">
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <div>
-            <mat-panel-title>
-              <h2>
-                {{ topic.name }}
-              </h2>
-            </mat-panel-title>
-            <!-- <mat-panel-description>
-            <h4>This is the Basic Discription of the topic</h4>
-             status {{panelOpenState ? 'open' : 'closed'}}
-
-          </mat-panel-description> -->
-          </div>
-        </mat-expansion-panel-header>
-        <div>
-          <mat-tab-group mat-align-tabs="center">
-            <mat-tab  label="Description"> 
-            <div class="dropDownStyle">
-              {{ topic.description }}
-            </div> 
-            </mat-tab>
-       
-            <mat-tab class="dropDownStyle" label="Youtube / Website links"
-              >
-            <div class="dropDownStyle">
-             <tr *ngFor="let resource of topic.resources" >
-              <a
-                href="{{ resource.link }}"
-                
-              >
-              
-                {{ resource.link }}
-           
-              </a>
-            </tr>
+<div class="topics container-fluid">
+  <mat-card>
+    <br>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title style="font-size: x-large">TOPICS</mat-card-title>
+    </mat-card-header>
+  <mat-selection-list>
+    <mat-accordion >
+      <tr *ngFor="let topic of typesOfTopics">
+        <mat-expansion-panel >
+          <mat-expansion-panel-header>
+            <div>
+              <mat-panel-title>
+                <h2>
+                  {{ topic.name }}
+                </h2>
+              </mat-panel-title>
             </div>
-              </mat-tab
-            >
-          </mat-tab-group>
-        </div>
-      </mat-expansion-panel>
-    </tr>
-  </mat-accordion>
-</mat-selection-list>
+          </mat-expansion-panel-header>
+          <div class="fontSize">
+            <mat-tab-group mat-align-tabs="center">
+              <mat-tab label="Description">
+                <div class="dropDownStyle">
+                  {{ topic.description }}
+                </div>
+              </mat-tab>
+
+              <mat-tab
+                class="dropDownStyle"
+                label="Youtube / Website links"
+                style="font-size: large"
+              >
+                <div class="dropDownStyle">
+                  <tr *ngFor="let resource of topic.resources">
+                    <a href="{{ resource.link }}">
+                      {{ resource.link }}
+                    </a>
+                  </tr>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </mat-expansion-panel>
+      </tr>
+    </mat-accordion>
+  </mat-selection-list>
+  <br>
+</mat-card>
+
+</div>

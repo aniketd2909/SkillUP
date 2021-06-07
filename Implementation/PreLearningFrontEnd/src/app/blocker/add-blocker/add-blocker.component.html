@@ -1,20 +1,37 @@
 <div>
-    <form [formGroup]="addBlocker" (ngSubmit)="collectBlocker()">
+  <mat-card>
+  <mat-card-title>Add Your Blocker</mat-card-title>
+  
+  <form [formGroup]="addBlocker" (ngSubmit)="collectBlocker()">
+    <br>
     <mat-form-field>
       <mat-label>Topic Name</mat-label>
-      <input 
-      formControlName="name" matInput #message />
+      <input formControlName="name" matInput />
     </mat-form-field>
     <br />
     <mat-form-field>
       <mat-label>Description</mat-label>
-      <!-- <input matInput  #action> -->
       <textarea
-      formControlName="description" matInput placeholder="Ex. Explain you doubt..."></textarea>
+        formControlName="description"
+        matInput
+        placeholder="Ex. Explain you doubt..."
+      ></textarea>
     </mat-form-field>
     <br />
-    <button type="submit" mat-raised-button color="warn" (click)="openSnackBar() ">
-      Add Doubt
+    <div class="buttonStyle">
+    <mat-card-actions>
+    
+    <button
+      type="submit"
+      mat-raised-button
+      color="warn"
+      matTooltip="Submit the blocker"
+      (click)="openSnackBar()"
+    >
+      Submit
     </button>
-    </form>
-  </div>
+  </mat-card-actions>
+    </div>
+  </form>
+</mat-card>
+</div>

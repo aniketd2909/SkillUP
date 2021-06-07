@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlockerComponent implements OnInit {
 
+  flag: boolean=true;
   constructor() { }
 
   ngOnInit(): void {
