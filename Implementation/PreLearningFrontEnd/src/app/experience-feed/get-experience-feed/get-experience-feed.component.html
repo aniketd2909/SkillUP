@@ -1,13 +1,30 @@
+
 <div>
   <h1 style="text-align: center"><strong>Experiences</strong></h1>
 </div>
-<!-- <div class="image"> -->
-<div class="list-group" *ngFor="let feed of feeds">
+<div class="image">
+<!-- <div class="list-group" *ngFor="let feed of feeds">
   <a class="list-group-item list-group-item-action active" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
       <h3 class="mb-1">{{ feed.comment }}</h3>
       <small>{{ feed.postedAt | date }}</small>
     </div>
   </a>
-</div>
+</div> -->
 <!-- </div> -->
+<div class="row gx-4 ">
+  
+<div class="card text-white bg-secondary mb-3" style="max-width: 49rem;left: 80px;color:rgb(173, 216, 230);" *ngFor="let feed of feeds">
+
+  <div class="card-header" style="text-align: right;color: white;"><small>PostedAt : {{ feed.postedAt | date }}</small>
+
+  </div>
+  
+  <div class="card-body">
+    <!-- <h5 class="card-title">Dark card title</h5> -->
+    <h3 class="card-text">{{ feed.comment }}</h3>
+  </div>
+</div>
+
+</div>
+</div>

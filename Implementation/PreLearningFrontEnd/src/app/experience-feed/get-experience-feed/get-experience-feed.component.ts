@@ -13,6 +13,7 @@ interface feed {
   styleUrls: ['./get-experience-feed.component.css']
 })
 export class GetExperienceFeedComponent implements OnInit {
+flag:number=1;
 
   constructor(private apiService:ApiService) { }
 
