@@ -41,7 +41,7 @@ namespace PreLearningBackend.Controllers
             return BadRequest("Question doesn't exist to delete.");
         }
 
-        [Authorize(Roles = "Admin,CampusMind")]
+        //[Authorize(Roles = "Admin,CampusMind")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetQuestionById(int id)
         {
@@ -51,7 +51,7 @@ namespace PreLearningBackend.Controllers
             return BadRequest("Question doesn't exist.");
         }
 
-        [Authorize(Roles = "CampusMind,Admin")]
+        //[Authorize(Roles = "CampusMind,Admin")]
         [HttpPost("{id}")]
         public async Task<IActionResult> SubmitAnswer(int id,[FromBody] AnswerResource answerResource)
         {
