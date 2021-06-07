@@ -1,8 +1,12 @@
-.parallax {
-  background-image: url("https://image.freepik.com/free-photo/businessman-signature-document_1388-79.jpg");
-  min-height: 500px;
-  background-attachment: fixed;
+/* .image {
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+} */
+.image{
+  height:40em; background-size:cover; width:auto;
+  background-image:url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+  background-position:50% 50%;
 }
