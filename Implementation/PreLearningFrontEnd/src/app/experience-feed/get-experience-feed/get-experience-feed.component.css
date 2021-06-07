@@ -5,8 +5,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 } */
-.image{
-  height:40em; background-size:cover; width:auto;
-  background-image:url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
-  background-position:50% 50%;
+.image {
+  height: 40em;
+  background-size: cover;
+  width: auto;
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+  /* background-position:50% 50%; */
+  background-position: 100%;
 }
