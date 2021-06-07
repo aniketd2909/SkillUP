@@ -19,6 +19,9 @@ namespace PreLearningBackend.Services.Practice
 
         public async Task<bool> AddProblemStatement(ProblemStatement problemStatement)
         {
+            string question = problemStatement.Question;
+            question = question.Replace(".", "." + Environment.NewLine); //To addNew lines while storing data in DB
+            problemStatement.Question = question;
             await _context.AddAsync(problemStatement);
             int status = await _context.SaveChangesAsync();
             if (status > 0)
