@@ -1,6 +1,6 @@
 import { ApiService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, FormControlName } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
@@ -16,14 +16,14 @@ export class AddExperienceFeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.feedForm = this.fb.group({
-     Comment: ['']
+     Comment: [''],
+     postedAt:new Date()
     });
     this.OnSubmit
   }
 
   OnSubmit() {
     this.apiService.post('ExperienceFeed',this.feedForm.value).subscribe();
-    
   }
 
   resetForm(){

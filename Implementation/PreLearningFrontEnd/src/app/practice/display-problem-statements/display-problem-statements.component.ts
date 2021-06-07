@@ -9,9 +9,12 @@ import { ApiService } from 'src/services/api.service';
 export class DisplayProblemStatementsComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
-  problemsList :any =[]
+  problemsList :any =[];
+  bestPracticeList:any =[];
   ngOnInit(): void {
-this.loadProblems()
+this.loadProblems();
+this.loadBestPractices();
+
   }
 
   loadProblems()
@@ -28,5 +31,12 @@ this.loadProblems()
     })
   }
 
+  loadBestPractices()
+  {
+    this.apiService.get('BestPractice').subscribe((response)=>{
+     // console.log(response);
+      this.bestPracticeList = response;
+    })
+  }
 
 }
