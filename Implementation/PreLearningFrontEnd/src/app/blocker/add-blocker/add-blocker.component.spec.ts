@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddblockerComponent } from './addblocker.component';
+import { AddBlockerComponent } from './add-blocker.component';
 
-describe('AddblockerComponent', () => {
-  let component: AddblockerComponent;
-  let fixture: ComponentFixture<AddblockerComponent>;
+describe('AddBlockerComponent', () => {
+  let component: AddBlockerComponent;
+  let fixture: ComponentFixture<AddBlockerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddblockerComponent ]
+      declarations: [ AddBlockerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddblockerComponent);
+    fixture = TestBed.createComponent(AddBlockerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -40,9 +40,19 @@ namespace PreLearningBackend.Services.Resource
 
         public async Task<List<Topic>> GetAllTopics()
         {
-            List<Topic> topic = new List<Topic>();
-            topic = await _context.Topics.ToListAsync();
-            return topic;
+            List<Topic> topics = await _context.Topics.ToListAsync();
+            
+            foreach (Topic topic in topics)
+            {
+                List<Models.Resource.Resource> resources = await _context.Resources.Where(m=>m.TopicId==topic.Id).ToListAsync();
+                foreach (Models.Resource.Resource resource in resources)
+                {
+                    resource.Topic = null;
+                    topic.Resources.Add(resource);
+                    
+                }
+            }
+            return topics;
         }
 
         public async Task<Topic> GetTopicByName(string name)

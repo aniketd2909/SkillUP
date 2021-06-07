@@ -26,4 +26,9 @@ export class ApiService {
   update(path, data): Observable<any> {
     return this.httpClient.put(`${environment.baseUrl}/${path}`, data);
   }
+
+  getById(path,id): Observable<any> {
+    return this.httpClient.get(`${environment.baseUrl}/${path}/${id}`);
+  }
+  
 }

@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/services/api.service';
 
+interface feed {
+  id: Number;
+  comment: String;
+  postedAt: number;
+}
 @Component({
   selector: 'app-get-experience-feed',
   templateUrl: './get-experience-feed.component.html',
@@ -7,11 +13,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetExperienceFeedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
+    this.refreshList
   }
 
-  feeds:any=['feed1','feed2','feed3'];
+  feeds:feed[];
+
+    refreshList() {
+      this.apiService.get('ExperienceFeed').subscribe((result) => {
+        this.feeds = result;
+        console.log(result);
+      });
+    }
 
 }
