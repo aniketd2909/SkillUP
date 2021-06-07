@@ -1,1 +1,29 @@
-<p>add-experience-feed works!</p>
+<html>
+  <div class="container">
+    <form [formGroup]="feedForm" (ngSubmit)="resetForm()">
+      <div class="mb-2">
+        <h1 style="text-align: center">
+          <strong>Share Your Orchard Experience</strong>
+        </h1>
+      </div>
+      <div class="parallax"></div>
+      <br />
+      <div class="mb-3">
+        <h3 class="form-label"><strong>Feedback</strong></h3>
+        <textarea
+          type="text"
+          placeholder="Type here"
+          class="form-control"
+          formControlName="Comment"
+          id="Comment"
+          ngModel
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" (click)="OnSubmit()">
+        Submit
+      </button>
+      <br /><br />
+    </form>
+  </div>
+</html>

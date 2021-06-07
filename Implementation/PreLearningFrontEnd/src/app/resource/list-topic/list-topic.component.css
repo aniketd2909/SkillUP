@@ -1,5 +1,5 @@
 .mat-selection-list{
-    margin:50px 0px; padding:0px;
+    margin:30px 0px; padding:0px;
     text-align:center;
     
   }
@@ -9,3 +9,21 @@
   .mat-expansion-panel-header{
     height: 100px;
   }
+
+  /* .mat-tab-group{
+    height: 175px;
+    border-top-width: 50px;padding-top: 50px;padding-bottom: 0px;
+   
+  } */
+  
+  .dropDownStyle
+  {
+    padding-top: 25px;
+    padding-bottom: 25px;
+   
+  }
+
+  a{
+    padding-left: 290px;
+  }
+

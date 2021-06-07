@@ -21,7 +21,7 @@ namespace PreLearningBackend.Controllers
         {
             _service = service; // creates an reference object for the service
         }
-        [Authorize(Roles = "Admin")]
+     /*   [Authorize(Roles = "Admin")]*/
         [HttpPost]
         public async Task<ActionResult> AddBestCodingPractice(ProblemStatement problemStatement)
         {
@@ -48,7 +48,7 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,CampusMind")]
+      /*  [Authorize(Roles = "Admin,CampusMind")]*/
         [HttpGet]
         public async Task<ActionResult<List<ProblemStatement>>> GetProblemStatement()
         {

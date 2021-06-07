@@ -19,7 +19,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // GET api/<ResourceController>/<TopicId>
-        [Authorize(Roles = "CampusMind")]
+      //  [Authorize(Roles = "CampusMind")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAllResultByTopic(int id)
         {
@@ -40,7 +40,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // POST api/<ResourceController>
-        [Authorize(Roles = "Admin")]
+      //  [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Post(Models.Resource.Resource resource)
         {
@@ -56,7 +56,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // PUT api/<ResourceController>/5
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Models.Resource.Resource resource)
         {

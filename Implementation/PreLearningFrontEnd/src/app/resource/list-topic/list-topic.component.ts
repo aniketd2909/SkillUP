@@ -14,15 +14,11 @@ export class ListTopicComponent implements OnInit {
   }
   typesOfTopics: any = [];
   //typesOfTopicss: string[] = ['vv','tt links', 'webtgsdfgdfsite links'];
-  ResourcesHeadings: string[] = [
-    'Description',
-    'youtube links',
-    'website links',
-  ];
 
   refreshTopicList() {
     this.apiService.get('topic').subscribe((result) => {
       this.typesOfTopics = result;
+      console.log(result);
     });
   }
 }

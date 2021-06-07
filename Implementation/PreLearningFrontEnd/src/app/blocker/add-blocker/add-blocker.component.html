@@ -1,0 +1,20 @@
+<div>
+    <form [formGroup]="addBlocker" (ngSubmit)="collectBlocker()">
+    <mat-form-field>
+      <mat-label>Topic Name</mat-label>
+      <input 
+      formControlName="name" matInput #message />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <!-- <input matInput  #action> -->
+      <textarea
+      formControlName="description" matInput placeholder="Ex. Explain you doubt..."></textarea>
+    </mat-form-field>
+    <br />
+    <button type="submit" mat-raised-button color="warn" (click)="openSnackBar() ">
+      Add Doubt
+    </button>
+    </form>
+  </div>

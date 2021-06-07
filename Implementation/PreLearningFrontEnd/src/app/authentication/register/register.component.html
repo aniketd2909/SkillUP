@@ -1,48 +1,23 @@
 <h2>Registration Form</h2>
 <div class="container">
-  <form
-    class="form-horizontal"
-    role="form"
-    [formGroup]="registerForm"
-    (ngSubmit)="collectData()"
-  >
+  <form class="form-horizontal" role="form" [formGroup]="registerForm" (ngSubmit)="collectData()">
     <div class="form-group">
       <label for="name" class="col-sm-3 control-label">Name</label>
       <div class="col-sm-9">
-        <input
-          type="text"
-          id="name"
-          placeholder="Name"
-          class="form-control"
-          autofocus
-          formControlName="name"
-        />
+        <input type="text" id="name" placeholder="Name" class="form-control" autofocus formControlName="name" />
       </div>
     </div>
 
     <div class="form-group">
       <label for="email" class="col-sm-3 control-label">Email* </label>
       <div class="col-sm-9">
-        <input
-          type="email"
-          id="email"
-          placeholder="Email"
-          class="form-control"
-          name="email"
-          formControlName="email"
-        />
+        <input type="email" id="email" placeholder="Email" class="form-control" name="email" formControlName="email" />
       </div>
     </div>
     <div class="form-group">
       <label for="password" class="col-sm-3 control-label">Password*</label>
       <div class="col-sm-9">
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          class="form-control"
-          formControlName="password"
-        />
+        <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password" />
       </div>
     </div>
     <!-- <div class="form-group">
@@ -53,19 +28,12 @@
         </div> -->
 
     <div class="form-group">
-      <label for="contactNo" class="col-sm-3 control-label"
-        >Phone number
+      <label for="contactNo" class="col-sm-3 control-label">Phone number
       </label>
       <div class="col-sm-9">
-        <input
-          type="phoneNumber"
-          id="contactNo"
-          placeholder="Phone number"
-          class="form-control"
-          formControlName="contactNo"
-        />
-        <span class="help-block"
-          >Your phone number won't be disclosed anywhere
+        <input type="phoneNumber" id="contactNo" placeholder="Phone number" class="form-control"
+          formControlName="contactNo" />
+        <span class="help-block">Your phone number won't be disclosed anywhere
         </span>
       </div>
     </div>
@@ -76,24 +44,12 @@
         <div class="row">
           <div class="col-sm-4">
             <label class="radio-inline">
-              <input
-                type="radio"
-                id="femaleRadio"
-                value="Female"
-                name="gender"
-                formControlName="gender"
-              />Female
+              <input type="radio" id="femaleRadio" value="Female" name="gender" formControlName="gender" />Female
             </label>
           </div>
           <div class="col-sm-4">
             <label class="radio-inline">
-              <input
-                type="radio"
-                id="maleRadio"
-                value="Male"
-                name="gender"
-                formControlName="gender"
-              />Male
+              <input type="radio" id="maleRadio" value="Male" name="gender" formControlName="gender" />Male
             </label>
           </div>
         </div>
@@ -107,26 +63,14 @@
         <div class="row">
           <div class="col-sm-4">
             <label class="radio-inline">
-              <input
-                type="radio"
-                id="campusmindRadio"
-                value="1"
-                name="roleId"
-                (click)="campusMindRole()"
-                formControlName="roleId"
-              />Campus Mind
+              <input type="radio" id="campusmindRadio" value="1" name="roleId" (click)="campusMindRole()"
+                formControlName="roleId" />Campus Mind
             </label>
           </div>
           <div class="col-sm-4">
             <label class="radio-inline">
-              <input
-                type="radio"
-                id="mindtreemindRadio"
-                value="2"
-                name="roleId"
-                (click)="mindtreeMindRole()"
-                formControlName="roleId"
-              />MindTree Mind
+              <input type="radio" id="mindtreemindRadio" value="2" name="roleId" (click)="mindtreeMindRole()"
+                formControlName="roleId" />MindTree Mind
             </label>
           </div>
         </div>
@@ -135,46 +79,25 @@
     <!-- /.form-group -->
 
     <div class="form-group" *ngIf="campusMind">
-      <label for="engineeringBranch" class="col-sm-3 control-label"
-        >Engineering Branch</label
-      >
+      <label for="engineeringBranch" class="col-sm-3 control-label">Engineering Branch</label>
       <div class="col-sm-9">
-        <input
-          type="text"
-          id="engineeringBranch"
-          placeholder="Engineering Branch"
-          class="form-control"
-          autofocus
-          formControlName="engineeringBranch"
-        />
+        <input type="text" id="engineeringBranch" placeholder="Engineering Branch" class="form-control" autofocus
+          formControlName="engineeringBranch" />
       </div>
     </div>
     <div *ngIf="mindTreeMind">
       <div class="form-group">
         <label for="location" class="col-sm-3 control-label">Location</label>
         <div class="col-sm-9">
-          <input
-            type="text"
-            id="location"
-            placeholder="Location"
-            class="form-control"
-            autofocus
-            formControlName="location"
-          />
+          <input type="text" id="location" placeholder="Location" class="form-control" autofocus
+            formControlName="location" />
         </div>
       </div>
 
       <div class="form-group">
         <label for="track" class="col-sm-3 control-label">Track</label>
         <div class="col-sm-9">
-          <input
-            type="text"
-            id="track"
-            placeholder="Track"
-            class="form-control"
-            autofocus
-            formControlName="track"
-          />
+          <input type="text" id="track" placeholder="Track" class="form-control" autofocus formControlName="track" />
         </div>
       </div>
     </div>
@@ -184,11 +107,7 @@
         <span class="help-block">*Required fields</span>
       </div>
     </div>
-    <button
-      type="submit"
-      class="btn btn-primary btn-block"
-      [disabled]="!registerForm.valid"
-    >
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="!registerForm.valid">
       Register
     </button>
   </form>

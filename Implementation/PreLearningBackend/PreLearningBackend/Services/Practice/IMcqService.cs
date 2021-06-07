@@ -12,5 +12,8 @@ namespace PreLearningBackend.Services.Practice
         Task<bool> DeleteQuestion(int id);
         Task<CompleteQuestion> GetQuestionById(int id);
         Task<bool> SubmitAnswer(int id, AnswerResource answerResource);
+        Task<List<Question>> GetQuestionIds();
+
+
     }
 }

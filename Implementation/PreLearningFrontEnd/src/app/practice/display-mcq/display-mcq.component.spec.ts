@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddblockerComponent } from './addblocker.component';
+import { DisplayMcqComponent } from './display-mcq.component';
 
-describe('AddblockerComponent', () => {
-  let component: AddblockerComponent;
-  let fixture: ComponentFixture<AddblockerComponent>;
+describe('DisplayMcqComponent', () => {
+  let component: DisplayMcqComponent;
+  let fixture: ComponentFixture<DisplayMcqComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddblockerComponent ]
+      declarations: [ DisplayMcqComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddblockerComponent);
+    fixture = TestBed.createComponent(DisplayMcqComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

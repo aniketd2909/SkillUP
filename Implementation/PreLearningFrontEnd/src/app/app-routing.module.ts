@@ -4,11 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'blocker',
-    loadChildren: () =>
-      import('./blocker/blocker.module').then((m) => m.BlockerModule),
-  },
-  {
     path: 'experience-feed',
     loadChildren: () =>
       import('./experience-feed/experience-feed.module').then(
@@ -27,6 +22,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./resource/resource.module').then((m) => m.ResourceModule),
   },
+  { path: 'bestPractises', loadChildren: () => import('./best-practises/best-practises.module').then(m => m.BestPractisesModule) },
+  {
+    path: 'blocker',
+    loadChildren: () =>
+      import('./blocker/blocker.module').then((m) => m.BlockerModule),
+  },
+  { path: 'practice', loadChildren: () => import('./practice/practice.module').then(m => m.PracticeModule) },
 ];
 
 @NgModule({

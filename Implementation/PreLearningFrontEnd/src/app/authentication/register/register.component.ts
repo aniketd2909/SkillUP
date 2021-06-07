@@ -8,7 +8,7 @@ import { AuthService } from 'src/services/auth.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   campusMind: boolean = false;
   mindTreeMind: boolean = false;
@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     roleId: new FormControl('', [Validators.required]),
   });
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   campusMindRole() {
     this.campusMind = true;
     this.mindTreeMind = false;
@@ -57,9 +57,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm.value.roleId = +this.registerForm.value.roleId;
     console.log(this.registerForm.value);
     let path =
-      this.registerForm.value.roleId == 1
-        ? 'CampusMindRegister'
-        : 'MindTreeMindRegister';
+      this.registerForm.value.roleId == 1 ? 'CampusMindRegister' : 'MindTreeMindRegister';
     this.authService.register(path, this.registerForm.value).subscribe(
       (response) => {
         console.log(response);
