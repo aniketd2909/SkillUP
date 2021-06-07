@@ -1,10 +1,21 @@
-<h2>Problem Statements For Practice</h2>
 
-<div *ngFor="let item of problemsList">
-    <p [innerHTML]="item.question |lineBreak"></p>
-</div>
 
-<mat-selection-list>
+
+<!-- 
+<ul class="list-group" *ngFor="let item of bestPracticeList">
+    <li class="list-group-item list-group-item-success" >{{item.description}}</li>
+</ul> -->
+
+
+
+  <ul class="list-group">
+    <h2>Best Practices To Be Followed :</h2>
+    <li class="list-group-item list-group-item-info" *ngFor="let item of bestPracticeList"> -> {{item.description}}</li>
+   
+  </ul>
+
+
+<mat-selection-list style="text-align: center;" >
     <mat-accordion #problem>
         <tr *ngFor="let problem of problemsList" [value]="problem">
             <mat-expansion-panel hideToggle>
