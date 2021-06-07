@@ -1,6 +1,6 @@
 <html>
   <div class="container">
-    <form [formGroup]="feedForm" (ngSubmit)="OnSubmit()">
+    <form [formGroup]="feedForm" (ngSubmit)="resetForm()">
       <div class="mb-2">
         <h1 style="text-align: center">
           <strong>Share Your Orchard Experience</strong>
@@ -20,7 +20,7 @@
         ></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary" (click)="(resetForm)">
+      <button type="submit" class="btn btn-primary" (click)="OnSubmit()">
         Submit
       </button>
       <br /><br />

@@ -16,7 +16,7 @@ export class GetExperienceFeedComponent implements OnInit {
   constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
-    this.refreshList
+    this.refreshList();
   }
 
   feeds:feed[];
@@ -24,6 +24,7 @@ export class GetExperienceFeedComponent implements OnInit {
     refreshList() {
       this.apiService.get('ExperienceFeed').subscribe((result) => {
         this.feeds = result;
+
         console.log(result);
       });
     }
