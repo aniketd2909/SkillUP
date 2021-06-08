@@ -5,7 +5,24 @@
   }
   .mat-expansion-panel{
     width: 1000px;
+    background-color:#9b9bdb;
   }
   .mat-expansion-panel-header{
     height: 100px;
+    background-color: whitesmoke;
+
+  }
+
+  .mat-form-field {
+    float: right;
+    padding-right: 100px;
+
+  }
+
+  .mat-label{
+    text-decoration: solid;
+  }
+  .mat-card{
+
+   background-color: #9b9bdb;
   }

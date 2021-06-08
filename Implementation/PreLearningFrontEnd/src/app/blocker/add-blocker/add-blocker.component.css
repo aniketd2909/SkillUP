@@ -1,0 +1,21 @@
+mat-form-field{
+
+    width: 90%;
+    padding-left: 50px;
+}
+
+mat-card{
+    width: 50%;
+    background-color: whitesmoke;
+}
+
+.buttonStyle{
+  
+    padding-left: 235px;
+}
+
+mat-card-title{
+
+    text-align: center;
+
+}

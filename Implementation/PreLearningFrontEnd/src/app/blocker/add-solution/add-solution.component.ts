@@ -10,7 +10,7 @@ import { ApiService } from 'src/services/api.service';
 })
 export class AddSolutionComponent implements OnInit {
 
-
+  listBlocker: string= 'Array';
   constructor(private apiService: ApiService,private router:ActivatedRoute,private route: Router) { }
   addSolution= new FormGroup({
     solution: new FormControl(''),

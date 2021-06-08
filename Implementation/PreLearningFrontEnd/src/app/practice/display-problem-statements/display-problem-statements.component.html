@@ -1,4 +1,8 @@
+<h2>Problem Statements For Practice</h2>
 
+<div *ngFor="let item of problemsList">
+    <p [innerHTML]="item.question |lineBreak"></p>
+</div>
 
 
 <!-- 
@@ -49,7 +53,7 @@
               </div>
             </mat-tab>
 
-            <!-- <mat-tab class="dropDownStyle" label="Youtube / Website links"
+                        <!-- <mat-tab class="dropDownStyle" label="Youtube / Website links"
                 >
               <div class="dropDownStyle">
                <tr *ngFor="let resource of problem.resources" >

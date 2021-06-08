@@ -1,10 +1,12 @@
 .mat-selection-list{
     margin:30px 0px; padding:0px;
     text-align:center;
+     
     
   }
   .mat-expansion-panel{
     width: 1000px;
+    background-color: whitesmoke;
   }
   .mat-expansion-panel-header{
     height: 100px;
@@ -27,3 +29,28 @@
     padding-left: 290px;
   }
 
+
+  .fontSize{
+
+    font-size: large;
+  }
+
+  h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  mat-card-title{
+    padding-left: 400px;
+  }
+
+  mat-card{
+    /* background-image: url('../../../assets/resource1.jpg');
+    background-size: cover;
+    background-color: transparent; */
+    background-color: whitesmoke;
+
+  }
+  
+  mat-tab.label{
+      font-size:xx-large;
+  }

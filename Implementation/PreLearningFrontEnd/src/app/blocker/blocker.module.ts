@@ -19,6 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddSolutionComponent } from './add-solution/add-solution.component';
 import {MatCardModule} from '@angular/material/card';
 import { AddBlockerComponent } from './add-blocker/add-blocker.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [
     BlockerComponent,
@@ -41,13 +44,16 @@ import { AddBlockerComponent } from './add-blocker/add-blocker.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule,
+    MatTooltipModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true,
+
     },
   ],
 })

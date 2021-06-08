@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from 'src/services/token-interceptor.service';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { TokenInterceptorService } from 'src/services/token-interceptor.service'
     MatTabsModule,
     MatTreeModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCardModule,
   ],
   providers: [
     {
