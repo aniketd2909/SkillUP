@@ -7,8 +7,11 @@
   .mat-expansion-panel{
     width: 1000px;
     background-color: whitesmoke;
+    opacity: 0.9;
+    
   }
   .mat-expansion-panel-header{
+    background-color: rgb(201, 252, 181);
     height: 100px;
   }
 
