@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PreLearningBackend.JWTAuthenticationManager
 {
     public class JWTAuthentication : IJWTAuthentication
@@ -25,7 +26,7 @@ namespace PreLearningBackend.JWTAuthenticationManager
           }*/
 
 
-        public string Login(string email, string password)
+        public UserData Login(string email, string password)
         {
            // var _key = "This is my long private SecretKey";
             Mind mind = _context.Minds.SingleOrDefault(user => user.Email.Equals(email) && user.Password.Equals(password));
@@ -50,7 +51,12 @@ namespace PreLearningBackend.JWTAuthenticationManager
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);  //this line returns the string format of generated token 
+            //return tokenHandler.WriteToken(token);  //this line returns the string format of generated token 
+          UserData userData=new UserData();
+          userData.Token=tokenHandler.WriteToken(token);
+          userData.RoleId=userRole.Id;
+          userData.Email=mind.Email;
+        return userData;
         }
     }
 }

@@ -12,16 +12,15 @@ export class AuthService {
   register(path, data): Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/${path}`, data);
   }
-  login(data) {
-    return this.httpClient.post(`${environment.baseUrl}/login`, data, {
-      responseType: 'text',
-    });
+  login(data):Observable<any> {
+    return this.httpClient.post(`${environment.baseUrl}/login`, data
+    );
   }
   getToken() {
     return localStorage.getItem('jwtToken');
   }
-  saveToken(token) {
-    localStorage.setItem('jwtToken', token);
+  saveItem(key:string ,val:string) {
+    localStorage.setItem(key, val);
   }
   logout() {
     localStorage.removeItem('jwtToken');
@@ -30,4 +29,14 @@ export class AuthService {
   isLoggedIn() {
     return !!localStorage.getItem('jwtToken');
   }
+
+  getUserRole()
+  {
+    
+    if(localStorage.getItem('roleId') === '1')
+      return true;
+    return false;
+    
+  }
+
 }

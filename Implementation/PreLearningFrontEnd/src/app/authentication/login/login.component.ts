@@ -23,7 +23,11 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.loginForm.value).subscribe(
       (response) => {
-        this.authService.saveToken(response);
+       //console.log(response.token)
+        // let val:any = response
+        // console.log(val.token)
+       this.authService.saveItem('jwtToken',response.token);
+       this.authService.saveItem('roleId',response.roleId);
         alert('login successfull');
         this.loginForm.reset()
       },

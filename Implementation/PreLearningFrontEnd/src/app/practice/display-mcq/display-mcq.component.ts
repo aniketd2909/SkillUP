@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { a } from 'src/app/Models/IQuestion';
 import { ApiService } from 'src/services/api.service';
 
@@ -13,7 +13,7 @@ export class DisplayMcqComponent implements OnInit {
   mcq: any;
   mcqs: any = []
   mcqForm = new FormGroup({
-    optionId: new FormControl()
+    optionId: new FormControl('',[Validators.required])
   })
 currentIndex=0
 mcqLength

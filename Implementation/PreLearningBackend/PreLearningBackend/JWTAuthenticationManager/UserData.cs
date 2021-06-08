@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.JWTAuthenticationManager
 {
-    public interface IJWTAuthentication
+    public class UserData
     {
-       UserData Login(string email, string password);  //Method declaration for user authentication
+        public string Token { get; set; }
+
+        public int RoleId { get; set; }
+
+        public string Email { get; set; }
     }
 }
-
