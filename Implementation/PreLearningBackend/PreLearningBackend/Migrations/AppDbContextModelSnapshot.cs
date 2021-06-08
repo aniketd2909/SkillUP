@@ -74,6 +74,9 @@ namespace PreLearningBackend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("PostedAt")
                         .HasColumnType("datetime(6)");
 

@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   constructor(private httpClient: HttpClient, private router: Router) {}
   register(path, data): Observable<any> {
-    return this.httpClient.post(`${environment.baseUrl}/${path}`, data);
+    return this.httpClient.post(`${environment.baseUrl}/${path}`, data,{responseType:'text'});
   }
   login(data):Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/login`, data
@@ -24,6 +24,8 @@ export class AuthService {
   }
   logout() {
     localStorage.removeItem('jwtToken');
+    localStorage.removeItem('roleId');
+    localStorage.removeItem('email');
     this.router.navigate(['authentication/login']);
   }
   isLoggedIn() {

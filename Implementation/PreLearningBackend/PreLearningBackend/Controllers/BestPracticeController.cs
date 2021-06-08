@@ -49,7 +49,7 @@ namespace PreLearningBackend.Controllers
         }
 
 
-      /*  [Authorize(Roles = "CampusMind")]*/
+        [Authorize(Roles = "CampusMind")]
         [HttpGet]
         public async Task<ActionResult<List<BestPractice>>> GetBestPractices()
         {

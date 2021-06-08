@@ -1,0 +1,19 @@
+#bgImage{
+    background-image: url('../../../assets/tim-mossholder-WE_Kv_ZB1l0-unsplash.jpg');
+    background-size:cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position:center;
+    padding: 20px;
+    color:black;
+    height: 480px;
+    width: 100%;
+}
+.form{
+    padding: 30px;
+
+}
+
+#form2{
+    padding-left: 72%;
+}

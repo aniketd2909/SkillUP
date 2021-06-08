@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(8),
+      Validators.minLength(6),
       Validators.maxLength(16),
     ]),
   });
@@ -28,10 +28,11 @@ export class LoginComponent implements OnInit {
         // console.log(val.token)
        this.authService.saveItem('jwtToken',response.token);
        this.authService.saveItem('roleId',response.roleId);
+       this.authService.saveItem('email',response.email);
         alert('login successfull');
         this.loginForm.reset()
       },
-      (error) => console.log(error)
+      (error) => {console.log(error.error),alert(error.error)}
     );
   }
 }

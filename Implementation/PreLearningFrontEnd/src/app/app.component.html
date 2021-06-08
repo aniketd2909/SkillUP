@@ -1,6 +1,6 @@
 <!-- <div class="image"> -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">PreLearning</a>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;font-weight:bold">
+  <a class="navbar-brand" href="#">Skill Up</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -16,14 +16,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="resource/topics">Resources</a>
+        <a class="nav-link" routerLink="resource/topics" *ngIf="authService. getUserRole()">Resources</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="blocker">Blockers</a>
+        <a class="nav-link" routerLink="blocker" *ngIf="authService. getUserRole()">Blockers</a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" routerLink= "experience-feed/add" *ngIf="!authService. getUserRole()">Experience Feed</a>
+        <a class="nav-link" routerLink= "experience-feed/add" *ngIf="authService.isLoggedIn()&& !authService. getUserRole() ">Experience Feed</a>
       </li>
 
       
@@ -34,11 +34,11 @@
       <li
         class="nav-item active"
         style="padding: 1px; margin-top: 7px"
-        *ngIf="authService.isLoggedIn()"
+        *ngIf="authService. getUserRole()"
       >
-        <div class="dropdown">
+        <div class="dropdown" >
           <button class="btn dropdown-toggle nav-link" type="button" id="toggleButtonForPlayer"
-            data-bs-toggle="dropdown" aria-expanded="false" >
+            data-bs-toggle="dropdown" aria-expanded="false"style="font-weight:bold" >
             Practice 
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">       
