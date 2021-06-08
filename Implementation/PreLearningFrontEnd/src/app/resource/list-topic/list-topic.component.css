@@ -7,8 +7,11 @@
   .mat-expansion-panel{
     width: 1000px;
     background-color: whitesmoke;
+    opacity: 0.9;
+    
   }
   .mat-expansion-panel-header{
+    background-color: rgb(201, 252, 181);
     height: 100px;
   }
 
@@ -47,7 +50,7 @@
     /* background-image: url('../../../assets/resource1.jpg');
     background-size: cover;
     background-color: transparent; */
-    background-color: whitesmoke;
+    background-color: rgb(213, 210, 245);
 
   }
   
