@@ -17,13 +17,16 @@ export class AddExperienceFeedComponent implements OnInit {
   ngOnInit(): void {
     this.feedForm = this.fb.group({
      Comment: [''],
-     postedAt:new Date()
+      postedAt: new Date(),
+     email:localStorage.getItem('email')
     });
     this.OnSubmit
   }
 
   OnSubmit() {
-    this.apiService.post('ExperienceFeed',this.feedForm.value).subscribe();
+    this.apiService.post('ExperienceFeed',this.feedForm.value).subscribe((response)=>{
+      console.log(response)
+    }, (error) => {console.log(error.error),alert(error.error)});
   }
 
   resetForm(){

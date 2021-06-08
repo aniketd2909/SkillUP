@@ -48,7 +48,7 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-      /*  [Authorize(Roles = "Admin,CampusMind")]*/
+        [Authorize(Roles = "Admin,CampusMind")]
         [HttpGet]
         public async Task<ActionResult<List<ProblemStatement>>> GetProblemStatement()
         {
@@ -70,7 +70,7 @@ namespace PreLearningBackend.Controllers
                 return NotFound();
             }
         }
-        [Authorize(Roles = "Admin")]
+       /* [Authorize(Roles = "Admin")]*/
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateProblemStatement(int id, ProblemStatement problemStatement)
         {
@@ -97,7 +97,7 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+      /*  [Authorize(Roles = "Admin")]*/
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteProblemStatement(int id)
         {

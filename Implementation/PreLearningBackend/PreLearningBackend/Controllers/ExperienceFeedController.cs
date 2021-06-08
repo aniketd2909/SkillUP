@@ -22,7 +22,7 @@ namespace PreLearningBackend.Controllers
             _service = service; // creates an reference object for the service
         }
 
-        //[Authorize(Roles = "MindtreeMind")]
+        [Authorize(Roles = "MindtreeMind")]
         [HttpPost]
         public async Task<ActionResult> AddExperienceFeed(ExperienceFeed experienceFeed)
         {
@@ -49,7 +49,7 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-        //[Authorize(Roles = "CampusMind")]
+        [Authorize(Roles = "CampusMind")]
         [HttpGet]
         public async Task<ActionResult<List<ExperienceFeed>>> GetAllExperienceFeeds()
         {

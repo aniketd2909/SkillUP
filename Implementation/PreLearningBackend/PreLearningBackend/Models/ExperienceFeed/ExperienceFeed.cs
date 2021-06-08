@@ -16,5 +16,7 @@ namespace PreLearningBackend.Models.ExperienceFeed
         public string Comment { get; set; }
 
         public DateTime PostedAt { get; set; }
+
+        public string Email { get; set; }
     }
 }

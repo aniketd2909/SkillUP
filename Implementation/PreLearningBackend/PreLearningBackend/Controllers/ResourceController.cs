@@ -19,7 +19,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // GET api/<ResourceController>/<TopicId>
-      //  [Authorize(Roles = "CampusMind")]
+         [Authorize(Roles = "CampusMind")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAllResultByTopic(int id)
         {
@@ -72,7 +72,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // DELETE api/<ResourceController>/5
-        [Authorize(Roles = "Admin")]
+       /* [Authorize(Roles = "Admin")]*/
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

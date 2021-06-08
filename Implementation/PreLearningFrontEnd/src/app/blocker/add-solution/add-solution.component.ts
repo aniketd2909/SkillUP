@@ -36,7 +36,7 @@ export class AddSolutionComponent implements OnInit {
       console.log(result);
       this.route.navigate(['blocker/list']);  
   
-    });
+    } ,(error) => {console.log(error.error),alert(error.error)});
     
 
   }

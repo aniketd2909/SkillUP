@@ -1,35 +1,69 @@
-
 <h2>Practice Questions</h2>
 <br>
 <form [formGroup]="mcqForm" (ngSubmit)="onSubmit( mcq.question.id)">
-    <div class="form-group">
-        <li class="list-group-item active">
-            <label class="control-label col-sm-3"> Question : <br>{{
-                mcq.question.description
-                }}</label><br><br>
-        </li>
-        <div>
-            <div *ngFor="let option of mcq.options" class="list-group-item">
-                <label class="radio-inline">
-                    <input type="radio" id="mcqRadio" value="{{ option.id }}" formControlName="optionId" />{{
-                    option.optionName }}
-                </label>
-            </div>
-        </div>
+  <div class="form-group" style="width: 100%;">
+    <li class="list-group-item active" style="height :150px;">
+      <label class="control-label col-sm-3" style="width: 100%;"> Question : <br>{{
+        mcq.question.description
+        }}</label><br><br>
+    </li>
+    <div>
+      <div *ngFor="let option of mcq.options" class="list-group-item">
+        <label class="radio-inline">
+          <input type="radio" id="mcqRadio" value="{{ option.id }}" formControlName="optionId" />{{
+          option.optionName }}
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="outer">
+    <div class="inner">
+      <button type="button" class="btn btn-primary btn-block" (click)="previousQuestion()"
+        [disabled]="currentIndex === 0">
+        <span class="glyphicon glyphicon glyphicon-arrow-left"></span>
+        Previous Question
+      </button>
+    </div>
+    <div class="inner">
+      <button type="submit" class="btn btn-success btn-block" [disabled]="!mcqForm.valid">Submit</button>
     </div>
 
-    <button type="submit" class="btn btn-success btn-block">Submit</button>
-
-</form><br>
-<button type="submit" class="btn btn-success btn-block" (click)="nextQuestion()"
+    <div class="inner">
+      <button type="button" class="btn btn-primary btn-block" (click)="nextQuestion()"
+        [disabled]="currentIndex === mcqLength - 1">
+        Next Question
+        <span class="glyphicon glyphicon glyphicon-arrow-right"></span>
+      </button>
+    </div>
+  </div>
+</form>
+<!-- <div class="col-md-12">
+    <button type="submit" class="btn btn btn-primary btn-block" (click)="nextQuestion()"
     [disabled]="currentIndex===mcqLength-1">Next Question</button>
-
-<br>
-<button type="submit" class="btn btn-success btn-block" (click)="previousQuestion()"
+    <button type="submit" class="btn btn btn-primary btn-block" (click)="previousQuestion()"
     [disabled]="currentIndex===0">Previous Question</button>
+</div> -->
 
 
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6" style="width:100%">
+         <form>
+          <button class="btn btn-primary btn-lg" type="submit" formaction="1klasse.html">1.klasse </button>
+         </form>
+      </div>
+      <div class="col-12 col-md-6" style="width:100%">
+        <form>
+          <button class="btn btn-primary btn-lg" type="submit" formaction="1klasse.html">1.klasse </button>
+         </form>
+      </div>
+    </div>
+  </div> -->
 
 
-
-
+<!-- <div id="outer">
+    <div class="inner"><button type="submit" class="msgBtn" onClick="return false;" >Save</button></div>
+    <div class="inner"><button type="submit" class="msgBtn2" onClick="return false;">Publish</button></div>
+    <div class="inner"><button class="msgBtnBack">Back</button></div>
+  </div> -->

@@ -7,7 +7,7 @@ namespace PreLearningBackend.JWTAuthenticationManager
 {
     public interface IJWTAuthentication
     {
-        string Login(string email, string password);  //Method declaration for user authentication
+       UserData Login(string email, string password);  //Method declaration for user authentication
     }
 }
 

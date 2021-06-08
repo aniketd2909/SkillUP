@@ -19,6 +19,6 @@ export class ListTopicComponent implements OnInit {
     this.apiService.get('topic').subscribe((result) => {
       this.typesOfTopics = result;
       console.log(result);
-    });
+    }, (error) => {console.log(error.error),alert(error.error)});
   }
 }

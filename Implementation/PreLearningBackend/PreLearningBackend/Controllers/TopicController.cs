@@ -19,7 +19,7 @@ namespace PreLearningBackend.Controllers
             _context = context;
         }
         // GET: api/<TopicController>
-     //   [Authorize(Roles = "CampusMind")]
+        [Authorize(Roles = "CampusMind")]
         [HttpGet]
         public async Task<IActionResult> GetAllTopics()
         {
@@ -87,7 +87,7 @@ namespace PreLearningBackend.Controllers
         }
 
         // DELETE api/<TopicController>/5
-        [Authorize(Roles = "Admin")]
+       /* [Authorize(Roles = "Admin")]*/
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
