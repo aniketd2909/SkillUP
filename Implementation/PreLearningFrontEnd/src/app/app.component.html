@@ -22,9 +22,20 @@
         <a class="nav-link" routerLink="blocker">Blockers</a>
       </li>
 
-     
+      <li class="nav-item active">
+        <a class="nav-link" routerLink= "experience-feed/add" *ngIf="!authService. getUserRole()">Experience Feed</a>
+      </li>
 
-      <li class="nav-item active " style="padding: 1px;margin-top: 7px;" *ngIf="authService.isLoggedIn()">
+      
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="experience-feed/get" *ngIf="authService. getUserRole()">Experience Feed</a>
+      </li>
+
+      <li
+        class="nav-item active"
+        style="padding: 1px; margin-top: 7px"
+        *ngIf="authService.isLoggedIn()"
+      >
         <div class="dropdown">
           <button class="btn dropdown-toggle nav-link" type="button" id="toggleButtonForPlayer"
             data-bs-toggle="dropdown" aria-expanded="false" >

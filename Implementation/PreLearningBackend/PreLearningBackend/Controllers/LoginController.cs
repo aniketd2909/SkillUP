@@ -27,10 +27,10 @@ namespace PreLearningBackend.Controllers
         [AllowAnonymous]
         public IActionResult Authenticate([FromBody] UserCredential userCredential)
         {
-            var token = _jWTAuthentication.Login(userCredential.Email, userCredential.Password);
-            if (token is null)
+            var userData = _jWTAuthentication.Login(userCredential.Email, userCredential.Password);
+            if (userData.Token is null)
                 return Unauthorized();
-            return Ok(token);
+            return Ok(userData);
         }
     }
 }

@@ -4,6 +4,21 @@
     <p [innerHTML]="item.question |lineBreak"></p>
 </div>
 
+
+<!-- 
+<ul class="list-group" *ngFor="let item of bestPracticeList">
+    <li class="list-group-item list-group-item-success" >{{item.description}}</li>
+</ul> -->
+
+
+
+  <ul class="list-group">
+    <h2>Best Practices To Be Followed :</h2>
+    <li class="list-group-item list-group-item-info" *ngFor="let item of bestPracticeList"> -> {{item.description}}</li>
+   
+  </ul>
+
+
 <mat-selection-list>
     <mat-accordion #problem>
         <tr *ngFor="let problem of problemsList" [value]="problem">
@@ -11,25 +26,32 @@
                 <mat-expansion-panel-header>
                     <div>
                         <mat-panel-title>
-                            <h2>
-                                Topics Covered:
-                            </h2>
-                            <h3>{{ problem.topicsCovered }}</h3>
+                           <h2>
+                Topics Covered:
+                <span style="color: rgb(104, 100, 100)">{{
+                  problem.topicsCovered
+                }}</span>
+              </h2>
                         </mat-panel-title>
                         <!-- <mat-panel-description>
               <h4>This is the Basic Discription of the problem</h4>
                status {{panelOpenState ? 'open' : 'closed'}}
   
             </mat-panel-description> -->
-                    </div>
-                </mat-expansion-panel-header>
-                <div>
-                    <mat-tab-group mat-align-tabs="center">
-                        <mat-tab label="Problem Statement">
-                            <div class="dropDownStyle" [innerHTML]="problem.question |lineBreak">>
-                                <!-- {{ problem.question }} -->
-                            </div>
-                        </mat-tab>
+          </div>
+        </mat-expansion-panel-header>
+        <div>
+          <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="Problem Statement">
+              <div
+                style="font-size: larger"
+                class="dropDownStyle"
+                [innerHTML]="problem.question | lineBreak"
+              >
+                >
+                <!-- {{ problem.question }} -->
+              </div>
+            </mat-tab>
 
                         <!-- <mat-tab class="dropDownStyle" label="Youtube / Website links"
                 >
