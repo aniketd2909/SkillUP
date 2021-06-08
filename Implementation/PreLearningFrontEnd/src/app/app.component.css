@@ -6,3 +6,30 @@
     background-size: cover;
   }
    */
+
+   img{
+    width: 45px;
+    height: 45px
+   }
+
+   footer{
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .logoutButton{
+    top: 7px;
+    left: 900px;
+    
+   /* // align-content: flex-end; */
+  }
+
+  .navbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+  }
+
+ 

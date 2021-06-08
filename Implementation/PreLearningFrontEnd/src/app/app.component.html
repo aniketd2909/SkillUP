@@ -1,6 +1,8 @@
 <!-- <div class="image"> -->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;font-weight:bold">
-  <a class="navbar-brand" href="#">Skill Up</a>
+ <!-- <div class="container-fluid"> -->
+<nav class="navbar" class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;font-weight:bold">
+  <!-- <nav class="navbar navbar-dark bg-dark"> -->
+  <img src="../../assets/logo.jpeg" alt="logo.jpeg"><a class="navbar-brand" routerLink="home" >SkillUP</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -57,13 +59,14 @@
         <a class="nav-link" routerLink="authentication/login">Login</a>
       </li>
 
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
-        <a
-          class="nav-link"
-          style="cursor: pointer"
-          (click)="authService.logout()"
-          >Logout</a
-        >
+      <li class="nav-item"  *ngIf="authService.isLoggedIn()">
+        <button mat-raised-button 
+        color="warn" class="nav-link" 
+        style="cursor: pointer"
+        class="logoutButton"
+        (click)="authService.logout()">
+          Logout
+        </button>
       </li>
       <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -86,4 +89,18 @@
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer >
+  <p>
+    <span>Mail To: </span><a href="mailto:campusmind@gmail.com">campusmind@mail.com</a>
+  </p>
+  <p>© 2021 Created By Campus Minds</p>
+</footer>
+<!-- </div> -->
+
 <!-- </div> -->

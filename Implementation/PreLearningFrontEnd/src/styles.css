@@ -3,6 +3,9 @@
 html,
 body {
   height: 100%;
+  /* background-image: url('../src/assets/homepage.jpg'); */
+
+
 }
 body {
   margin: 0;
