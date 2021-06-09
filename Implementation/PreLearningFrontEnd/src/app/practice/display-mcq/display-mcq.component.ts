@@ -47,9 +47,8 @@ mcqLength
       this.mcqs = response
       console.log(response)
       this.getMcq(this.mcqs[this.currentIndex].id)
-      this.mcqLength=this.mcqs.length
-    }
-      , error => console.log(error))
+      this.mcqLength = this.mcqs.length
+    },(error) => { console.log(error.error); alert(error.error) })
   }
 
   nextQuestion() {

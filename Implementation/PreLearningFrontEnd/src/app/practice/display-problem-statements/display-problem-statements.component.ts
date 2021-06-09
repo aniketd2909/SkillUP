@@ -28,7 +28,7 @@ this.loadBestPractices();
     // });
       console.log(this.problemsList)
 
-    })
+    }, (error) => {console.log(error.error),alert(error.error)})
   }
 
   loadBestPractices()
@@ -36,7 +36,7 @@ this.loadBestPractices();
     this.apiService.get('BestPractice').subscribe((response)=>{
      // console.log(response);
       this.bestPracticeList = response;
-    })
+    }, (error) => {console.log(error.error),alert(error.error)})
   }
 
 }

@@ -12,18 +12,21 @@ import { MatListModule } from '@angular/material/list';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from 'src/services/token-interceptor.service';
-
+import {MatCardModule} from '@angular/material/card';
+import { HomeComponent } from './home/home.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [
     {

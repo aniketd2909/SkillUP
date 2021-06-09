@@ -26,7 +26,7 @@ flag:number=1;
     refreshList() {
       this.apiService.get('ExperienceFeed').subscribe((result) => {
         this.feeds = result;
-      });
+      }, (error) => {console.log(error.error),alert(error.error)});
     }
 
 }

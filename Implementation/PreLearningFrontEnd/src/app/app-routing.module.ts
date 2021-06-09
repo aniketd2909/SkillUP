@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
 
 const routes: Routes = [
   {
@@ -29,6 +31,11 @@ const routes: Routes = [
       import('./blocker/blocker.module').then((m) => m.BlockerModule),
   },
   { path: 'practice', loadChildren: () => import('./practice/practice.module').then(m => m.PracticeModule) },
+  {
+     path: 'home', component: HomeComponent 
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

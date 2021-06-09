@@ -1,0 +1,49 @@
+/* #bgImage{
+    background-image: url('../../../assets/tim-mossholder-WE_Kv_ZB1l0-unsplash.jpg');
+    background-size:cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position:center;
+    padding: 20px;
+    color:black;
+    height: 480px;
+    width: 100%;
+} */
+.form{
+    padding: 30px;
+
+}
+
+#form2{
+    padding-left: 75%;
+    padding-top: 50px;
+   
+}
+
+.loginForm2{
+ 
+    background-image: url('../../../assets/login.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    
+    color:black;
+    height: 600px;
+    width: 100%;
+}
+
+.inputField{
+
+    text-decoration-color: white;
+}
+.logo{
+    width: 75px;
+    height: 75px;
+ 
+ }
+
+ mat-card-title{
+
+    padding-left: 50px;
+    padding-top: 30px;
+ }

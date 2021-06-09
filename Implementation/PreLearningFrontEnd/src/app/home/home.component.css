@@ -1,0 +1,23 @@
+.example-card {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+   
+  }
+  
+  .example-header-image {
+    background-image: url('../../assets/logo.jpeg');
+    background-size: 45px;
+  }
+
+ 
+
+  .logo{
+      width: 75px;
+      height: 75px;
+         
+   }
+   .header{
+       padding-left: 170px;
+   }
+
