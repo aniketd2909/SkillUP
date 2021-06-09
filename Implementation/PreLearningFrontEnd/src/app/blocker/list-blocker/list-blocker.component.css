@@ -5,7 +5,7 @@
   }
   .mat-expansion-panel{
     width: 1000px;
-    background-color:#9b9bdb;
+    background-image: url('../../../assets/blocker1.jpg');
   }
   .mat-expansion-panel-header{
     height: 100px;

@@ -11,7 +11,8 @@
     
   }
   .mat-expansion-panel-header{
-    background-color: rgb(201, 252, 181);
+    /* background-color: rgb(201, 252, 181); */
+    background-image: url('../../../assets/resource3.jpg');
     height: 100px;
   }
 
