@@ -38,7 +38,7 @@ namespace PreLearningBackend.Controllers
 
         // POST api/<RegisterController>
         [HttpPost]
-        public async Task<IActionResult> Post(CampusMindRegister register)
+        public async Task<IActionResult> RegisterUser(CampusMindRegister register)
         {
             try
             {

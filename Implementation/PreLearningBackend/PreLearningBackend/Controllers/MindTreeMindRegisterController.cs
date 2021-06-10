@@ -40,7 +40,7 @@ namespace PreLearningBackend.Controllers
 
         // POST api/<MindTreeMindRegisterController>
         [HttpPost]
-        public async Task<IActionResult> Post(MindTreeMindRegister mindTreeMindDetails)
+        public async Task<IActionResult> RegisterMind(MindTreeMindRegister mindTreeMindDetails)
         {
             try
             {

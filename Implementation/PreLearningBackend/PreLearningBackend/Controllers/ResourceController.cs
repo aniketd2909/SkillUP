@@ -21,7 +21,7 @@ namespace PreLearningBackend.Controllers
         // GET api/<ResourceController>/<TopicId>
          [Authorize(Roles = "CampusMind")]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAllResultByTopic(int id)
+        public async Task<IActionResult> GetAllResourcesByTopic(int id)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace PreLearningBackend.Controllers
         // POST api/<ResourceController>
       //  [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> Post(Models.Resource.Resource resource)
+        public async Task<IActionResult> AddResource(Models.Resource.Resource resource)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace PreLearningBackend.Controllers
         // PUT api/<ResourceController>/5
        // [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Models.Resource.Resource resource)
+        public async Task<IActionResult> updateResource(Models.Resource.Resource resource)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace PreLearningBackend.Controllers
         // DELETE api/<ResourceController>/5
        /* [Authorize(Roles = "Admin")]*/
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteResource(int id)
         {
             try
             {

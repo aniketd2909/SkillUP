@@ -4,18 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PreLearningBackend.Services.ExpereienceFeed
+namespace PreLearningBackend.Services.ExperienceFeed
 {
     public interface IExperienceFeedService
     {
         // To display all existing feebacks from the system
-        Task<List<ExperienceFeed>> GetAllFeedbacks();
+        Task<List<Models.ExperienceFeed.ExperienceFeed>> GetAllFeedbacks();
 
         // To add a new feedback to system
-        Task<bool> AddExperienceFeed(ExperienceFeed experienceFeed);
+        Task<bool> AddExperienceFeed(Models.ExperienceFeed.ExperienceFeed experienceFeed);
 
         // To Edit/Update exsisting feeback in the system
-        Task<bool> UpdateExperienceFeed(int id, ExperienceFeed experienceFeed);
+        Task<bool> UpdateExperienceFeed(int id, Models.ExperienceFeed.ExperienceFeed experienceFeed);
 
         // To Delete/Remove your feedback from the system
         Task<bool> DeleteExperienceFeed(int id);
