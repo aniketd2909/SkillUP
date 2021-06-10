@@ -20,8 +20,7 @@ namespace PreLearningBackend.Services.Blocker
 
         //Method to add blocker
         public async Task<bool> AddBlocker(Models.Blocker.Blocker blocker)
-        { 
-            //flag is added
+        {
             bool flag = true;
             await _context.Blockers.AddAsync(blocker);
             int check = await _context.SaveChangesAsync();
