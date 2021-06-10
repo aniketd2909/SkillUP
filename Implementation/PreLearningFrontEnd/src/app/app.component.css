@@ -8,8 +8,9 @@
    */
 
    img{
-    width: 45px;
-    height: 45px
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
    }
 
    footer{

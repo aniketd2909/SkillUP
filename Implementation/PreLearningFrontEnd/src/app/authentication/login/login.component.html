@@ -33,13 +33,13 @@
       <mat-form-field class="inputField">
         
         <mat-label>Email address</mat-label>
-        <input formControlName="email" matInput />
+        <input formControlName="email" id="email" matInput />
       </mat-form-field>
       <br />
       <br>
       <mat-form-field>
         <mat-label>Password</mat-label>
-        <input type="password" formControlName="password" matInput />
+        <input type="password" formControlName="password"  id="password" matInput />
       </mat-form-field>
       <br /> 
       <button mat-flat-button color="primary" type="submit" class="btn btn-primary" [disabled]= !loginForm.valid>Login</button>

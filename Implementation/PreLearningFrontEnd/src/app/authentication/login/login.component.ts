@@ -28,13 +28,14 @@ export class LoginComponent implements OnInit {
         // let val:any = response
         // console.log(val.token)
        this.authService.saveItem('jwtToken',response.token);
+       console.log(response.token);
        this.authService.saveItem('roleId',response.roleId);
        this.authService.saveItem('email',response.email);
-        alert('login successfull');
+       // alert('login successfull');
         this.loginForm.reset()
         this.route.navigate(['home']);
       },
-      (error) => {console.log(error.error),alert(error.error)}
+      (error) => {console.log(error.error),alert("Login Unsuccessfull")}
     );
   }
 }
