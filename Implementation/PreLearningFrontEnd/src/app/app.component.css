@@ -19,15 +19,14 @@
     text-align: center;
   }
 
-  .logoutButton{
-    top: 7px;
-    left: 900px;
-    
-   /* // align-content: flex-end; */
-  }
+   /* .logoutButton{
+       align-self:flex-end;
+  }  */
 
   .navbar{
     height:70px;
+    display:inline;
+    width:100%;
     /* 
    
     margin-right: 18px; */
@@ -42,7 +41,7 @@
     padding: 8px 16px; */
   }
 
-  nav .navbar-nav li a{
+  nav .navbar-nav li a ,#toggleButtonForPlayer {
     color:white;
     font-weight: 500;
     font-size:20px;
@@ -57,7 +56,18 @@
 
   nav .navbar-nav li a:hover{
     text-decoration: none;
-    color:yellow;
+     color:yellow; 
   }
-
+/* #toggleButtonForPlayer {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+} */
+.dropdown-item {
+    background-color: #007bff
+}
+.dropdown-item:hover {
+    background-color: #007bff
+}
  

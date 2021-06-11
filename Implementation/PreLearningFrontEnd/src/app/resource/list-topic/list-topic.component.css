@@ -1,27 +1,42 @@
 .mat-selection-list{
-    margin:30px 0px; padding:0px;
+    margin:30px 0px; 
     text-align:center;
-     
-    
   }
   .mat-expansion-panel{
-    width: 1000px;
     background-color: whitesmoke;
     opacity: 0.9;
-    
   }
+
+
+  @media only screen and (min-width: 600px) {
+    .mat-expansion-panel{
+      width: 500px;
+    }
+  }
+  @media only screen and (min-width: 800px) {
+    .mat-expansion-panel {
+      width: 700px;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .mat-expansion-panel {
+      width: 900px;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .mat-expansion-panel {
+      width: 1100px;
+    }
+  }
+
+
   .mat-expansion-panel-header{
-    /* background-color: rgb(201, 252, 181); */
+   
     background-image: url('../../../assets/resource3.jpg');
     height: 100px;
   }
 
-  /* .mat-tab-group{
-    height: 175px;
-    border-top-width: 50px;padding-top: 50px;padding-bottom: 0px;
-   
-  } */
-  
+ 
   .dropDownStyle
   {
     padding-top: 25px;
@@ -29,13 +44,9 @@
    
   }
 
-  a{
-    padding-left: 290px;
-  }
-
+ 
 
   .fontSize{
-
     font-size: large;
   }
 
@@ -43,9 +54,6 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  mat-card-title{
-    padding-left: 400px;
-  }
 
   mat-card{
     /* background-image: url('../../../assets/resource1.jpg');
