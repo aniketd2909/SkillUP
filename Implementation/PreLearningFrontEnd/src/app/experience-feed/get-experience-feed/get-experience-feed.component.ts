@@ -6,6 +6,7 @@ interface feed {
   id: Number;
   comment: String;
   postedAt: any|Date;
+  email: string;
 }
 @Component({
   selector: 'app-get-experience-feed',

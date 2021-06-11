@@ -10,3 +10,20 @@
     width: 100%; */
     padding-left: 65%;
 }
+
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  .radioButtons{
+    margin-right: 16px;
+    margin-left: 10px;
+  }
+
+  mat-form-field{
+
+    width: 85%;
+    padding-left: 10px;
+ 
+}

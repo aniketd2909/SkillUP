@@ -1,50 +1,40 @@
-<!-- 
-<div id="bgImage">
-<div id="form2">
 
-  <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp"  placeholder="Enter email"
-        formControlName="email"/>
-      <br>
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password"  placeholder="Password" formControlName="password" />
-    </div>
-
-    <button type="submit" class="btn btn-primary" [disabled]= !loginForm.valid>Login</button>
-  </form>
-</div>
-</div> -->
-<mat-card class="loginForm2">
-<!-- <div id="bgImage"> -->
-  <div id="form2">
-    <mat-card-title ><img class="logo"  src="../../assets/logo.jpeg" alt="logo.jpeg">
-      <br>
-      <br>
-      
+<div class="fluid-container" id="bgImage">
+  <mat-card>
+    <mat-card-title
+      ><img class="logo" src="../../assets/logo.jpeg" alt="logo.jpeg" />
+      <br />
+      <br />
       <p>Sign-In</p>
-      </mat-card-title>
+    </mat-card-title>
     <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
-      <br>
-      
+      <br />
+
       <mat-form-field class="inputField">
-        
         <mat-label>Email address</mat-label>
         <input formControlName="email" id="email" matInput />
       </mat-form-field>
       <br />
-      <br>
+      <br />
       <mat-form-field>
         <mat-label>Password</mat-label>
-        <input type="password" formControlName="password"  id="password" matInput />
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          matInput
+        />
       </mat-form-field>
-      <br /> 
-      <button mat-flat-button color="primary" type="submit" class="btn btn-primary" [disabled]= !loginForm.valid>Login</button>
+      <br />
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
     </form>
-
-  </div>
-
-</mat-card>
+  </mat-card>
+</div>
