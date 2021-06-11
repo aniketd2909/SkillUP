@@ -1,27 +1,27 @@
 <!-- <h2>Registration Form</h2> -->
 
-<div class="fluid-container" id="image">
+<div class="container-fluid" id="image">
+  <div class="matCard">
   <mat-card>
+    <mat-card-title
+      ><img class="logo" src="../../assets/logo.jpeg" alt="logo.jpeg" />   
+    </mat-card-title>
     <form
       class="form-horizontal"
       role="form"
       [formGroup]="registerForm"
       (ngSubmit)="collectData()"
     >
-      <br>
+      
       <mat-form-field class="inputField">
         <mat-label>*Name</mat-label>
         <input formControlName="name" matInput />
       </mat-form-field>
-     
     
-   
       <mat-form-field class="inputField">
         <mat-label>*Email</mat-label>
-        <input formControlName="email" type="email" matInput />
+        <input formControlName="email" matInput />
       </mat-form-field>
-
-
  
       <mat-form-field class="inputField">
         <mat-label>*Password</mat-label>
@@ -35,36 +35,34 @@
         <input formControlName="contactNo" matInput />
       </mat-form-field>
       <br>
-      <br>
+      
       <label  class="radioButtons">Gender</label>
-      <mat-radio-group>
-        <mat-radio-button value="Female" formControlName="gender"
+      <mat-radio-group formControlName="gender" >
+        <mat-radio-button value="Female"
           >Female</mat-radio-button
         >
-        <mat-radio-button value="Male" formControlName="gender"
+        <mat-radio-button value="Male"
           >Male</mat-radio-button
         >
       </mat-radio-group>
       <br>
       <br>
       <label class="radioButtons">Role</label>
-      <mat-radio-group>
+      <mat-radio-group formControlName="roleId">
         <mat-radio-button
           value="1"
           name="roleId"
           (click)="campusMindRole()"
-          formControlName="roleId"
           >Campus Mind</mat-radio-button
         >
         <mat-radio-button
           value="2"
           name="roleId"
           (click)="mindtreeMindRole()"
-          formControlName="roleId"
+          
           >Mindtree Mind</mat-radio-button
         >
       </mat-radio-group>
-      <br>
       <br>
       <div *ngIf="campusMind">
         <mat-form-field class="inputField">
@@ -72,7 +70,7 @@
           <input formControlName="engineeringBranch" matInput />
         </mat-form-field>
       </div>
-
+      <br>
       <div *ngIf="mindTreeMind">
      
         <mat-form-field class="inputField">
@@ -95,12 +93,13 @@
       <button
         type="submit"
         class="btn btn-primary btn-block"
-        [disabled]="!registerForm.valid"
+       [disabled]="!registerForm.valid"
       >
         Register
       </button>
     </form>
   </mat-card>
+</div>
   <!-- /form -->
 </div>
 <!-- ./container -->

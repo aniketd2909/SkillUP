@@ -19,12 +19,12 @@
     text-align: center;
   }
 
-  .logoutButton{
+  /* .logoutButton{
     top: 7px;
     left: 900px;
-    
+  } */
    /* // align-content: flex-end; */
-  }
+  
 
   .navbar{
     height:70px;
@@ -57,7 +57,30 @@
 
   nav .navbar-nav li a:hover{
     text-decoration: none;
-    color:yellow;
+
+    opacity: 0.5;
   }
 
+  #navbarSupportedContent a{
+    padding-left: 16px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    text-transform: uppercase;
+    border-radius: 4px;
+    
+  }
+
+  .dropdown-menu{
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: #0d6efd;
+    
+  }
+
+
  
+  

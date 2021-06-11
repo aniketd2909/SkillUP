@@ -41,24 +41,25 @@
         *ngIf="authService. getUserRole()"
       >
         <div class="dropdown" >
-          <button class="btn dropdown-toggle nav-link" type="button" id="toggleButtonForPlayer"
-            data-bs-toggle="dropdown" aria-expanded="false"style="font-weight:bold" >
+          <a class="btn dropdown-toggle nav-link" type="button" id="toggleButtonForPlayer"
+            data-bs-toggle="dropdown" aria-expanded="false" >
             Practice 
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">       
+          </a>
+          <ul class="dropdown-menu"    aria-labelledby="dropdownMenuButton1">   
+                
             <li><a class="dropdown-item" routerLink="practice/mcq">MCQ</a></li>
-            <li><a class="dropdown-item" routerLink="practice/problemStatement" id="playerlist">Practice Programming</a></li>
+            <li><a class="dropdown-item"  routerLink="practice/problemStatement">Practice Programming</a></li>
           </ul>
         </div>
       </li>
       
 
       <li class="nav-item active" *ngIf="!authService.isLoggedIn()">
-        <a class="nav-link" routerLink="authentication/register">Register</a>
+        <a class="nav-link" routerLink="authentication/register">REGISTER</a>
       </li>
 
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-        <a class="nav-link" id="loginButton" routerLink="authentication/login">Login</a>
+        <a class="nav-link" id="loginButton" routerLink="authentication/login">LOGIN</a>
       </li>
 
       <li class="nav-item"  *ngIf="authService.isLoggedIn()">
