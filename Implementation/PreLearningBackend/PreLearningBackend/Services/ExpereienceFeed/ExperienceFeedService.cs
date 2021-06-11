@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Services.ExpereienceFeed
 {
-    public class ExperienceFeedService : IExperienceFeedService
+    public class ExperienceFeedService : IExperienceFeedService // Class which implements IExperienceFeed service
     {
-        public readonly AppDbContext _context;
+        public readonly AppDbContext _context; // Reference for AppDbContext
         public ExperienceFeedService(AppDbContext context)
         {
             _context = context;

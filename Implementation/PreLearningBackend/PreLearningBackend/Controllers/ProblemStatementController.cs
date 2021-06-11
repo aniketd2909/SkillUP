@@ -15,15 +15,15 @@ namespace PreLearningBackend.Controllers
     [ApiController]
     public class ProblemStatementController : ControllerBase
     {
-        private readonly IProblemStatementService _service;
+        private readonly IProblemStatementService _service; //Reference for IProblemStatement service
 
         public ProblemStatementController(IProblemStatementService service)
         {
             _service = service; // creates an reference object for the service
         }
-     /*   [Authorize(Roles = "Admin")]*/
+        /*   [Authorize(Roles = "Admin")]*/  // Restricts users other than Admin
         [HttpPost]
-        public async Task<ActionResult> AddBestCodingPractice(ProblemStatement problemStatement)
+        public async Task<ActionResult> AddBestCodingPractice(ProblemStatement problemStatement) //This method adds a new problem statement to system 
         {
             try
             {
@@ -48,9 +48,9 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,CampusMind")]
+        [Authorize(Roles = "Admin,CampusMind")] // Restricts users other than Admin or Campus mind
         [HttpGet]
-        public async Task<ActionResult<List<ProblemStatement>>> GetProblemStatement()
+        public async Task<ActionResult<List<ProblemStatement>>> GetProblemStatement() //Gets all the problem statements from the database
         {
 
             try
@@ -70,9 +70,9 @@ namespace PreLearningBackend.Controllers
                 return NotFound();
             }
         }
-       /* [Authorize(Roles = "Admin")]*/
+        /* [Authorize(Roles = "Admin")]*/  // Restricts users other than Admin
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateProblemStatement(int id, ProblemStatement problemStatement)
+        public async Task<ActionResult> UpdateProblemStatement(int id, ProblemStatement problemStatement) // This method Edit/Update exsisting Problem statement in the system
         {
             try
             {
@@ -97,9 +97,9 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-      /*  [Authorize(Roles = "Admin")]*/
+        /*  [Authorize(Roles = "Admin")]*/  // Restricts users other than Admin
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteProblemStatement(int id)
+        public async Task<ActionResult> DeleteProblemStatement(int id)  // This method Delete/Remove the Problem statement from the system
         {
             try
             {

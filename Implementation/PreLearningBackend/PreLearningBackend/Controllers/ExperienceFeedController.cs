@@ -11,20 +11,20 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] 
     [ApiController]
     public class ExperienceFeedController : ControllerBase
     {
-        private readonly IExperienceFeedService _service;
+        private readonly IExperienceFeedService _service; //Reference for IExperienceFeedService
 
         public ExperienceFeedController(IExperienceFeedService service)
         {
             _service = service; // creates an reference object for the service
         }
 
-        [Authorize(Roles = "MindtreeMind")]
+        [Authorize(Roles = "MindtreeMind")] // Restricts users other than MindtreeMind
         [HttpPost]
-        public async Task<ActionResult> AddExperienceFeed(ExperienceFeed experienceFeed)
+        public async Task<ActionResult> AddExperienceFeed(ExperienceFeed experienceFeed) //This method adds a new feedback to system 
         {
             try
             {
@@ -49,9 +49,9 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-        [Authorize(Roles = "CampusMind")]
+        [Authorize(Roles = "CampusMind")]  // Restricts users other than CampusMind
         [HttpGet]
-        public async Task<ActionResult<List<ExperienceFeed>>> GetAllExperienceFeeds()
+        public async Task<ActionResult<List<ExperienceFeed>>> GetAllExperienceFeeds() // This method displays all existing feebacks from the system
         {
 
             try
@@ -72,9 +72,9 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-        //[Authorize(Roles = "MindtreeMind")]
+        //[Authorize(Roles = "MindtreeMind")]  // Restricts users other than MindtreeMind
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateExperienceFeed(int id, ExperienceFeed experienceFeed)
+        public async Task<ActionResult> UpdateExperienceFeed(int id, ExperienceFeed experienceFeed) // This method Edit/Update exsisting feeback in the system
         {
             try
             {
@@ -98,9 +98,9 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-        //[Authorize(Roles = "MindtreeMind,Admin")]
+        //[Authorize(Roles = "MindtreeMind,Admin")]  // Restricts users other than MindtreeMind and Admin
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteFeed(int id)
+        public async Task<ActionResult> DeleteFeed(int id)  // This method Delete/Remove your feedback from the system
         {
             try
             {
