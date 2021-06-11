@@ -13,8 +13,9 @@
  
 
   .logo{
-      width: 75px;
-      height: 75px;
+      width: 76px;
+      height: 76px;
+      border-radius: 38px;
          
    }
    .header{

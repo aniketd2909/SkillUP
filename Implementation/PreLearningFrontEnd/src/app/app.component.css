@@ -8,8 +8,9 @@
    */
 
    img{
-    width: 45px;
-    height: 45px
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
    }
 
    footer{
@@ -26,10 +27,37 @@
   }
 
   .navbar{
+    height:70px;
+    /* 
+   
+    margin-right: 18px; */
+    margin-top:10px;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    padding: 8px 16px;
+    
+    /* display: flex;
+    flex-wrap: wrap;
+   
+    padding: 8px 16px; */
+  }
+
+  nav .navbar-nav li a{
+    color:white;
+    font-weight: 500;
+    font-size:20px;
+    text-decoration: none;
+  }
+
+  .navbar-brand{
+    color:white;
+    font-weight: 500;
+    font-size:24px;
+  }
+
+  nav .navbar-nav li a:hover{
+    text-decoration: none;
+    color:yellow;
   }
 
  

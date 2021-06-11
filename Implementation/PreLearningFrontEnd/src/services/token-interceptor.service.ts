@@ -1,5 +1,6 @@
-import { HttpInterceptor } from '@angular/common/http';
+import { HttpErrorResponse, HttpInterceptor } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
+import { Observable, of, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -16,4 +17,6 @@ export class TokenInterceptorService implements HttpInterceptor {
     });
     return next.handle(ReqWithToken);
   }
+
+  
 }

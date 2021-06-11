@@ -13,7 +13,7 @@ using Microsoft.OpenApi.Models;
 using PreLearningBackend.Context;
 using PreLearningBackend.JWTAuthenticationManager;
 using PreLearningBackend.Services.Blocker;
-using PreLearningBackend.Services.ExpereienceFeed;
+using PreLearningBackend.Services.ExperienceFeed;
 using PreLearningBackend.Services.Practice;
 using PreLearningBackend.Services.Resource;
 using PreLearningBackend.Services.User;

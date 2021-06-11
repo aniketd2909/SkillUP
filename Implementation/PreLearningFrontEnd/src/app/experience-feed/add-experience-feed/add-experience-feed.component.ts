@@ -31,7 +31,8 @@ export class AddExperienceFeedComponent implements OnInit {
 
   resetForm(){
     this.feedForm.reset();
-    this.route.navigate(['experience-feed/get']);
+    alert("Added successfully!")
+   // this.route.navigate(['experience-feed/get']);
   }
 }
 

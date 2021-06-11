@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PreLearningBackend.Services.ExpereienceFeed
+namespace PreLearningBackend.Services.ExperienceFeed
 {
     public class ExperienceFeedService : IExperienceFeedService // Class which implements IExperienceFeed service
     {
@@ -16,7 +16,7 @@ namespace PreLearningBackend.Services.ExpereienceFeed
             _context = context;
         }
         // To add a new feedback to system
-        public async Task<bool> AddExperienceFeed(ExperienceFeed experienceFeed)
+        public async Task<bool> AddExperienceFeed(Models.ExperienceFeed.ExperienceFeed experienceFeed)
         {
             bool result = false;
             await _context.ExperienceFeeds.AddAsync(experienceFeed); // Adds feed to database asynchronously
@@ -31,7 +31,7 @@ namespace PreLearningBackend.Services.ExpereienceFeed
         public async Task<bool> DeleteExperienceFeed(int id)
         {
             bool result = false;
-            ExperienceFeed experienceFeed = _context.ExperienceFeeds.Find(id); // Gets the specific ExperinceFeed by id
+            Models.ExperienceFeed.ExperienceFeed experienceFeed = _context.ExperienceFeeds.Find(id); // Gets the specific ExperinceFeed by id
             if (experienceFeed != null)
             {
                 _context.ExperienceFeeds.Remove(experienceFeed); // Removes the feed from the system permenantly
@@ -43,13 +43,13 @@ namespace PreLearningBackend.Services.ExpereienceFeed
         }
 
         // To display all existing feebacks from the system
-        public async Task<List<ExperienceFeed>> GetAllFeedbacks()
+        public async Task<List<Models.ExperienceFeed.ExperienceFeed>> GetAllFeedbacks()
         {
              return await _context.ExperienceFeeds.ToListAsync(); // Gets all the feeds from the database 
         }
 
         // To Edit/Update exsisting feeback in the system
-        public async Task<bool> UpdateExperienceFeed(int id, ExperienceFeed experienceFeed)
+        public async Task<bool> UpdateExperienceFeed(int id, Models.ExperienceFeed.ExperienceFeed experienceFeed)
         {
             bool result = false;
             if (id == experienceFeed.Id && experienceFeed.Id != 0)
