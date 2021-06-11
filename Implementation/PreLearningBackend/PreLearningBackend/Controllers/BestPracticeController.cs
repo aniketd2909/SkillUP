@@ -15,16 +15,16 @@ namespace PreLearningBackend.Controllers
     [ApiController]
     public class BestPracticeController : ControllerBase
     {
-        private readonly IBestPracticesService _service;
+        private readonly IBestPracticesService _service; //Reference for IExperienceFeedService
 
         public BestPracticeController(IBestPracticesService service)
         {
             _service = service; // creates an reference object for the service
         }
 
-      /*  [Authorize(Roles = "Admin")]*/
+        /*  [Authorize(Roles = "Admin")]*/ // Restricts users other than Admin
         [HttpPost]
-        public async Task<ActionResult> AddBestCodingPractice(BestPractice bestCodingPractice)
+        public async Task<ActionResult> AddBestCodingPractice(BestPractice bestCodingPractice)  //This method adds a new best practice to system 
         {
             try
             {
@@ -49,9 +49,9 @@ namespace PreLearningBackend.Controllers
         }
 
 
-        [Authorize(Roles = "CampusMind")]
+        [Authorize(Roles = "CampusMind")] // Restricts users other than CampusMind
         [HttpGet]
-        public async Task<ActionResult<List<BestPractice>>> GetBestPractices()
+        public async Task<ActionResult<List<BestPractice>>> GetBestPractices() //Gets all the best practices from the database
         {
 
             try
@@ -72,9 +72,9 @@ namespace PreLearningBackend.Controllers
             }
         }
 
-       /* [Authorize(Roles = "Admin")]*/
+        /* [Authorize(Roles = "Admin")]*/  // Restricts users other than Admin
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateBestCodingPractice(int id, BestPractice bestCodingPractice)
+        public async Task<ActionResult> UpdateBestCodingPractice(int id, BestPractice bestCodingPractice) // This method Edit/Update exsisting best practice in the system
         {
             try
             {
@@ -98,10 +98,10 @@ namespace PreLearningBackend.Controllers
                 return NotFound();
             }
         }
-/*
-        [Authorize(Roles = "Admin")]*/
+
+        /*[Authorize(Roles = "Admin")]*/  // Restricts users other than Admin
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteBestPractice(int id)
+        public async Task<ActionResult> DeleteBestPractice(int id)  // This method Delete/Remove the best practice from the system
         {
             try
             {
