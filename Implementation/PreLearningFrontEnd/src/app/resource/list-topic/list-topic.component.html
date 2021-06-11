@@ -1,9 +1,9 @@
-<div class="topics container-fluid">
-  <mat-card>
+<div>
+  <mat-card >
     <br>
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title style="font-size: x-large">TOPICS</mat-card-title>
+      <mat-card-title style="font-size: x-large">List Of Topics</mat-card-title>
     </mat-card-header>
   <mat-selection-list>
     <mat-accordion >
@@ -29,10 +29,10 @@
               <mat-tab
                 class="dropDownStyle"
                 label="Youtube / Website links"
-                style="font-size: large"
+                style="font-size: large;"
               >
                 <div class="dropDownStyle">
-                  <tr *ngFor="let resource of topic.resources">
+                  <tr *ngFor="let resource of topic.resources" >
                     <a href="{{ resource.link }}">
                       {{ resource.link }}
                     </a>
