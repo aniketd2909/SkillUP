@@ -1,119 +1,106 @@
 <!-- <h2>Registration Form</h2> -->
-<div class="container" id="image" >
-  
-  <form class="form-horizontal" role="form" [formGroup]="registerForm" (ngSubmit)="collectData()">
-   
-     
-    <br>
+
+<div class="fluid-container" id="image">
+  <mat-card>
+    <form
+      class="form-horizontal"
+      role="form"
+      [formGroup]="registerForm"
+      (ngSubmit)="collectData()"
+    >
+      <br>
       <mat-form-field class="inputField">
-        
-        <mat-label>Name</mat-label>
+        <mat-label>*Name</mat-label>
         <input formControlName="name" matInput />
       </mat-form-field>
-      <br />
-
- <br>
+     
+    
+   
       <mat-form-field class="inputField">
-        
-        <mat-label>Email</mat-label>
+        <mat-label>*Email</mat-label>
         <input formControlName="email" matInput />
       </mat-form-field>
-      <br />
 
 
-
- <br>
+ 
       <mat-form-field class="inputField">
-        
-        <mat-label>Password</mat-label>
+        <mat-label>*Password</mat-label>
         <input formControlName="password" matInput />
       </mat-form-field>
-      <br />
+     
 
-
- <br>
+   
       <mat-form-field class="inputField">
-        
-        <mat-label>Phone No</mat-label>
+        <mat-label>*Phone No</mat-label>
         <input formControlName="contactNo" matInput />
       </mat-form-field>
-      <br />
-    <div class="form-group">
-      <label class="control-label col-sm-3">Gender</label>
-      <div class="col-sm-6">
-        <div class="row">
-          <div class="col-sm-6">
-            <label class="radio-inline">
-              <input type="radio" id="femaleRadio" value="Female" name="gender" formControlName="gender" />Female
-            </label>
-          </div>
-          <div class="col-sm-6">
-            <label class="radio-inline">
-              <input type="radio" id="maleRadio" value="Male" name="gender" formControlName="gender" />Male
-            </label>
-          </div>
-        </div>
+      <br>
+      <br>
+      <label  class="radioButtons">Gender</label>
+      <mat-radio-group>
+        <mat-radio-button value="Female" formControlName="gender"
+          >Female</mat-radio-button
+        >
+        <mat-radio-button value="Male" formControlName="gender"
+          >Male</mat-radio-button
+        >
+      </mat-radio-group>
+      <br>
+      <br>
+      <label class="radioButtons">Role</label>
+      <mat-radio-group>
+        <mat-radio-button
+          value="1"
+          name="roleId"
+          (click)="campusMindRole()"
+          formControlName="roleId"
+          >Campus Mind</mat-radio-button
+        >
+        <mat-radio-button
+          value="2"
+          name="roleId"
+          (click)="mindtreeMindRole()"
+          formControlName="roleId"
+          >Mindtree Mind</mat-radio-button
+        >
+      </mat-radio-group>
+      <br>
+      <br>
+      <div *ngIf="campusMind">
+        <mat-form-field class="inputField">
+          <mat-label>*Engineering Branch</mat-label>
+          <input formControlName="engineeringBranch" matInput />
+        </mat-form-field>
       </div>
-    </div>
-    <!-- /.form-group -->
 
-    <div class="form-group">
-      <label class="control-label col-sm-3">Role</label>
-      <div class="col-sm-16">
-        <div class="row">
-          <div class="col-sm-8">
-            <label class="radio-inline">
-              <input type="radio" id="campusmindRadio" value="1" name="roleId" (click)="campusMindRole()"
-                formControlName="roleId" />Campus Mind
-            </label>
-          </div>
-          <div class="col-sm-8">
-            <label class="radio-inline">
-              <input type="radio" id="mindtreemindRadio" value="2" name="roleId" (click)="mindtreeMindRole()"
-                formControlName="roleId" />MindTree Mind
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.form-group -->
-      <br />
-    <div class="form-group" *ngIf="campusMind">
+      <div *ngIf="mindTreeMind">
      
-      <mat-form-field class="inputField">
-        <mat-label>Engineering Branch</mat-label>
-        <input formControlName="engineeringBranch" matInput />
-      </mat-form-field>
+        <mat-form-field class="inputField">
+          <mat-label>*Location</mat-label>
+          <input formControlName="location" matInput />
+        </mat-form-field>
 
-    </div>
-    <div *ngIf="mindTreeMind">
-    
-      <br>
-      <mat-form-field class="inputField">
-        <mat-label>Location</mat-label>
-        <input formControlName="location" matInput />
-      </mat-form-field>
-      <br />
-      <br>
-      <mat-form-field class="inputField">
-        <mat-label>Track</mat-label>
-        <input formControlName="track" matInput />
-      </mat-form-field>
-      <br />
-
-  
-    </div>
-
-    <div class="form-group">
-      <div class="col-sm-9 col-sm-offset-3">
-        <span class="help-block" style="color:black">*Required fields</span>
+        <mat-form-field class="inputField">
+          <mat-label>*Track</mat-label>
+          <input formControlName="track" matInput />
+        </mat-form-field>
+     
       </div>
-    </div>
-    <button type="submit" class="btn btn-primary btn-block" [disabled]="!registerForm.valid">
-      Register
-    </button>
-  </form>
+
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+          <span class="help-block" style="color: black">*Required fields</span>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="!registerForm.valid"
+      >
+        Register
+      </button>
+    </form>
+  </mat-card>
   <!-- /form -->
 </div>
 <!-- ./container -->
-
