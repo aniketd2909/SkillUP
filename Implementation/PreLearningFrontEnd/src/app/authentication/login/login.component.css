@@ -8,23 +8,8 @@
     color:black;
     height: 600px;
     width: 100%;
-    padding-left: 65%;
+    /* padding-left: 65%; */
 }
-
-
-
-
-/* .loginForm2{
- 
-    background-image: url('../../../assets/login.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position:center;
-    
-    color:black;
-    height: 600px;
-    width: 100%;
-} */
 
 .inputField{
 
@@ -37,32 +22,35 @@
  
  }
 
- mat-card-title{
+ /* mat-card-title{
 
     padding-left: 90px;
     padding-top: 20px;
- }
+ } */
 
  mat-card{
 
-  width: 100%;
+  width: 300px;
   height: 70%;
- 
+ float: right;
+ text-align: center;
+ margin-top: 100px;
  }
 
- .matCard{
+ /* .matCard{
 
     padding-left: 200px;
     padding-top: 80px
- }
+ } */
 
  .mat-form-field{
 
-    padding-left: 20px;
+    /* padding-left: 20px; */
     width: 90%;
  }
 
- .loginButton{
-
-    padding-left: 90px;
+ mat-label{
+    color: black;
  }
+
+ 

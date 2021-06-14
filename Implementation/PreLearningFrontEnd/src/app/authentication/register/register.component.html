@@ -1,105 +1,82 @@
 <!-- <h2>Registration Form</h2> -->
 
-<div class="container-fluid" id="image">
+<div class="container-fluid " id="image">
+
   <div class="matCard">
-  <mat-card>
-    <mat-card-title
-      ><img class="logo" src="../../assets/logo.jpeg" alt="logo.jpeg" />   
-    </mat-card-title>
-    <form
-      class="form-horizontal"
-      role="form"
-      [formGroup]="registerForm"
-      (ngSubmit)="collectData()"
-    >
-      
-      <mat-form-field class="inputField">
-        <mat-label>*Name</mat-label>
-        <input formControlName="name" matInput />
-      </mat-form-field>
-    
-      <mat-form-field class="inputField">
-        <mat-label>*Email</mat-label>
-        <input formControlName="email" matInput />
-      </mat-form-field>
- 
-      <mat-form-field class="inputField">
-        <mat-label>*Password</mat-label>
-        <input type="password" formControlName="password" matInput />
-      </mat-form-field>
-     
+    <mat-card>
+      <mat-card-title>
+        <img class="logo" src="../../assets/logo.jpeg" alt="logo.jpeg" />
+      </mat-card-title>
+      <form class="form-horizontal" role="form" [formGroup]="registerForm" (ngSubmit)="collectData()">
 
-   
-      <mat-form-field class="inputField">
-        <mat-label>*Phone No</mat-label>
-        <input formControlName="contactNo" matInput />
-      </mat-form-field>
-      <br>
-      
-      <label  class="radioButtons">Gender</label>
-      <mat-radio-group formControlName="gender" >
-        <mat-radio-button value="Female"
-          >Female</mat-radio-button
-        >
-        <mat-radio-button value="Male"
-          >Male</mat-radio-button
-        >
-      </mat-radio-group>
-      <br>
-      <br>
-      <label class="radioButtons">Role</label>
-      <mat-radio-group formControlName="roleId">
-        <mat-radio-button
-          value="1"
-          name="roleId"
-          (click)="campusMindRole()"
-          >Campus Mind</mat-radio-button
-        >
-        <mat-radio-button
-          value="2"
-          name="roleId"
-          (click)="mindtreeMindRole()"
-          
-          >Mindtree Mind</mat-radio-button
-        >
-      </mat-radio-group>
-      <br>
-      <div *ngIf="campusMind">
         <mat-form-field class="inputField">
-          <mat-label>*Engineering Branch</mat-label>
-          <input formControlName="engineeringBranch" matInput />
-        </mat-form-field>
-      </div>
-      <br>
-      <div *ngIf="mindTreeMind">
-     
-        <mat-form-field class="inputField">
-          <mat-label>*Location</mat-label>
-          <input formControlName="location" matInput />
+          <mat-label>Name*</mat-label>
+          <input formControlName="name" matInput />
         </mat-form-field>
 
         <mat-form-field class="inputField">
-          <mat-label>*Track</mat-label>
-          <input formControlName="track" matInput />
+          <mat-label>Email*</mat-label>
+          <input formControlName="email" matInput />
         </mat-form-field>
-     
-      </div>
 
-      <div class="form-group">
-        <div class="col-sm-9 col-sm-offset-3">
-          <span class="help-block" style="color: black">*Required fields</span>
+        <mat-form-field class="inputField">
+          <mat-label>Password*</mat-label>
+          <input type="password" formControlName="password" matInput />
+        </mat-form-field>
+
+
+
+        <mat-form-field class="inputField">
+          <mat-label>Phone No*</mat-label>
+          <input formControlName="contactNo" matInput />
+        </mat-form-field>
+        <br>
+
+        <label class="radioButtons">Gender</label>
+        <mat-radio-group formControlName="gender">
+          <mat-radio-button value="Female" style="font-weight:100; color: rgb(70, 65, 65);">Female</mat-radio-button>
+          <mat-radio-button value="Male">Male</mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <br> 
+        <label class="radioButtons">Role</label>
+        <mat-radio-group formControlName="roleId">
+          <mat-radio-button value="1" name="roleId" (click)="campusMindRole()">Campus Mind</mat-radio-button>
+          <mat-radio-button value="2" name="roleId" (click)="mindtreeMindRole()">Mindtree Mind</mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <div *ngIf="campusMind">
+          <mat-form-field class="inputField">
+            <mat-label>*Engineering Branch</mat-label>
+            <input formControlName="engineeringBranch" matInput />
+          </mat-form-field>
         </div>
-      </div>
-      <button
-        type="submit"
-        class="btn btn-primary btn-block"
-       [disabled]="!registerForm.valid"
-      >
-        Register
-      </button>
-    </form>
-  </mat-card>
-</div>
+        <br>
+        <div *ngIf="mindTreeMind">
+
+          <mat-form-field class="inputField">
+            <mat-label>*Location</mat-label>
+            <input formControlName="location" matInput />
+          </mat-form-field>
+
+          <mat-form-field class="inputField">
+            <mat-label>*Track</mat-label>
+            <input formControlName="track" matInput />
+          </mat-form-field>
+
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-9 col-sm-offset-3">
+            <span class="help-block" style="color: black">*Required fields</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="!registerForm.valid">
+          Register
+        </button>
+      </form>
+    </mat-card>
+  </div>
   <!-- /form -->
 </div>
 <!-- ./container -->
