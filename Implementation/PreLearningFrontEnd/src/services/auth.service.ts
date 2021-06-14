@@ -27,7 +27,7 @@ export class AuthService {
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('roleId');
     localStorage.removeItem('email');
-    this.toastr.warning('You Have Successfully Loged Out', 'Logout')
+    this.toastr.warning('You Have Successfully Logged Out', 'Logout')
 
     this.router.navigate(['authentication/login']);
   }

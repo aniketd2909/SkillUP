@@ -23,8 +23,7 @@ mcqLength;
 validButton: boolean=false;
 
 questionNumber: number=1;
-  constructor(private apiService: ApiService) { }
-
+ 
   ngOnInit(): void {
 
     this.getMcqs();
