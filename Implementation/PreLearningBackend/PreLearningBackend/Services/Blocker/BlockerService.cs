@@ -10,22 +10,22 @@ namespace PreLearningBackend.Services.Blocker
 {
 
 
-    public class BlockerService: IBlockerService
+    public class BlockerService: IBlockerService// Class which implements IBlockerService service
     {
 
         private readonly AppDbContext _context;
 
-        public BlockerService(AppDbContext context)
+        public BlockerService(AppDbContext context)// Reference for AppDbContext
         {
             _context = context;
         }
 
-        //Method to add blocker
+        // This method is used to add the blocker 
         public async Task<bool> AddBlocker(Models.Blocker.Blocker blocker)
         {
             bool flag = true;
-            await _context.Blockers.AddAsync(blocker);
-            int check = await _context.SaveChangesAsync();
+            await _context.Blockers.AddAsync(blocker);// Adds blocker to database asynchronously
+            int check = await _context.SaveChangesAsync();// saves the changes 
             if (check < 0)
             {
                 flag = false;
@@ -73,7 +73,7 @@ namespace PreLearningBackend.Services.Blocker
         //Method to get blocker by Id
         public async Task<Models.Blocker.Blocker> GetBlockerById(int id)
         {
-            Models.Blocker.Blocker blocker =await _context.Blockers.FindAsync(id);
+            Models.Blocker.Blocker blocker =await _context.Blockers.FindAsync(id);// Gets the specific Blocker by id
 
             //If blocker with given id is not present throw an InvalidBlocker Exception
 
