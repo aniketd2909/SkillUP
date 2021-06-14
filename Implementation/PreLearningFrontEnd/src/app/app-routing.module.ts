@@ -35,6 +35,7 @@ const routes: Routes = [
      path: 'home', component: HomeComponent 
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
