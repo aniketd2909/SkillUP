@@ -8,10 +8,19 @@ namespace PreLearningBackend.Services.Resource
 {
     public interface ITopicService
     {
-         Task<List<Topic>> GetAllTopics();
-         Task<Topic> GetTopicByName(string name);
-         Task<bool> AddTopic(Topic Topic);
-         Task<bool> DeleteTopicById(int id);
-         Task<bool> updateTopic(Topic Topic);
+        // To display all Topic from the system.
+        Task<List<Topic>> GetAllTopics();
+
+        //To get a particular Topic by its name.
+        Task<Topic> GetTopicByName(string name);
+
+        // To add a new Topic to system.
+        Task<bool> AddTopic(Topic Topic);
+
+        // To Delete/Remove your Topic from the system
+        Task<bool> DeleteTopicById(int id);
+
+        // To Edit/Update exsisting Topic in the system
+        Task<bool> updateTopic(Topic Topic);
     }
 }

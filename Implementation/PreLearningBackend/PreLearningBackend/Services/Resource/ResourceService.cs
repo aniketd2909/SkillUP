@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Services.Resource
 {
-    public class ResourceService : IResourceService
+    public class ResourceService : IResourceService // Class which implements IResourceService service
     {
         public readonly AppDbContext _context = null;
-        public ResourceService(AppDbContext context)
+        public ResourceService(AppDbContext context) // Reference for AppDbContext
         {
             _context = context;
         }
@@ -18,8 +18,8 @@ namespace PreLearningBackend.Services.Resource
         // This method is used to add the Resource 
         public async Task<bool> AddResource(Models.Resource.Resource Resource)
         {
-            await _context.Resources.AddAsync(Resource);
-            int checkss = await _context.SaveChangesAsync();
+            await _context.Resources.AddAsync(Resource);// Adds Resource to database asynchronously
+            int checkss = await _context.SaveChangesAsync();// saves the changes 
             if (checkss <= 0)
             {
                 return false;
@@ -30,9 +30,9 @@ namespace PreLearningBackend.Services.Resource
         //This method is used to delete resource by Resource id
         public async Task<bool> DeleteResourceById(int id)
         {
-            Models.Resource.Resource resource = _context.Resources.Find(id);
-            _context.Resources.Remove(resource);
-            int check = await _context.SaveChangesAsync();
+            Models.Resource.Resource resource = _context.Resources.Find(id);// Gets the specific Resource by id
+            _context.Resources.Remove(resource);// Removes the resource from the system permenantly
+            int check = await _context.SaveChangesAsync(); // saves the changes 
             if (check <= 0)
             {
                 return false;
@@ -57,11 +57,11 @@ namespace PreLearningBackend.Services.Resource
             return Resources;
         }
 
-
+        // This method is used to update a particular resource in Database.
         public async Task<bool> updateResource(Models.Resource.Resource Resource)
         {
-            _context.Resources.Update(Resource);
-            int check = await _context.SaveChangesAsync();
+            _context.Resources.Update(Resource);// Updates the exsisting Resource
+            int check = await _context.SaveChangesAsync();// saves the changes
             if (check <= 0)
             {
                 return false;
