@@ -15,8 +15,11 @@ export class DisplayMcqComponent implements OnInit {
   mcqForm = new FormGroup({
     optionId: new FormControl('',[Validators.required])
   })
-currentIndex=0
-mcqLength
+currentIndex=0;
+mcqLength;
+validButton: boolean=false;
+
+questionNumber: number=1;
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
@@ -53,7 +56,8 @@ mcqLength
 
   nextQuestion() {
     this.getMcq(this.mcqs[++this.currentIndex].id)
-
+    this.questionNumber++;
+    this.validButton=false;
     // console.log(question)
     // let index = this.mcqs.indexOf(question)
     // console.log(index)
@@ -67,7 +71,12 @@ mcqLength
   previousQuestion()
   {
     this.getMcq(this.mcqs[--this.currentIndex].id)
+    this.questionNumber--;
+    this.validButton=false;
   }
 
+  isSelected(){
+    this.validButton=true;
+  }
 
 }

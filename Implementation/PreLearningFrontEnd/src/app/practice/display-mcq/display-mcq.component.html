@@ -1,16 +1,22 @@
-<h2>Practice Questions</h2>
+
+<div class="container-fluid">
+  <br>
+
+
+<mat-card>
+<h2>PRACTICE QUESTIONS</h2>
 <br>
 <form [formGroup]="mcqForm" (ngSubmit)="onSubmit( mcq.question.id)">
   <div class="form-group" style="width: 100%;">
-    <li class="list-group-item active" style="height :150px;">
-      <label class="control-label col-sm-3" style="width: 100%;"> Question : <br>{{
+    <li  class="list-group-item"  id="questionBlock" style="height : auto">
+      <label style="width: 100%;  font-weight: 400;"> Question  {{questionNumber}}: <br><br>{{
         mcq.question.description
-        }}</label><br><br>
+        }}<br></label><br><br>
     </li>
     <div>
       <div *ngFor="let option of mcq.options" class="list-group-item">
         <label class="radio-inline">
-          <input type="radio" id="mcqRadio" value="{{ option.id }}" formControlName="optionId" />{{
+          <input type="radio" id="mcqRadio" value="{{ option.id }}" (click)="isSelected()" formControlName="optionId" />{{
           option.optionName }}
         </label>
       </div>
@@ -19,25 +25,25 @@
 
   <div id="outer">
     <div class="inner">
-      <button type="button" class="btn btn-primary btn-block" (click)="previousQuestion()"
+      <button type="button" mat-raised-button color="primary" (click)="previousQuestion()"
         [disabled]="currentIndex === 0">
-        <span class="glyphicon glyphicon glyphicon-arrow-left"></span>
-        Previous Question
+        <span class="glyphicon glyphicon-chevron-left" style="padding-bottom: 5px;"></span>     
       </button>
     </div>
     <div class="inner">
-      <button type="submit" class="btn btn-success btn-block" [disabled]="!mcqForm.valid">Submit</button>
+      <button type="submit" mat-raised-button class="btn-success" [disabled]="!validButton">Submit</button>
     </div>
 
     <div class="inner">
-      <button type="button" class="btn btn-primary btn-block" (click)="nextQuestion()"
+      <button type="button" mat-raised-button color="primary"  (click)="nextQuestion()"
         [disabled]="currentIndex === mcqLength - 1">
-        Next Question
-        <span class="glyphicon glyphicon glyphicon-arrow-right"></span>
+        <span class="glyphicon glyphicon-chevron-right" style="padding-bottom: 5px;"></span>
       </button>
     </div>
   </div>
 </form>
+</mat-card>
+</div>
 <!-- <div class="col-md-12">
     <button type="submit" class="btn btn btn-primary btn-block" (click)="nextQuestion()"
     [disabled]="currentIndex===mcqLength-1">Next Question</button>

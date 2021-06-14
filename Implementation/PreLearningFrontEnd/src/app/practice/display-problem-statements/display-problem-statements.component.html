@@ -8,11 +8,14 @@
     <li class="list-group-item list-group-item-success" >{{item.description}}</li>
 </ul> -->
 
-
+<div class="container-fluid">
 
 <ul class="list-group">
-  <h2>Best Practices To Be Followed :</h2>
-  <li class="list-group-item list-group-item-info" *ngFor="let item of bestPracticeList"> -> {{item.description}}</li>
+  <h2>Best Practices To Be Followed</h2>
+
+  <li  style="background-color: #f2f2f2" class="list-group-item " *ngFor="let item of bestPracticeList">
+    
+    <span  class="glyphicon glyphicon-star-empty"></span>   {{item.description}}</li>
 
 </ul>
 
@@ -65,5 +68,8 @@
       </tr>
     </mat-accordion>
   </mat-selection-list>
+
+</div>
+
 
 </div>

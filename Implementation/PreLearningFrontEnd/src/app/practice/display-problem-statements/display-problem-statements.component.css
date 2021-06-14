@@ -5,7 +5,7 @@
     
   }
   .mat-expansion-panel{
-    width: 1110px;
+    width: 967px;
     background-color: whitesmoke;
   }
   .mat-expansion-panel-header{
@@ -54,3 +54,22 @@
   mat-tab.label{
       font-size:xx-large;
   }
+
+  .container-fluid{
+
+  
+    max-width: 1000px;
+    padding-left: 16px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    border-radius: 4px;
+   
+    }
+
+    h2{
+      text-align: center;
+      font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
