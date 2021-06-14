@@ -106,7 +106,7 @@ namespace PreLearningBackend.Controllers
                     return Created("Updated Succesfully", blocker); 
                 }
 
-                //Returns Conflict if it was not able to update
+                //Returns Conflict if id was not able to update
                 return Conflict("Blocker was not Updated"); 
 
             }
