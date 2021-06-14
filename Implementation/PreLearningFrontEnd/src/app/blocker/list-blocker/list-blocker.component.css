@@ -5,7 +5,7 @@
   }
   .mat-expansion-panel{
  
-    background-image: url('../../../assets/blocker1.jpg');
+    background-color: #f2f2f2;
   }
 
 
@@ -52,7 +52,12 @@
   .mat-label{
     text-decoration: solid;
   }
-  .mat-card{
 
-   background-color: #79baf0;
+  .searchBar{
+    
+
+    width: 30%;
+    margin:auto;
+    
+
   }

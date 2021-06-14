@@ -1,14 +1,16 @@
-<div>
-  <mat-card >
+<div class="resourceList" >
+
     <br>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title style="font-size: x-large">List Of Topics</mat-card-title>
-    </mat-card-header>
+   
+      
+      <!-- <div
+      style=" text-align: center;" ><h2 class="Topics">Topics</h2></div> -->
+      <h2 class="Topics">Topics</h2>
+  
   <mat-selection-list>
     <mat-accordion >
       <tr *ngFor="let topic of typesOfTopics">
-        <mat-expansion-panel >
+        <mat-expansion-panel style="background-color: #f2f2f2"  >
           <mat-expansion-panel-header>
             <div>
               <mat-panel-title>
@@ -19,7 +21,7 @@
             </div>
           </mat-expansion-panel-header>
           <div class="fontSize">
-            <mat-tab-group mat-align-tabs="center">
+            <mat-tab-group mat-align-tabs="center" style="text-align: center;">
               <mat-tab label="Description">
                 <div class="dropDownStyle">
                   {{ topic.description }}
@@ -31,11 +33,14 @@
                 label="Youtube / Website links"
                 style="font-size: large;"
               >
-                <div class="dropDownStyle">
-                  <tr *ngFor="let resource of topic.resources" >
-                    <a href="{{ resource.link }}">
-                      {{ resource.link }}
+              <div class="dropDownStyle" >
+                  <tr  *ngFor="let resource of topic.resources" >
+                
+                    <a   href="{{ resource.link }}" target="_blank" >
+                     {{ resource.link }}
+                    
                     </a>
+        
                   </tr>
                 </div>
               </mat-tab>
@@ -46,6 +51,6 @@
     </mat-accordion>
   </mat-selection-list>
   <br>
-</mat-card>
+
 
 </div>
