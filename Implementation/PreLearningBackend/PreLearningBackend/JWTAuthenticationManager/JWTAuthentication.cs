@@ -31,7 +31,13 @@ namespace PreLearningBackend.JWTAuthenticationManager
            // var _key = "This is my long private SecretKey";
             Mind mind = _context.Minds.SingleOrDefault(user => user.Email.Equals(email) && user.Password.Equals(password));
             if (mind is null)
-                return null;
+            {
+                // return null;
+                UserData userData1 = new UserData();
+                userData1.Message = "failure";
+                return userData1;
+            }
+               
 
             var userRole = _context.Roles.Find(mind.RoleId);
 
@@ -56,6 +62,7 @@ namespace PreLearningBackend.JWTAuthenticationManager
           userData.Token=tokenHandler.WriteToken(token);
           userData.RoleId=userRole.Id;
           userData.Email=mind.Email;
+            userData.Message = "success";
         return userData;
         }
     }

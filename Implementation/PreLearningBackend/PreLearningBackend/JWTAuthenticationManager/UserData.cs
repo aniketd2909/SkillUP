@@ -12,5 +12,7 @@ namespace PreLearningBackend.JWTAuthenticationManager
         public int RoleId { get; set; }
 
         public string Email { get; set; }
+
+        public string Message { get; set; }
     }
 }

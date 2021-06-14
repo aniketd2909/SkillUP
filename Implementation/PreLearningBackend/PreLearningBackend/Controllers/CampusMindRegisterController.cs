@@ -44,11 +44,11 @@ namespace PreLearningBackend.Controllers
             {
                 if ( await _service.AddDetails(register))
                 {
-                    return Ok("Added");
+                    return Ok("Registration Successful");
                 }
                 else
                 {
-                    return BadRequest("This Email is Not Allowed To Register");
+                    return Ok("This Email is Either Not Allowed To Register Or Already Registered");
                 }
             }
             catch (Exception ex)
