@@ -1,7 +1,10 @@
-﻿using PreLearningBackend.Context;
+﻿using Microsoft.AspNetCore.Http;
+using OfficeOpenXml;
+using PreLearningBackend.Context;
 using PreLearningBackend.Models.User;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,9 +17,26 @@ namespace PreLearningBackend.Services.User
         {
             _context = context;
         }
-        public async Task<bool> AddUser(SelectedUser selectedUser)
+        public async Task<bool> AddUser(IFormFile file)
         {
-          await _context.SelectedUsers.AddAsync(selectedUser);
+            using (var stream = new MemoryStream())
+            {
+                await file.CopyToAsync(stream);
+                using (var package = new ExcelPackage(stream))
+                {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                    var rowCount = worksheet.Dimension.Rows;
+                    for (int row = 2; row <= rowCount; row++)
+                    {
+                        await _context.SelectedUsers.AddAsync(new SelectedUser
+                        {
+                            //Id = (int)worksheet.Cells[row, 1].Value,
+                            EmailId = worksheet.Cells[row, 1].Value.ToString().Trim()
+                        });
+                    }
+                }
+            }
+           
             int check = await  _context.SaveChangesAsync();
             if (check > 0)
             {

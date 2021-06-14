@@ -1,4 +1,5 @@
-﻿using PreLearningBackend.Models.User;
+﻿using Microsoft.AspNetCore.Http;
+using PreLearningBackend.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace PreLearningBackend.Services.User
 {
     public interface ISelectedUserService
     {
-        Task<bool> AddUser(SelectedUser selectedUser);
+        Task<bool> AddUser(IFormFile file);
         Task<SelectedUser> GetUserById(int Id);
 
         Task<bool> DeleteUser(int Id);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PreLearningBackend.Models.User;
 using PreLearningBackend.Services.User;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PreLearningBackend.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class SelectedUserController : ControllerBase
@@ -47,11 +48,11 @@ namespace PreLearningBackend.Controllers
 
         // POST api/<SelectedUserController>
         [HttpPost]
-        public async Task<IActionResult> Post(SelectedUser user)
+        public async Task<IActionResult> Post(IFormFile file)
         {
             try
             {
-                bool added = await _service.AddUser(user);
+                bool added = await _service.AddUser(file);
                 if (added)
                     return Ok("User Added");
                 else
