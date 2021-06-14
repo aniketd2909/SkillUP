@@ -17,6 +17,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from 'src/services/token-interceptor.service';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
@@ -26,7 +27,13 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    ToastrModule.forRoot({
+      timeOut:3000,
+      progressBar:true,
+      progressAnimation: 'increasing',
+      preventDuplicates : true
+    })
   ],
   providers: [
     {

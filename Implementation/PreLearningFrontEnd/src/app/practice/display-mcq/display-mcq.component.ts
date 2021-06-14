@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { a } from 'src/app/Models/IQuestion';
 import { ApiService } from 'src/services/api.service';
 
@@ -13,11 +14,11 @@ export class DisplayMcqComponent implements OnInit {
   mcq: any;
   mcqs: any = []
   mcqForm = new FormGroup({
-    optionId: new FormControl('',[Validators.required])
+    optionId: new FormControl('', [Validators.required])
   })
-currentIndex=0
-mcqLength
-  constructor(private apiService: ApiService) { }
+  currentIndex = 0
+  mcqLength
+  constructor(private apiService: ApiService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -27,18 +28,24 @@ mcqLength
   getMcq(id) {
     this.apiService.get(`mcq/${id}`).subscribe((response) => {
       this.mcq = response
-        console.log(response)
+      console.log(response)
     });
 
   }
   onSubmit(qtionId) {
-    console.log("Question ID ="+qtionId);
-    console.log("Form Details ="+this.mcqForm.value.optionId);
-    
+    console.log("Question ID =" + qtionId);
+    console.log("Form Details =" + this.mcqForm.value.optionId);
+
     this.apiService.postAnswer(`mcq/${qtionId}`, this.mcqForm.value).subscribe((response) => {
-     // console.log(response);
-      if (response === 'Correct') alert('Correct Answer');
-      else alert('Wrong Answer');
+      // console.log(response);
+      if (response === 'Correct') {
+       // alert('Correct Answer');
+       this.toastr.success('Correct Answer','Result',{positionClass:'toast-bottom-right'})
+      }
+      else {
+        //alert('Wrong Answer');
+        this.toastr.error('Wrong Answer','Result',{positionClass:'toast-bottom-right'})
+      }
     });
   }
 
@@ -48,7 +55,7 @@ mcqLength
       console.log(response)
       this.getMcq(this.mcqs[this.currentIndex].id)
       this.mcqLength = this.mcqs.length
-    },(error) => { console.log(error.error); alert(error.error) })
+    }, (error) => { console.log(error.error); alert(error.error) })
   }
 
   nextQuestion() {
@@ -64,8 +71,7 @@ mcqLength
     // this.getMcq()
   }
 
-  previousQuestion()
-  {
+  previousQuestion() {
     this.getMcq(this.mcqs[--this.currentIndex].id)
   }
 

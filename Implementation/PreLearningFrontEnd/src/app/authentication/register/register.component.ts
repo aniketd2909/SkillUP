@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/services/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from 'src/services/auth.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private toastr: ToastrService) { }
 
   campusMind: boolean = false;
   mindTreeMind: boolean = false;
@@ -61,11 +62,18 @@ export class RegisterComponent implements OnInit {
     this.authService.register(path, this.registerForm.value).subscribe(
       (response) => {
         console.log(response);
-        alert("Registered Successfully")
+        //alert(response)
+        if (response === 'Registration Successful') {
+          this.toastr.success(response, 'Registration')
+        }
+        else {
+          this.toastr.error(response, 'Registration')
+        }
+
         this.registerForm.reset();
       },
-      (error) => {console.log(error.error),alert(error.error)}
-      
+      (error) => { console.log(error.error) }
+
     );
   }
 }

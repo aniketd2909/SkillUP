@@ -11,6 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 
+
+
 @NgModule({
   declarations: [AuthenticationComponent, RegisterComponent, LoginComponent],
   imports: [
@@ -22,6 +24,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatButtonModule,
     MatCardModule,
     MatRadioModule
+  
   ]
 })
 export class AuthenticationModule {}

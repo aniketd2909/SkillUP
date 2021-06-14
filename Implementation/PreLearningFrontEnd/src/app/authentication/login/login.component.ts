@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
       Validators.maxLength(16),
     ]),
   });
-  constructor(private authService: AuthService,private route: Router) {}
+  constructor(private authService: AuthService,private route: Router, private toastr:ToastrService) {}
 
   ngOnInit(): void {}
 
@@ -27,13 +28,22 @@ export class LoginComponent implements OnInit {
        //console.log(response.token)
         // let val:any = response
         // console.log(val.token)
-       this.authService.saveItem('jwtToken',response.token);
-       console.log(response.token);
-       this.authService.saveItem('roleId',response.roleId);
-       this.authService.saveItem('email',response.email);
-       // alert('login successfull');
-        this.loginForm.reset()
-        this.route.navigate(['home']);
+        if(response.message === 'failure')
+        {
+         // alert('Unsuccessfull Login')
+         this.toastr.error('Login Unsuccessful','Login Status')
+          this.loginForm.reset()
+        }
+        else{
+          this.authService.saveItem('jwtToken',response.token);
+          console.log(response.token);
+          this.authService.saveItem('roleId',response.roleId);
+          this.authService.saveItem('email',response.email);
+          this.toastr.success('Login Successfull' , 'Login Status')
+          this.loginForm.reset()
+          this.route.navigate(['home']);
+        } 
+       
       },
       (error) => {console.log(error.error),alert("Login Unsuccessfull")}
     );
