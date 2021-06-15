@@ -35,12 +35,12 @@ export class AddUserDetailsComponent implements OnInit {
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);
     this.apiService.UploadExcel('SelectedUser', formData).subscribe(response => {
-      if (response.message === 'Users Added')
-        this.toastr.success(response.message, 'Adding Users')
+                if (response.message === 'Users Added')
+              this.toastr.success(response.message, 'Adding Users')
       else
         this.toastr.error(response.message, 'Adding Users')
 
-    }, error => console.log(error))
+    },error=>console.log(error))
   }
 
 }
