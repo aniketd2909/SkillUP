@@ -32,14 +32,14 @@
         </mat-form-field>
         <br>
 
-        <label class="radioButtons">Gender</label>
+        <label class="radioButtons">Gender* :</label>
         <mat-radio-group formControlName="gender">
           <mat-radio-button value="Female" style="font-weight:100; color: rgb(70, 65, 65);">Female</mat-radio-button>
           <mat-radio-button value="Male">Male</mat-radio-button>
         </mat-radio-group>
         <br>
         <br> 
-        <label class="radioButtons">Role</label>
+        <label class="radioButtons">Role* :</label>
         <mat-radio-group formControlName="roleId">
           <mat-radio-button value="1" name="roleId" (click)="campusMindRole()">Campus Mind</mat-radio-button>
           <mat-radio-button value="2" name="roleId" (click)="mindtreeMindRole()">Mindtree Mind</mat-radio-button>
@@ -47,7 +47,7 @@
         <br>
         <div *ngIf="campusMind">
           <mat-form-field class="inputField">
-            <mat-label>*Engineering Branch</mat-label>
+            <mat-label>Engineering Branch*</mat-label>
             <input formControlName="engineeringBranch" matInput />
           </mat-form-field>
         </div>
@@ -55,12 +55,12 @@
         <div *ngIf="mindTreeMind">
 
           <mat-form-field class="inputField">
-            <mat-label>*Location</mat-label>
+            <mat-label>Location*</mat-label>
             <input formControlName="location" matInput />
           </mat-form-field>
 
           <mat-form-field class="inputField">
-            <mat-label>*Track</mat-label>
+            <mat-label>Track*</mat-label>
             <input formControlName="track" matInput />
           </mat-form-field>
 

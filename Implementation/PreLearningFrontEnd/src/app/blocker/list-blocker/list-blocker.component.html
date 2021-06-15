@@ -1,10 +1,12 @@
 <div style="text-align: center;">
  
   <mat-form-field>
+    <div class="searchBar">
     <mat-label style="content-visibility: inherit;color: black;font-size: 18px;"> <span style="margin-left:10px;"
      class="glyphicon glyphicon-search" style="font-size:18px"></span>
       Search
       </mat-label>
+    </div>
     <input matTooltip="Search By Topic" type="text" [(ngModel)]='listBlocker' matInput />
   </mat-form-field>
   <br />
@@ -26,15 +28,14 @@
         <br>
         <h3>Solutions Posted:</h3>
 
-    <tr *ngFor="let blockerSolution of blocker.blockerSolutions">
-      <mat-divider></mat-divider>
+    <tr style="text-align: left;" *ngFor="let blockerSolution of blocker.blockerSolutions">
       <br>
-      <span>
-        {{blockerSolution.Count}}
+      <span >
+        {{ blocker.blockerSolutions.indexOf(blockerSolution)+1}} :
       </span>
-      <p>
+    
         {{ blockerSolution.solution }}
-      </p>
+  
     </tr>
     <button style="float: right" mat-raised-button color="accent" routerLink="/blocker/add/{{ blocker.id }}"
       matTooltip="Add your solution to the problem">

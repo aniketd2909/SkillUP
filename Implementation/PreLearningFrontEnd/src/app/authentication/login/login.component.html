@@ -17,9 +17,15 @@
         </mat-form-field>
         <br>
 
-        <div class="loginButton">
-          <button mat-flat-button color="primary" type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
+        <div class="loginButton" >
+          <button mat-flat-button class="btn-success"  type="submit"  [disabled]="!loginForm.valid">
             Login
+          </button>
+         <br>
+         <br>
+         <h4>Don't have an account? </h4>     
+         <button  mat-flat-button color="primary" routerLink="/authentication/register">
+            Register
           </button>
         </div>
       </form>

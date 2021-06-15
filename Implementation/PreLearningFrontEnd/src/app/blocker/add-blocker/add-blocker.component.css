@@ -1,12 +1,15 @@
 mat-form-field{
 
     width: 90%;
-    padding-left: 50px;
+
 }
 
 mat-card{
-    width: 50%;
-    background-color: whitesmoke;
+    
+    background-color: #f2f2f2;
+    width: 125%;
+    
+  
 }
 
 /*.buttonStyle{

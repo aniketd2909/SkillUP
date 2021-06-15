@@ -10,6 +10,15 @@ mat-form-field{
 
 }
 
-mat-card{
- background-color: rgb(215, 240, 253);
+.addBlocker{
+
+
+ /* padding-left: 350px; */
+
+
+ padding-right: 40px;
+ width: 30%;
+ margin:auto;
+
 }
+
