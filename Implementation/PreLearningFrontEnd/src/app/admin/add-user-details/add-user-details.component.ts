@@ -18,7 +18,7 @@ export class AddUserDetailsComponent implements OnInit {
   // List: any;
 
   //flag :boolean =false
-
+  filePath =''
   constructor(private fb: FormBuilder, private apiService: ApiService, private route: Router,
     private toastr: ToastrService) { }
   ngOnInit(): void {
