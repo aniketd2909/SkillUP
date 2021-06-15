@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/services/api.service';
 
 @Component({
@@ -10,26 +11,36 @@ import { ApiService } from 'src/services/api.service';
 })
 export class AddUserDetailsComponent implements OnInit {
 
-  Form!: FormGroup;
-  List: any;
-  constructor(private fb: FormBuilder,private apiService:ApiService,private route: Router) { }
 
+  // @ViewChild('fileInput') fileInput;
+  // message: string;
+  // Form!: FormGroup;
+  // List: any;
+
+  //flag :boolean =false
+
+  constructor(private fb: FormBuilder, private apiService: ApiService, private route: Router,
+    private toastr: ToastrService) { }
   ngOnInit(): void {
-    this.Form = this.fb.group({
-     file: ['']   
-    });
-    this.OnSubmit
+
   }
 
-  OnSubmit() {
-    this.apiService.post('SelectedUser',this.Form.value).subscribe((response)=>{
-      console.log(response)
-    }, (error) => {console.log(error.error),alert(error.error)});
+
+
+  onFileUpload(event) {
+    //  this.flag = true;
+    const file = event.files[0];
+    //this.progressBar = true;
+    console.log(file)
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+    this.apiService.UploadExcel('SelectedUser', formData).subscribe(response => {
+                if (response.message === 'Users Added')
+              this.toastr.success(response.message, 'Adding Users')
+      else
+        this.toastr.error(response.message, 'Adding Users')
+
+    },error=>console.log(error))
   }
 
-  resetForm(){
-    this.Form.reset();
-    alert("Added successfully!")
-   
-  }
 }

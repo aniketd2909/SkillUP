@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         } 
        
       },
-      (error) => {console.log(error.error),alert("Login Unsuccessfull")}
+      (error) => {console.log(error.error)}
     );
   }
 }

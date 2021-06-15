@@ -24,7 +24,7 @@
   }  */
 
   .navbar{
-    height:70px;
+    height:auto;
     display:inline;
     width:100%;
     /* 
@@ -91,4 +91,11 @@
 .bg-primary {
   color: #fff;
   background-color: #3f51b5;
+}
+
+#emailHeader{
+  margin-right: 20px;
+  color: white;
+  margin-top: 8px;
+  font-size:large;
 }

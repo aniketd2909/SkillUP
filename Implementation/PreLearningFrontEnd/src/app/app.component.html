@@ -13,28 +13,35 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="resource/topics" *ngIf="authService. getUserRole()">Resources</a>
+          <a class="nav-link" routerLink="resource/topics"
+            *ngIf="authService. getUserRole() =='campusMind'">Resources</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" routerLink="blocker" *ngIf="authService. getUserRole()">Blockers</a>
+          <a class="nav-link" routerLink="blocker" *ngIf="authService. getUserRole() =='campusMind'">Blockers</a>
         </li>
+
+        <!-- <li class="nav-item active">
+          <a class="nav-link" routerLink="experience-feed/add"
+            *ngIf="authService.isLoggedIn()&& !authService. getUserRole()">Experience Feed</a>
+        </li> -->
 
         <li class="nav-item active">
           <a class="nav-link" routerLink="experience-feed/add"
-            *ngIf="authService.isLoggedIn()&& !authService. getUserRole() ">Experience Feed</a>
+            *ngIf="authService.isLoggedIn()&& authService. getUserRole()=='mindtreeMind'">Experience Feed</a>
         </li>
 
 
         <li class="nav-item active">
-          <a class="nav-link" routerLink="experience-feed/get" *ngIf="authService. getUserRole()">Experience Feed</a>
+          <a class="nav-link" routerLink="experience-feed/get"
+            *ngIf="authService. getUserRole()=='campusMind'">Experience Feed</a>
         </li>
 
-        <li class="nav-item active" style=" margin-top: 6px" *ngIf="authService. getUserRole()">
+        <li class="nav-item active" style=" margin-top: 6px" *ngIf="authService. getUserRole() =='campusMind'">
           <div class="dropdown">
-            <a class="btn dropdown-toggle nav-link" type="button" id="toggleButtonForPlayer"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="btn dropdown-toggle nav-link" type="button" id="toggleButtonForPlayer" data-bs-toggle="dropdown"
+              aria-expanded="false">
               Practice
-          </a>
+            </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" routerLink="practice/mcq">MCQ</a></li>
               <li><a class="dropdown-item" routerLink="practice/problemStatement" id="playerlist">Practice
@@ -52,34 +59,21 @@
           <a class="nav-link" id="loginButton" routerLink="authentication/login">Login</a>
         </li>
 
-        <!--<li class="nav-item logoutButton"  *ngIf="authService.isLoggedIn()">
-        <button mat-raised-button 
-        color="warn" class="nav-link" 
-        style="cursor: pointer"
+
+        <li class="nav-item active" *ngIf="authService. getUserRole()=='admin'">
+          <a class="nav-link" routerLink="admin/add-users">Add Users</a>
+        </li>
         
-        (click)="authService.logout()">
-          Logout
-        </button>
-      </li>-->
-        <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> -->
+        
       </ul>
     </div>
     <div style="float:right; padding-top: 5px;">
-      <ul style="list-style-type:none;">
+      <ul style="list-style-type:none;"  class="navbar-nav mr-auto">
+        <li class="nav-item active" *ngIf="authService.isLoggedIn()" id="emailHeader">
+         {{authService.getEmail()}}
+        </li>
         <li class="nav-item " *ngIf="authService.isLoggedIn()">
+          
           <button mat-raised-button color="warn" class="nav-link" style="cursor: pointer"
             (click)="authService.logout()">
             Logout

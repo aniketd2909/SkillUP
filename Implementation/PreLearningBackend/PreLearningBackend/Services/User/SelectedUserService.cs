@@ -18,22 +18,33 @@ namespace PreLearningBackend.Services.User
             _context = context;
         }
         public async Task<bool> AddUser(IFormFile file)
+        
         {
+           
             using (var stream = new MemoryStream())
             {
-                await file.CopyToAsync(stream);
-                using (var package = new ExcelPackage(stream))
+                if (file.FileName.EndsWith(".xlsx"))
                 {
-                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
-                    var rowCount = worksheet.Dimension.Rows;
-                    for (int row = 2; row <= rowCount; row++)
+
+                    await file.CopyToAsync(stream);
+                    using (var package = new ExcelPackage(stream))
                     {
-                        await _context.SelectedUsers.AddAsync(new SelectedUser
+                        ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                        var rowCount = worksheet.Dimension.Rows;
+                        for (int row = 2; row <= rowCount; row++)
                         {
-                            //Id = (int)worksheet.Cells[row, 1].Value,
-                            EmailId = worksheet.Cells[row, 1].Value.ToString().Trim()
-                        });
+                            await _context.SelectedUsers.AddAsync(new SelectedUser
+                            {
+                                //Id = (int)worksheet.Cells[row, 1].Value,
+                                EmailId = worksheet.Cells[row, 1].Value.ToString().Trim()
+                            });
+                        }
                     }
+                }
+                else
+                {
+                    //throw new Exception("This file format is not supported");
+                    return false;
                 }
             }
            
