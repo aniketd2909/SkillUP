@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -23,8 +23,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
-    MatRadioModule
-  
+    MatRadioModule,
+    MatDividerModule
+
   ]
 })
 export class AuthenticationModule {}

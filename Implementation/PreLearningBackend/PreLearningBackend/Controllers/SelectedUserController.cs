@@ -53,10 +53,19 @@ namespace PreLearningBackend.Controllers
             try
             {
                 bool added = await _service.AddUser(file);
+                string message = "";
                 if (added)
-                    return Ok("User Added");
+                {
+                    message = "User Added";
+                    return Ok(message);
+                }
+
                 else
-                    return BadRequest("User Not Added");
+                {
+                    message = "User Not Added";
+                    return Ok(message);
+                }
+                  
             }
             catch (Exception ex)
             {

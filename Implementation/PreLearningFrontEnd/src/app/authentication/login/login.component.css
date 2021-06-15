@@ -8,7 +8,8 @@
     color:black;
     height: 600px;
     width: 100%;
-    /* padding-left: 65%; */
+
+  
 }
 
 .inputField{
@@ -30,11 +31,15 @@
 
  mat-card{
 
-  width: 300px;
-  height: 70%;
+ width: 300px;
+ height: 70%;
  float: right;
  text-align: center;
- margin-top: 100px;
+ margin-top: 60px;
+ background-color: #f2f2f2;
+ opacity: 0.9;
+
+
  }
 
  /* .matCard{

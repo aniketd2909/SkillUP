@@ -42,6 +42,7 @@
     padding-top: 25px;
     padding-bottom: 25px;
    
+   
   }
 
  
@@ -55,14 +56,25 @@
   }
 
 
-  mat-card{
-    /* background-image: url('../../../assets/resource1.jpg');
-    background-size: cover;
-    background-color: transparent; */
-    background-color: rgb(215, 240, 253);
 
-  }
   
   mat-tab.label{
       font-size:xx-large;
   }
+.resourceList{
+
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  border-radius: 4px;
+  text-align: center;
+
+}
+
+.Topics{
+  text-align: center;
+  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
