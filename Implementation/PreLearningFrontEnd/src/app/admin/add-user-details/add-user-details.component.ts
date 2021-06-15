@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/services/api.service';
 
 @Component({
@@ -10,42 +10,37 @@ import { ApiService } from 'src/services/api.service';
   styleUrls: ['./add-user-details.component.css']
 })
 export class AddUserDetailsComponent implements OnInit {
-  @ViewChild('fileInput') fileInput; 
-  message: string; 
-  Form!: FormGroup;
-  List: any;
-  constructor(private fb: FormBuilder,private apiService:ApiService,private route: Router,private http:HttpClient) { }
-  url = 'https://localhost:44363/api/SelectedUser';
+
+
+  // @ViewChild('fileInput') fileInput;
+  // message: string;
+  // Form!: FormGroup;
+  // List: any;
+
+  //flag :boolean =false
+
+  constructor(private fb: FormBuilder, private apiService: ApiService, private route: Router,
+    private toastr: ToastrService) { }
   ngOnInit(): void {
-    this.onFileUpload
+
   }
-  // uploadFile() {  
-  //   let formData = new FormData();  
-  //   formData.append('upload', this.fileInput.nativeElement.files[0])  
-  
-  //   this.UploadExcel(formData).subscribe(result => {  
-  //     this.message = result.toString();  
-      
-  //   });   
-  
-  // }  
+
+
+
   onFileUpload(event) {
-    
+    //  this.flag = true;
     const file = event.files[0];
     //this.progressBar = true;
-    console.log(event)
+    console.log(file)
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);
-    this.UploadExcel(formData).subscribe(x => console.log(x),error=>console.log(error));
+    this.apiService.UploadExcel('SelectedUser', formData).subscribe(response => {
+      if (response.message === 'Users Added')
+        this.toastr.success(response.message, 'Adding Users')
+      else
+        this.toastr.error(response.message, 'Adding Users')
+
+    }, error => console.log(error))
   }
-  UploadExcel(formData: FormData) {  
-    let headers = new HttpHeaders();  
-  
-    headers.append('Content-Type', 'multipart/form-data');  
-    headers.append('Accept', 'application/json');  
-  
-    const httpOptions = { headers: headers};  
-  
-    return this.http.post(this.url , formData, httpOptions)  
-  }  
+
 }

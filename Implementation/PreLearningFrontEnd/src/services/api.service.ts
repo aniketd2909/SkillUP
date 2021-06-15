@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 @Injectable({
@@ -30,5 +30,15 @@ export class ApiService {
   getById(path,id): Observable<any> {
     return this.httpClient.get(`${environment.baseUrl}/${path}/${id}`);
   }
-  
+
+    UploadExcel(path,formData):Observable<any> {
+        let headers = new HttpHeaders();
+
+        headers.append('Content-Type', 'multipart/form-data');
+        headers.append('Accept', 'application/json');
+
+        const httpOptions = { headers: headers };
+
+        return this.httpClient.post(`${environment.baseUrl}/${path}`, formData, httpOptions)
+    } 
 }

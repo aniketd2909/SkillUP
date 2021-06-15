@@ -1,36 +1,41 @@
+<!-- <form  [formGroup]="usersForm" (ngSubmit)="submit()">
 
-<!-- <form  [formGroup]="Form" ngSubmit="submit()">
-<div class="container">
-  <div class="form-group" x-data="{ fileName: '' }">
     <h2><strong>Add User Details</strong></h2>
     <div class="input-group shadow">
-        <input type="file" class="form-control form-control-lg" placeholder="Upload Image" formControlName="file" x-model="fileName">
-      <button class="browse btn btn-primary px-4" type="submit"> Submit</button>
-        
+        <input type="file" class="form-control form-control-lg" placeholder="Upload Image" formControlName="file"   x-model="fileName">
+        <button class="browse btn btn-primary px-4" type="submit" [disabled]="!usersForm.valid" > Submit</button>
+    </div>
+ 
+
+</form>  -->
+
+
+
+
+<!-- <div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      
+      <input class="form-control" type="file" #file required>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-primary" (click)="onFileUpload(file)"  >Upload</button>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      
+      <input class="form-control" type="file" #file required id="excel">
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-primary" (click)="onFileUpload(file)"  >Upload</button>
     </div>
   </div>
 </div>
-</form>  -->
-<div class="container">  
-    <br> 
-<div class="row">  
-    <div class="col-md-6">  
-        <input class="form-control" type="file" #file />  
-    </div>  
-    <div class="col-md-6">  
-        <button class="btn btn-primary" (click)="onFileUpload(file);">Upload</button>  
-    </div>  
-</div>  
-</div>
-<!-- <form>
-    <div class="file-field md-form">
-        <div mdbBtn floating="true" size="md" gradient="purple" mdbWavesEffect>
-          <mdb-icon fas icon="cloud-upload-alt" aria-hidden="true"></mdb-icon>
-          <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
-        </div>
-      <div class="file-path-wrapper mt-3">
-        <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
-      </div>
-    </div>
-    <button mdbBtn type="button" gradient="purple" class="waves-light" (click)="startUpload()" mdbWavesEffect>Start uploading</button>
-</form> -->

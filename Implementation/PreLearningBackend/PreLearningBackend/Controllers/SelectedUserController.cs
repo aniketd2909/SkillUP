@@ -52,18 +52,19 @@ namespace PreLearningBackend.Controllers
         {
             try
             {
+                ExcelResponse response = new ExcelResponse();
                 bool added = await _service.AddUser(file);
-                string message = "";
+              //  string message = "";
                 if (added)
                 {
-                    message = "User Added";
-                    return Ok(message);
+                   response.Message = "Users Added";
+                    return Ok(response);
                 }
 
                 else
                 {
-                    message = "User Not Added";
-                    return Ok(message);
+                    response.Message = "File Format Not Supported";
+                    return Ok(response);
                 }
                   
             }
