@@ -1,5 +1,5 @@
 
-<form  [formGroup]="Form" ngSubmit="submit()">
+<!-- <form  [formGroup]="Form" ngSubmit="submit()">
 <div class="container">
   <div class="form-group" x-data="{ fileName: '' }">
     <h2><strong>Add User Details</strong></h2>
@@ -10,7 +10,18 @@
     </div>
   </div>
 </div>
-</form> 
+</form>  -->
+<div class="container">  
+    <br> 
+<div class="row">  
+    <div class="col-md-6">  
+        <input class="form-control" type="file" #file />  
+    </div>  
+    <div class="col-md-6">  
+        <button class="btn btn-primary" (click)="onFileUpload(file);">Upload</button>  
+    </div>  
+</div>  
+</div>
 <!-- <form>
     <div class="file-field md-form">
         <div mdbBtn floating="true" size="md" gradient="purple" mdbWavesEffect>
