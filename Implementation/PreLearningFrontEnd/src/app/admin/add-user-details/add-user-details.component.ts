@@ -25,8 +25,6 @@ export class AddUserDetailsComponent implements OnInit {
 
   }
 
-
-
   onFileUpload(event) {
     //  this.flag = true;
     const file = event.files[0];
