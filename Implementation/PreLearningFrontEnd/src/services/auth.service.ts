@@ -37,10 +37,21 @@ export class AuthService {
 
   getUserRole() {
 
+    // if (localStorage.getItem('roleId') === '1')
+    //   return true;
+    // return false;
     if (localStorage.getItem('roleId') === '1')
-      return true;
-    return false;
+      return 'campusMind';
+    if (localStorage.getItem('roleId') === '2')
+      return 'mindtreeMind'
+    if (localStorage.getItem('roleId') === '3')
+      return 'admin';
+      return 'none'
+  }
 
+  getEmail()
+  {
+    return localStorage.getItem('email')
   }
 
 }

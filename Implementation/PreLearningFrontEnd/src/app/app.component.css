@@ -92,3 +92,10 @@
   color: #fff;
   background-color: #3f51b5;
 }
+
+#emailHeader{
+  margin-right: 20px;
+  color: white;
+  margin-top: 8px;
+  font-size:large;
+}
