@@ -17,7 +17,7 @@ export class AddUserDetailsComponent implements OnInit {
   // Form!: FormGroup;
   // List: any;
 
-  //flag :boolean =false
+  valid = '';
 
   constructor(private fb: FormBuilder, private apiService: ApiService, private route: Router,
     private toastr: ToastrService) { }
