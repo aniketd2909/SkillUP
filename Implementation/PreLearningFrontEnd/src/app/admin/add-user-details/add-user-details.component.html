@@ -32,11 +32,11 @@
   <div class="row">
     <div class="col-md-6">
       
-      <input class="form-control" type="file" #file required id="excel" [(ngModel)]="valid">
+      <input class="form-control" type="file" #file required id="excel" [(ngModel)]="filePath">
     </div>
     
     <div class="col-md-6">
-      <button class="btn btn-primary" type="submit" [disabled]="valid === ''" (click)="onFileUpload(file)" >Upload</button>
+      <button class="btn btn-primary" type="submit" [disabled]="filePath === ''" (click)="onFileUpload(file)" >Upload</button>
     </div>
   </div>
 </div>
