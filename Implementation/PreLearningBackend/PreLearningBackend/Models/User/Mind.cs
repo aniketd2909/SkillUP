@@ -10,7 +10,7 @@ namespace PreLearningBackend.Models.User
     public class Mind
     {   
         // Mind ID
-        //Hi hello 
+        //Hi hello
         [Key]
         public int Id { get; set; }
 
@@ -18,19 +18,20 @@ namespace PreLearningBackend.Models.User
         public string Email { get; set; }
         [Required]
         [StringLength(50)]
-
         public string Name { get; set; }
+
+
         [Required]
-        [StringLength(50)]
+        [StringLength(12)]
         public string ContactNo { get; set; }
-        [Required]
+       
         public string ProfilePicture { get; set; }
         [Required]
         [MaxLength(8)]
 
         public string Gender { get; set; }
         [Required]
-        [MaxLength(16)]
+        [MaxLength(16) ,MinLength(8)]
         public string Password { get; set; }
 
         [ForeignKey("Role")]

@@ -1,0 +1,23 @@
+/* .image {
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+.image {
+  /* height: 40em; */
+  background-size: cover;
+  width: auto;
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+  background-position:50% 50%;
+  background-repeat: repeat;
+  background-position: 100%;
+}
+
+h1{
+  text-align: center;
+  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}

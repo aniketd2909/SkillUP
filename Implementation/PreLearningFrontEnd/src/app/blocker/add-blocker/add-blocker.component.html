@@ -1,0 +1,28 @@
+<div style="text-align:center">
+  <mat-card>
+    <mat-card-title>Post Your Doubt</mat-card-title>
+
+    <form [formGroup]="addBlocker" (ngSubmit)="collectBlocker()">
+      <br>
+      <mat-form-field>
+        <mat-label>Topic Name</mat-label>
+        <input formControlName="name" matInput />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput placeholder="Ex. Explain you doubt..."></textarea>
+      </mat-form-field>
+      <br />
+      <div class="buttonStyle">
+        <mat-card-actions>
+
+          <button type="submit" mat-raised-button color="warn" matTooltip="Submit the blocker" (click)="openSnackBar()">
+            Submit
+          </button>
+        </mat-card-actions>
+      </div>
+    </form>
+  </mat-card>
+
+</div>

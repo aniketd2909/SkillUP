@@ -1,0 +1,43 @@
+<!-- <form  [formGroup]="usersForm" (ngSubmit)="submit()">
+
+    <h2><strong>Add User Details</strong></h2>
+    <div class="input-group shadow">
+        <input type="file" class="form-control form-control-lg" placeholder="Upload Image" formControlName="file"   x-model="fileName">
+        <button class="browse btn btn-primary px-4" type="submit" [disabled]="!usersForm.valid" > Submit</button>
+    </div>
+ 
+
+</form>  -->
+
+
+
+
+<!-- <div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      
+      <input class="form-control" type="file" #file required>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-primary" (click)="onFileUpload(file)"  >Upload</button>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      
+      <input class="form-control" type="file" #file required id="excel" [(ngModel)]="filePath">
+    </div>
+    
+    <div class="col-md-6">
+      <button class="btn btn-primary" type="submit" [disabled]="filePath === ''" (click)="onFileUpload(file)" >Upload</button>
+    </div>
+  </div>
+</div>
+

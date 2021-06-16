@@ -1,0 +1,35 @@
+<div class="container-fluid" id="bgImage">
+  <div class="matCard">
+    <mat-card>
+      <mat-card-title><img class="logo" src="../../assets/logo.jpeg" alt="logo.jpeg" />
+        <h2>LOG-IN</h2>
+      </mat-card-title>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+        <mat-form-field class="inputField">
+          <mat-label>Email address</mat-label>
+          <input formControlName="email" id="email" type="email" matInput />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" formControlName="password" id="password" matInput />
+        </mat-form-field>
+        <br>
+
+        <div class="loginButton" >
+          <button mat-flat-button class="btn-success"  type="submit"  [disabled]="!loginForm.valid">
+            Login
+          </button>
+         <br>
+         <br>
+         <h4>Don't have an account? </h4>     
+         <button  mat-flat-button color="primary" routerLink="/authentication/register">
+            Register
+          </button>
+        </div>
+      </form>
+      <br>
+    </mat-card>
+  </div>
+</div>

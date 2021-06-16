@@ -1,0 +1,55 @@
+#image {
+    /* background-image: url('../../../assets/element5-digital-OyCl7Y4y0Bk-unsplash.jpg');  */
+    background-image: url('../../../assets/login.jpg');
+    background-size:cover;
+ 
+    background-repeat: no-repeat;
+    background-position:center;
+    padding: 20px;
+    color:black;
+    height: 670px;
+    width: 100%;
+  /* padding-left: 65%; */
+}
+
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  .radioButtons{
+    margin-right: 16px;
+    margin-left: 10px;
+  }
+
+  mat-form-field{
+
+    width: 85%;
+    padding-left: 10px;
+ 
+  }
+
+  .matCard{
+
+    float:right;
+    width: 400px;
+    
+ }
+
+ .logo{
+    width: 68px;
+    height: 68px;
+    border-radius: 34px;
+ }
+
+ mat-card-title{
+   text-align: center;
+ }
+ mat-label{
+   color: black;
+ }
+
+ mat-card{
+  background-color: #f2f2f2;
+  opacity: 0.8;
+ }

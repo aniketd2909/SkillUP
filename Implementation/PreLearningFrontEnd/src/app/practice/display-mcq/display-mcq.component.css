@@ -1,0 +1,40 @@
+#outer {
+    width: 100%;
+    text-align: center;
+  }
+  .inner {
+    display: inline-block;
+    margin: 10px;
+  }
+
+
+  .container-fluid{
+
+  
+  max-width: 900px;
+  padding-left: 16px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  border-radius: 4px;
+
+  }
+
+ 
+
+  h2{
+    text-align: center;
+  }
+
+  #questionBlock{
+
+    background-color: #3f51b5;
+    color:white;
+    font-weight: 400;
+  }
+
+  .buttonColor{
+
+    background-color: #3f51b5;
+
+  }

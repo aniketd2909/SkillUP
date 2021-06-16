@@ -1,0 +1,79 @@
+.mat-selection-list{
+    margin:30px 0px; padding:0px;
+   
+     
+    
+  }
+  .mat-expansion-panel{
+    width: 967px;
+    background-color: whitesmoke;
+  }
+  .mat-expansion-panel-header{
+    height: 100px;
+  }
+
+  /* .mat-tab-group{
+    height: 175px;
+    border-top-width: 50px;padding-top: 50px;padding-bottom: 0px;
+   
+  } */
+  
+  .dropDownStyle
+  {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    border-radius: 4px;
+   
+  }
+
+  a{
+    padding-left: 290px;
+  }
+
+
+  .fontSize{
+
+    font-size: large;
+  }
+
+  h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  mat-card-title{
+    padding-left: 400px;
+  }
+
+  mat-card{
+    /* background-image: url('../../../assets/resource1.jpg');
+    background-size: cover;
+    background-color: transparent; */
+    background-color: whitesmoke;
+
+  }
+  
+  mat-tab.label{
+      font-size:xx-large;
+  }
+
+  .container-fluid{
+
+  
+    max-width: 1000px;
+    padding-left: 16px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    border-radius: 4px;
+   
+    }
+
+    h2{
+      text-align: center;
+      font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+    }

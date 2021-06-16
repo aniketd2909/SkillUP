@@ -1,0 +1,80 @@
+.mat-selection-list{
+    margin:30px 0px; 
+    text-align:center;
+  }
+  .mat-expansion-panel{
+    background-color: whitesmoke;
+    opacity: 0.9;
+  }
+
+
+  @media only screen and (min-width: 600px) {
+    .mat-expansion-panel{
+      width: 500px;
+    }
+  }
+  @media only screen and (min-width: 800px) {
+    .mat-expansion-panel {
+      width: 700px;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .mat-expansion-panel {
+      width: 900px;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .mat-expansion-panel {
+      width: 1100px;
+    }
+  }
+
+
+  .mat-expansion-panel-header{
+   
+    background-image: url('../../../assets/resource3.jpg');
+    height: 100px;
+  }
+
+ 
+  .dropDownStyle
+  {
+    padding-top: 25px;
+    padding-bottom: 25px;
+   
+   
+  }
+
+ 
+
+  .fontSize{
+    font-size: large;
+  }
+
+  h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+
+  
+  mat-tab.label{
+      font-size:xx-large;
+  }
+.resourceList{
+
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  border-radius: 4px;
+  text-align: center;
+
+}
+
+.Topics{
+  text-align: center;
+  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}

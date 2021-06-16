@@ -1,0 +1,103 @@
+<!-- <div class="image"> -->
+<div class="container-fluid">
+
+
+  <nav class="navbar" class="navbar navbar-expand-lg ">
+    <!-- <nav class="navbar navbar-dark bg-dark"> -->
+    <img src="../../assets/logo.jpeg" alt="logo.jpeg"><a class="navbar-brand" routerLink="home">sKILLup</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="resource/topics"
+            *ngIf="authService. getUserRole() =='campusMind'">Resources</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="blocker" *ngIf="authService. getUserRole() =='campusMind'">Blockers</a>
+        </li>
+
+        <!-- <li class="nav-item active">
+          <a class="nav-link" routerLink="experience-feed/add"
+            *ngIf="authService.isLoggedIn()&& !authService. getUserRole()">Experience Feed</a>
+        </li> -->
+
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="experience-feed/add"
+            *ngIf="authService.isLoggedIn()&& authService. getUserRole()=='mindtreeMind'">Experience Feed</a>
+        </li>
+
+
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="experience-feed/get"
+            *ngIf="authService. getUserRole()=='campusMind'">Experience Feed</a>
+        </li>
+
+        <li class="nav-item active" style=" margin-top: 6px" *ngIf="authService. getUserRole() =='campusMind'">
+          <div class="dropdown">
+            <a class="btn dropdown-toggle nav-link" type="button" id="toggleButtonForPlayer" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Practice
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" routerLink="practice/mcq">MCQ</a></li>
+              <li><a class="dropdown-item" routerLink="practice/problemStatement" id="playerlist">Practice
+                  Programming</a></li>
+            </ul>
+          </div>
+        </li>
+
+
+        <li class="nav-item active" *ngIf="!authService.isLoggedIn()">
+          <a class="nav-link" routerLink="authentication/register">Register</a>
+        </li>
+
+        <li class="nav-item" *ngIf="!authService.isLoggedIn()">
+          <a class="nav-link" id="loginButton" routerLink="authentication/login">Login</a>
+        </li>
+
+
+        <li class="nav-item active" *ngIf="authService. getUserRole()=='admin'">
+          <a class="nav-link" routerLink="admin/add-users">Add Users</a>
+        </li>
+        
+        
+      </ul>
+    </div>
+    <div style="float:right; padding-top: 5px;">
+      <ul style="list-style-type:none;"  class="navbar-nav mr-auto">
+        <li class="nav-item active" *ngIf="authService.isLoggedIn()" id="emailHeader">
+         {{authService.getEmail()}}
+        </li>
+        <li class="nav-item " *ngIf="authService.isLoggedIn()">
+          
+          <button mat-raised-button color="warn" class="nav-link" style="cursor: pointer"
+            (click)="authService.logout()">
+            Logout
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+</div>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+<br>
+<br>
+<br>
+
+<footer>
+  <p>
+    <span>Mail To: </span><a href="mailto:campusmind@gmail.com">campusmind@mail.com</a>
+  </p>
+  <p>© 2021 Created By Campus Minds</p>
+</footer>
+<!-- </div> -->
+
+<!-- </div> -->

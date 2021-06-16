@@ -1,0 +1,75 @@
+
+<div class="container-fluid">
+  <br>
+
+
+<mat-card>
+<h2>PRACTICE QUESTIONS</h2>
+<br>
+<form [formGroup]="mcqForm" (ngSubmit)="onSubmit( mcq.question.id)">
+  <div class="form-group" style="width: 100%;">
+    <li  class="list-group-item"  id="questionBlock" style="height : auto">
+      <label style="width: 100%;  font-weight: 400;"> Question  {{questionNumber}}: <br><br>{{
+        mcq.question.description
+        }}<br></label><br><br>
+    </li>
+    <div>
+      <div *ngFor="let option of mcq.options" class="list-group-item">
+        <label class="radio-inline">
+          <input type="radio" id="mcqRadio" value="{{ option.id }}" (click)="isSelected()" formControlName="optionId" />{{
+          option.optionName }}
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="outer">
+    <div class="inner">
+      <button type="button" mat-raised-button color="primary" (click)="previousQuestion()"
+        [disabled]="currentIndex === 0">
+        <span class="glyphicon glyphicon-chevron-left" style="padding-bottom: 5px;"></span>     
+      </button>
+    </div>
+    <div class="inner">
+      <button type="submit" mat-raised-button class="btn-success" [disabled]="!validButton">Submit</button>
+    </div>
+
+    <div class="inner">
+      <button type="button" mat-raised-button color="primary"  (click)="nextQuestion()"
+        [disabled]="currentIndex === mcqLength - 1">
+        <span class="glyphicon glyphicon-chevron-right" style="padding-bottom: 5px;"></span>
+      </button>
+    </div>
+  </div>
+</form>
+</mat-card>
+</div>
+<!-- <div class="col-md-12">
+    <button type="submit" class="btn btn btn-primary btn-block" (click)="nextQuestion()"
+    [disabled]="currentIndex===mcqLength-1">Next Question</button>
+    <button type="submit" class="btn btn btn-primary btn-block" (click)="previousQuestion()"
+    [disabled]="currentIndex===0">Previous Question</button>
+</div> -->
+
+
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6" style="width:100%">
+         <form>
+          <button class="btn btn-primary btn-lg" type="submit" formaction="1klasse.html">1.klasse </button>
+         </form>
+      </div>
+      <div class="col-12 col-md-6" style="width:100%">
+        <form>
+          <button class="btn btn-primary btn-lg" type="submit" formaction="1klasse.html">1.klasse </button>
+         </form>
+      </div>
+    </div>
+  </div> -->
+
+
+<!-- <div id="outer">
+    <div class="inner"><button type="submit" class="msgBtn" onClick="return false;" >Save</button></div>
+    <div class="inner"><button type="submit" class="msgBtn2" onClick="return false;">Publish</button></div>
+    <div class="inner"><button class="msgBtnBack">Back</button></div>
+  </div> -->

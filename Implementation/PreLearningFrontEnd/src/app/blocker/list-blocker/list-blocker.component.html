@@ -1,0 +1,50 @@
+<div style="text-align: center;">
+ 
+  <mat-form-field>
+    <div class="searchBar">
+    <mat-label style="content-visibility: inherit;color: black;font-size: 18px;"> <span style="margin-left:10px;"
+     class="glyphicon glyphicon-search" style="font-size:18px"></span>
+      Search
+      </mat-label>
+    </div>
+    <input matTooltip="Search By Topic" type="text" [(ngModel)]='listBlocker' matInput />
+  </mat-form-field>
+  <br />
+  <mat-accordion #blocker>
+    <tr *ngFor="let blocker of filteredBlockers" [value]="blocker">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title matTooltip="Topic name">
+            {{ blocker.name | uppercase}}
+          </mat-panel-title>
+          <mat-panel-description style="font-size: medium;" matTooltip="Blocker">
+            {{ blocker.description }}
+          </mat-panel-description>
+
+          Created At:
+          {{ blocker.createdAt | date: "fullDate"}}
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <br>
+        <h3>Solutions Posted:</h3>
+
+    <tr style="text-align: left;" *ngFor="let blockerSolution of blocker.blockerSolutions">
+      <br>
+      <span >
+        {{ blocker.blockerSolutions.indexOf(blockerSolution)+1}} :
+      </span>
+    
+        {{ blockerSolution.solution }}
+  
+    </tr>
+    <button style="float: right" mat-raised-button color="accent" routerLink="/blocker/add/{{ blocker.id }}"
+      matTooltip="Add your solution to the problem">
+      Add Solution
+    </button>
+
+    </mat-expansion-panel>
+
+    </tr>
+  </mat-accordion>
+
+</div>

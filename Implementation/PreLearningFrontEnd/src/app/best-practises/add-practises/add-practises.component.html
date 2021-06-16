@@ -1,0 +1,28 @@
+<html>
+  <div class="container">
+    <form [formGroup]="feedForm" (ngSubmit)="OnSubmit(feedForm.value)">
+      <div class="mb-2">
+        <h1 style="text-align: center">
+          <strong>Best Coding Practises</strong>
+        </h1>
+      </div>
+      <br />
+      <div class="mb-3">
+        <h3 class="form-label"><strong>Add Practise</strong></h3>
+        <textarea
+          type="text"
+          placeholder="Type here"
+          class="form-control"
+          formControlName="Comment"
+          id="Comment"
+          ngModel
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" (click)="(resetForm)">
+        Submit
+      </button>
+      <br /><br />
+    </form>
+  </div>
+</html>
